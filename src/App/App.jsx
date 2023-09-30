@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import './App.css'
 
 function App() {
 
   return (
     <>
+    <p className='text-blue-700'>salam</p>
     </>
   )
 }
