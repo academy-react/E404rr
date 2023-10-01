@@ -1,10 +1,11 @@
-import { useState } from 'react'
+
+import  Landing  from '../screens/landingTop/LandingTop'
 
 function App() {
 
   return (
     <>
-    <p className='text-blue-700'>salam</p>
+        <Landing/>
     </>
   )
 }
