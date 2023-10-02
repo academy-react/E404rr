@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Vazir;
+  src: url("./assets/fonts/Vazir-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: Vazir;
+}
