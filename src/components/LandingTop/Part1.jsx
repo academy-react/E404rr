@@ -3,7 +3,7 @@ const Part1 = () => {
   return (
     <>
                   {/* part 1 */}
-      <nav className=" w-78.125rem h-17.5  border mx-auto my-5 flex leading-17.5 rounded bg-[#f3fcf8]">
+      <nav className=" w-78.125rem h-17.5  border border-transparent mx-auto my-5 flex leading-17.5 rounded bg-[#f3fcf8]">
       <div className=" w-[40px] h-[35.33px] inline-block mt-[3.75px] mr-[23px] ">
         <img src={logo} alt="" className="mt-[15px]" />
       </div>
