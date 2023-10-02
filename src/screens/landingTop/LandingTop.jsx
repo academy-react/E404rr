@@ -10,7 +10,7 @@ const Landing = () => {
         // baraye logoha XD check she
   <>
 
-      <div className="w-312.5 mx-auto h-auto overflow-hidden mb-96">
+      <div className="w-312.5 mx-auto h-auto overflow-hidden mb-96 ">
         <Part1/>
         <Part2/>
         <Part3/>
