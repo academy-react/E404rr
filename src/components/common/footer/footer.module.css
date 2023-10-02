@@ -1,18 +1,15 @@
-.footerContainer {
-  background-color: #3c6e71;
-}
-.footer {
-  max-width: 1366px;
-  height: 420px;
-
-  color: #f2fcf8;
-}
-
 .title {
   color: #61ce70;
   font-size: 22px;
   font-weight: 600;
   padding: 1rem;
   padding-left: 4rem;
-  border-bottom: 2.5px solid #61ce70;
+  border-bottom: 2.5px solid;
+  border-color: linear-gradient(
+    270deg,
+    #198643 13.7%,
+    #6fc341 46.53%,
+    #61ce70 53.77%,
+    #6fc341 70.3%
+  );
 }
