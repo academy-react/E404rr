@@ -1,8 +1,8 @@
 const Address = () => {
   return (
-    <div className=" flex container mx-auto  items-center mb-9 mr-9">
+    <div className=" flex container mx-auto  md:items-center items-start pb-8">
       <svg
-        className="h-10 w-10"
+        className="h-12 w-12 md:h-10 md:w-10 mr-9 "
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         version="1.0"

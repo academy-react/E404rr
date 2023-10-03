@@ -1,9 +1,9 @@
-import style from "./footer.module.css";
+import styles from "./footer.module.css";
 
 const Trust = () => {
   return (
-    <div>
-      <h3 className={style.title}>نماد های اینترنتی</h3>
+    <div className="max-md:mx-auto  max-md:my-8">
+      <h3 className={` ${styles.title} max-w-xs `}>نماد های اینترنتی</h3>
       <div className="flex">
         <div className="flex justify-center	items-center	rounded-lg	bg-slate-300	ml-4 my-10">
           <svg

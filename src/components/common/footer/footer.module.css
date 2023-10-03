@@ -5,11 +5,4 @@
   padding: 1rem;
   padding-left: 4rem;
   border-bottom: 2.5px solid;
-  border-color: linear-gradient(
-    270deg,
-    #198643 13.7%,
-    #6fc341 46.53%,
-    #61ce70 53.77%,
-    #6fc341 70.3%
-  );
 }
