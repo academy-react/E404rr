@@ -1,4 +1,3 @@
-import { Part1 } from "../../components/LandingTop/Part1";
 import { Part2 } from "../../components/LandingTop/Part2";
 import { Part4 } from "../../components/LandingTop/Part4";
 import { Part3 } from "../../components/LandingTop/part3";
@@ -11,7 +10,6 @@ const Landing = () => {
   <>
 
       <div className="w-312.5 mx-auto h-auto overflow-hidden mb-96 ">
-        <Part1/>
         <Part2/>
         <Part3/>
         <Part4/>
@@ -20,4 +18,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export  {Landing}

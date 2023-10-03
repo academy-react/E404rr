@@ -7,9 +7,9 @@ const Part2 = () => {
   return (
         <>
             {/* part 2 */}
-    <div className=" w-312.5 h-100 border border-transparent  rounded-lg mt-9 flex flex-row bg-[#f3fcf8] ">
-      <div className="basis-1/2 border border-transparent">
-        <h2 className=" text-gray-600 text-[24px] mt-10 mr-16">  آموزش برنامه نویسی,خود آموزیو ورود به بازار کار </h2>
+    <div className=" w-[1250px] h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
+      <div className="xl:basis-1/2 border border-transparent">
+        <h2 className=" text-gray-600 text-[24px] mt-10 mr-16 ">  آموزش برنامه نویسی,خود آموزیو ورود به بازار کار </h2>
         <p className=" mt-4 mr-[142px] text-gray-500 text-[21px]">حرفه ای شدن را از امروز شروع کن</p>
         <div className="w-[510px] h-[50px]  border border-transparent mr-[60px] mt-5 mb-5 relative">
         <input className="border border-transparent pr-5  placeholder-green-600 w-full h-full outline-none rounded-xl " type="search" placeholder="جستوجو دوره های مختلف..." />
