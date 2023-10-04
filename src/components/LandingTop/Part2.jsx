@@ -7,8 +7,8 @@ const Part2 = () => {
   return (
         <>
             {/* part 2 */}
-    <div className=" w-[1250px] h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
-      <div className="xl:basis-1/2 border border-transparent">
+    <div className=" xl:w-[1250px] w-[100%] h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
+      <div className="xl:basis-1/2 w-full border border-transparent">
         <h2 className=" text-gray-600 text-[24px] mt-10 mr-16 ">  آموزش برنامه نویسی,خود آموزیو ورود به بازار کار </h2>
         <p className=" mt-4 mr-[142px] text-gray-500 text-[21px]">حرفه ای شدن را از امروز شروع کن</p>
         <div className="w-[510px] h-[50px]  border border-transparent mr-[60px] mt-5 mb-5 relative">
@@ -50,7 +50,7 @@ const Part2 = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/2 border border-transparent">
+      <div className="xl:basis-1/2 xl:opacity-100 xl:block border border-transparent hidden opacity-0">
         <img src={bg} alt=""  className="float-left"/>
       </div>
     </div>

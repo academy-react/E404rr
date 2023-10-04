@@ -11,9 +11,9 @@ const Part3 = () => {
   return (
         <>
                 {/* part 3 */}
-    <div className=" w-312.5 h-35 border border-transparent rounded mt-10 bg-[#f3fcf8]">
-    <div className="flex  gap-x-5 mt-4 justify-center items-center ">
-        <div className="w-25 h-25 border border-transparent mr-5">
+    <div className=" xl:w-[1250px] w-[600px] xl:h-35 h-[420px] border border-transparent rounded xl:mt-10 mt-5 bg-[#f3fcf8]">
+    <div className="flex flex-wrap  xl:gap-x-5 gap-x-10 xl:mt-4 mt-10 xl:justify-center items-center xl:w-full w-[520px] xl:mx-auto mr-[80px]">
+        <div className="w-25 h-25 border border-transparent xl:mr-5">
           <img src={vue} alt="" />
         </div>
         <div className="w-25 h-25 border border-transparent">
