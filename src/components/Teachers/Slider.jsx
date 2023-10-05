@@ -23,7 +23,20 @@ export default function Slider() {
   };
   return (
     <>
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        autoPlaySpeed={1000}
+        autoPlay="true"
+        arrows="false"
+        renderArrowsWhenDisabled="false"
+        removeArrowOnDeviceType={[
+          "superLargeDesktop",
+          "desktop",
+          "tablet",
+          "mobile",
+        ]}
+      >
         <SliderCart />
         <SliderCart />
         <SliderCart />
