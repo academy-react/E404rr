@@ -26,6 +26,10 @@ const App = createBrowserRouter([
         {path:"/consultation-request", element: <p>درخواست مشاوره</p>},
         {path:"/contact-us", element: <p>تماس با ما</p>},
         {path:"/about-we", element: <p>درباره ما</p>},
+        {path: "/free-learn" , element: <p>آموزش های رایگان</p>},
+        {path: "/best-teachers" , element: <p>بهترین معلمان</p>},
+        {path: "/gift-code" , element: <p>کد تخفیف</p>},
+        {path: "/support" , element:<p>پشتیبانی</p>}
       ]
   },
   {path:"/login", element: <p>ورود</p>},
