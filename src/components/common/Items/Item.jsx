@@ -2,7 +2,7 @@ import bgitem1 from "../../../assets/img/bgitem1.png"
 const Item = () => {
   return (
         <>
-            <div className="w-[287.5px] h-[340px]  rounded last:mb-20 shadow-md  xl:mx-0 md:mx-auto">
+            <div className="w-[287.5px] h-[340px]  rounded last:mb-20 shadow-md  xl:mx-0 lg:mx-0 md:mx-auto  ">
               <div className="h-45 w-full mb-5">
                 <img  src={bgitem1} alt="" className="w-full h-full" />
                 </div>
