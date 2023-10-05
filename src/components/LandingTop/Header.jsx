@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
                   {/* part 1 */}
-      <nav className="w-[100%]  xl:w-[1250px] h-17.5  border border-transparent xl:mx-auto xl:my-5 flex  leading-17.5 rounded bg-[#f3fcf8]">
+      <nav className="w-full  xl:w-[1250px] h-17.5  border border-transparent xl:mx-auto xl:my-5 flex  leading-17.5 rounded bg-[#f3fcf8]">
       <div className="mt-4  x;:opacity-0 xl:hidden mr-[30px] ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 fill-green-700">
           <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
@@ -25,7 +25,7 @@ const Header = () => {
             <li className=""><NavLink to="/about-we">درباره ما</NavLink></li>
         </ul>
           {/* icon2 */}
-        <div className="xl:w-[45px] w-[40px]  xl:h-[45px] h-[40px]   xl:mr-48 mr-[355px] mt-[12.5px]  rounded-full bg-green-700 flex items-center justify-center ">
+        <div className="xl:w-[45px] w-[40px]  xl:h-[45px] h-[40px] md:mr-[530px]   xl:mr-48 mr-[355px] mt-[12.5px]  rounded-full bg-green-700 flex items-center justify-center ">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 stroke-white">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
         </svg>
