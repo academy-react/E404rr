@@ -1,6 +1,6 @@
 
 import { NavLink, Outlet } from "react-router-dom";
-import logo2 from "../../assets/img/logo2.png";
+import logo3 from "../../assets/img/logo3.png";
 const Header = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const Header = () => {
           </svg>
       </div>
       <div className=" w-[40px] h-[35.33px] inline-block xl:mt-[3.75px] mt-[4px] mr-[10px] lg:mr-[30px] xl:mr-[23px] ">
-        <img src={logo2} alt="" className="xl:mt-[15px] mt-[8px] xl:h-[38px] xl:w-[40px] h-[50px] w-[50px]" />
+        <img src={logo3} alt="" className="xl:mt-[15px] mt-[8px] xl:h-[38px] xl:w-[40px] h-[50px] w-[50px]" />
       </div>
         <ul className="hidden xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex">
             <li className=""><NavLink to = "/">خانه</NavLink></li>
