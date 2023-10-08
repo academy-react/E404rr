@@ -4,7 +4,7 @@ import NavLink from "../../components/common/NavLink/NavLink";
 const FaveCourses = () => {
   return (
     <section>
-      <NavLink />
+      <NavLink title="دوره های محبوب" path="مشاهده همه دوره ها" />
       <CoursesRow />
     </section>
   );
