@@ -6,7 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const ForgetPass = () => {
   const validation = yup.object({
-    email: yup.string().email("ایمیل وارد شده نادرست است.").required("Required"),
+    email: yup.string().email("ایمیل وارد شده نادرست است.").required("لطفا پر کنید."),
   })
 
   return (
@@ -24,8 +24,8 @@ const ForgetPass = () => {
             <p className="m-12 text-3xl font-semibold">فراموشی رمز عبور</p>
             <div className="relative">
               <Field name='email' type="email" placeholder='ایمیل خود را وارد کنید' component={FormInput} />
+              <ErrorMessage name='email' component={'p'} className='absolute text-center text-danger w-full' />
             </div>
-            <ErrorMessage name='email' component={'p'} className='text-danger max-w-[25rem]' />
 
             <button type='submit' className='bg-lighter-green/[.65] text-dark-blue/95 mx-auto mt-16 px-6 py-2 rounded-lg' >دریافت کد</button>
 

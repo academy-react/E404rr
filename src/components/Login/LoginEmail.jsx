@@ -31,18 +31,22 @@ const LoginEmail = ({ handlePhone }) => {
 
       <Form>
         <p className="m-9 text-xl">وارد حساب کاربری خود شوید</p>
-        <div className="relative lg:w-[25rem]">
+        <div className="relative pb-4 lg:w-[25rem]">
           <Field name='email' type="text" placeholder='ایمیل' component={FormInput} />
+          <ErrorMessage name='email' component={'p'} className='absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]' />
         </div>
-        <ErrorMessage name='email' component={'p'} className='text-danger max-w-[25rem]' />
 
-        <div className='relative lg:w-[25rem]'>
-          <Field name='password' type={passVisible?'text':'password'} placeholder='رمز' component={FormInput} />
-          <span onClick={togglePass} className='absolute left-2 top-1/2 -translate-y-1/2'>
-            <img src={passVisible?closedEye:openEye} alt="" className='w-6 h-6' />
-          </span>
+        <div className='relative pb-4 lg:w-[25rem]'>
+          <div className="relative">
+            <Field name='password' type={passVisible?'text':'password'} placeholder='رمز' component={FormInput} />
+            <span onClick={togglePass} className='absolute left-2 top-1/2 -translate-y-1/2'>
+              <img src={passVisible?closedEye:openEye} alt="" className='w-6 h-6' />
+            </span>
+          </div>
+          <div className="relative">
+            <ErrorMessage name='password' component={'p'} className='absolute -top-4 text-center text-danger w-full' />
+          </div>
         </div>
-        <ErrorMessage name='password' component={'p'} className='text-danger max-w-[25rem]' />
 
         <div className='flex justify-between mt-5 text-darker-green font-semibold'>
           <span onClick={handlePhone} className='cursor-pointer'>ورود با شماره تلفن</span>

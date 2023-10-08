@@ -10,10 +10,10 @@ const LoginVerify = () => {
 
       <Form>
         <div>
-          <div className='relative lg:w-[25rem]'>
+          <div className='relative pb-4 lg:w-[25rem]'>
             <Field name='code' type='text' placeholder='کد فرستاده شده...' component={FormInput} />
+            <ErrorMessage name='code' component={'p'} className='absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]' />
           </div>
-          <ErrorMessage name='code' component={'p'} className='text-danger max-w-[25rem]' />
 
           <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >ورود</button>
         </div>

@@ -33,10 +33,10 @@ const RegisterPhone = () => {
           :  <p className="m-9 text-xl">شماره تلفن خود را وارد کنید</p> }
         { !verify? (
           <div>
-            <div className="relative lg:w-[25rem]">
-            <Field name='phone' type='text' placeholder='شماره تلفن' component={FormInput} />
+            <div className="relative pb-4 lg:w-[25rem]">
+              <Field name='phone' type='text' placeholder='شماره تلفن' component={FormInput} />
+              <ErrorMessage name='phone' component={'p'} className='absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]' />
             </div>
-            <ErrorMessage name='phone' component={'p'} className='text-danger max-w-[25rem]' />
 
             <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
           </div>

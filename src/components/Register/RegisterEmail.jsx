@@ -39,26 +39,36 @@ const RegisterEmail = ({ handlePhone }) => {
         <Form>
           <p className="m-9 text-xl">حساب کاربری خود را ایجاد کنید</p>
 
-          <div className="relative lg:w-[25rem]">
+          <div className="relative pb-4 lg:w-[25rem]">
             <Field name='email' type="email" placeholder='ایمیل' component={FormInput} />
+            <div className="relative">
+              <ErrorMessage name='email' component={'p'} className='absolute -top-4 text-center text-danger w-full' />
+            </div>
           </div>
-          <ErrorMessage name='email' component={'p'} className='text-danger max-w-[25rem]' />
 
-          <div className='relative lg:w-[25rem]'>
-            <Field name='password' type={passVisible1?'text':'password'} placeholder='رمز' component={FormInput} />
-            <span onClick={togglePass1} className='absolute left-2 top-1/2 -translate-y-1/2'>
-              <img src={passVisible1?closedEye:openEye} alt="" className='w-6 h-6' />
-            </span>
+          <div className='relative pb-4 lg:w-[25rem]'>
+            <div className="relative">
+              <Field name='password' type={passVisible1?'text':'password'} placeholder='رمز' component={FormInput} />
+              <span onClick={togglePass1} className='absolute left-2 top-1/2 -translate-y-1/2'>
+                <img src={passVisible1?closedEye:openEye} alt="" className='w-6 h-6' />
+              </span>
+            </div>
+            <div className="relative">
+              <ErrorMessage name='password' component={'p'} className='absolute -top-4 text-center text-danger w-full' />
+            </div>
           </div>
-          <ErrorMessage name='password' component={'p'} className='text-danger max-w-[25rem]' />
 
-          <div className='relative lg:w-[25rem]'>
-            <Field name='passRepeat' type={passVisible2?'text':'password'} placeholder='تکرار رمز' component={FormInput} />
-            <span onClick={togglePass2} className='absolute left-2 top-1/2 -translate-y-1/2'>
-              <img src={passVisible2?closedEye:openEye} alt="" className='w-6 h-6' />
-            </span>
+          <div className='relative pb-4 lg:w-[25rem]'>
+            <div className="relative">
+              <Field name='passRepeat' type={passVisible2?'text':'password'} placeholder='تکرار رمز' component={FormInput} />
+              <span onClick={togglePass2} className='absolute left-2 top-1/2 -translate-y-1/2'>
+                <img src={passVisible2?closedEye:openEye} alt="" className='w-6 h-6' />
+              </span>
+            </div>
+            <div className="relative">
+              <ErrorMessage name='passRepeat' component={'p'} className='absolute -top-4 text-center text-danger w-full' />
+            </div>
           </div>
-          <ErrorMessage name='passRepeat' component={'p'} className='text-danger max-w-[25rem]' />
 
           <button type='submit' className='bg-[rgba(130,216,185,.65)] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
         </Form>
