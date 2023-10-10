@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom"
 import { Item } from "../common/Items/Item"
 
  const Part4 = () => {
+  const navigate = useNavigate()
+  const goToCourses = () =>{
+    navigate("/course")
+  }
   return (
     <>
                 {/* part 4 */}
@@ -12,8 +17,8 @@ import { Item } from "../common/Items/Item"
                </div>
               </div>
               <div className=" xl:basis-2/12 basis-6/12">
-              <button className="border rounded-xl text-gray-700 p-3 inline-block bg-[#f3fcf8] border-transparent mr-[80px] md:mr-[200px] lg:mr-[255px] xl:mr-[40px]  w-[180px] h-[50px]">
-               <a href="#">مشاهده همه دوره ها</a>
+              <button onClick={goToCourses} className="border rounded-xl text-gray-700 p-3 inline-block bg-[#f3fcf8] border-transparent mr-[80px] md:mr-[200px] lg:mr-[255px] xl:mr-[40px]  w-[180px] h-[50px]">
+               مشاهده همه دوره ها
               </button>
               </div>
           </div>

@@ -1,5 +1,6 @@
 
 import { Header } from '../components/LandingTop/Header';
+import { Courses } from '../screens/Courses/Courses';
 import  {Landing}  from '../screens/landingTop/LandingTop';
 import {
   Route,
@@ -19,7 +20,7 @@ const App = createBrowserRouter([
   {
       path:"/" , element: <Header/> , children:[
         {path: "/" , element: <Landing/>},
-        {path:"/course", element: <p>دوره ها</p>},
+        {path:"/course", element:<Courses/>},
         {path:"/introducing-teachers", element: <p>معرفی مدرسین</p>},
         {path:"/blog", element: <p>بلاگ</p>},
         {path:"/Q&A", element: <p>پرسش و پاسخ</p>},
