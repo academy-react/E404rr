@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import Pagination from '../../components/Maghalat/Pagination'
+
 import maghaleImg from '../../assets/img/maghaleImg.png'
 
 const Maghalat = () => {
@@ -18,13 +20,15 @@ const Maghalat = () => {
     {title: 'مقاله', date: '1400/03/11'},
   ])
   const [currentPage, setCurrentPage] = useState(1)
-  const postsPerPage = useState(12)
+  const postsPerPage = 9
 
-  const pageNumbers = [];
- 
-  for (let i = 1; i <= Math.ceil(items.length / postsPerPage); i++) {
-    pageNumbers.push(i);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber)
   }
+
+   const indexOfLastPost = currentPage * postsPerPage;
+   const indexOfFirstPost = indexOfLastPost - postsPerPage;
+   const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <div className='container text-center bg-slate-50'>
@@ -35,7 +39,7 @@ const Maghalat = () => {
           </span>
       </div>
       <div className='grid grid-cols-3 gap-6 mx-auto px-10'>
-        {items.map((v, i) => (
+        {currentPosts.map((v, i) => (
           <div key={i} className='text-start'>
             <div className="image"><img src={maghaleImg} alt="Image not found." className='w-full' /></div>
             <h3 className="font-lg">{v.title}</h3>
@@ -43,11 +47,7 @@ const Maghalat = () => {
           </div>
         ))}
       </div>
-      <ul className="flex mx-auto">
-        {pageNumbers.map((number) => (
-          <li key={number}>{number}</li>
-        ))}
-      </ul>
+      <Pagination postsPerPage={postsPerPage} totalPosts={items.length} paginate={paginate} />
     </div>
   )
 }
