@@ -14,7 +14,7 @@ const Header = () => {
       <div className=" w-[40px] h-[35.33px] inline-block xl:mt-[3.75px] mt-[4px] mr-[10px] lg:mr-[30px] xl:mr-[23px] ">
         <img src={logo3} alt="" className="xl:mt-[15px] mt-[8px] xl:h-[38px] xl:w-[40px] h-[50px] w-[50px]" />
       </div>
-        <ul className="hidden xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex">
+        <ul className="hidden xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex text-[#323E73]">
             <li className=""><NavLink to = "/">خانه</NavLink></li>
             <li className=""><NavLink to="/course">دوره ها</NavLink></li>
             <li className=""><NavLink to="/introducing-teachers">معرفی مدرسین</NavLink></li>
