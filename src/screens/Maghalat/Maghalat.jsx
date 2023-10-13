@@ -1,8 +1,10 @@
 import { useState } from 'react'
 
 import Pagination from '../../components/Maghalat/Pagination'
+import TextInput from '../../components/common/TextInput'
 
 import maghaleImg from '../../assets/img/maghaleImg.png'
+import searchImg from '../../assets/img/search.svg'
 
 const Maghalat = () => {
   const [items, setItems] = useState([
@@ -25,29 +27,50 @@ const Maghalat = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
+  const previousPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+  const nextPage = () => {
+    if (currentPage !== Math.ceil(items.length / postsPerPage)) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
 
-   const indexOfLastPost = currentPage * postsPerPage;
-   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-   const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
-    <div className='container text-center bg-slate-50'>
-      <div className='flex justify-between items-center mx-10 my-6 px-8 py-6 rounded-lg bg-lighter-green/10'>
-          <input type="text" />
-          <span>
-              مرتب سازی براساس تاریخ
-          </span>
+    <div className='container font-vazir mx-auto px-10 text-center bg-slate-50'>
+      <div className='flex flex-col md:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10'>
+        <div className='relative w-full md:w-[450px]'>
+          <TextInput type="text" placeholder='جستجو مقاله های مختلف...' />
+          <img src={searchImg} onClick={(v) => console.log(v)} className='absolute left-0 top-1/2 w-[20px] ml-4 -translate-y-1/2 rounded-md cursor-pointer' />
+        </div>
+        <select className='bg-white shadow-md shadow-gray-200 w-full md:w-fit px-6 py-2 rounded-md'>
+          <option value="">مرتب سازی براساس تاریخ</option>
+          <option value="">مرتب سازی بر اساس محبوبیت</option>
+        </select>
       </div>
-      <div className='grid grid-cols-3 gap-6 mx-auto px-10'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto my-10 px-28'>
         {currentPosts.map((v, i) => (
-          <div key={i} className='text-start'>
-            <div className="image"><img src={maghaleImg} alt="Image not found." className='w-full' /></div>
-            <h3 className="font-lg">{v.title}</h3>
+          <div key={i} className='text-start py-2 shadow-lg shadow-green-200/30 rounded-md cursor-pointer'>
+            <div><img src={maghaleImg} alt="Image not found." className='w-full rounded-xl' /></div>
+            <h3 className="text-lg py-2">{v.title}</h3>
             <span className='text-slate-800'>{v.date}</span>
           </div>
         ))}
       </div>
-      <Pagination postsPerPage={postsPerPage} totalPosts={items.length} paginate={paginate} />
+      <Pagination 
+        currentPage={currentPage} 
+        postsPerPage={postsPerPage} 
+        totalPosts={items.length} 
+        paginate={paginate} 
+        previousPage={previousPage} 
+        nextPage={nextPage} 
+      />
     </div>
   )
 }
