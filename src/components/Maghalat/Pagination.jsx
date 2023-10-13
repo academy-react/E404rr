@@ -8,7 +8,7 @@ const Pagination = ({ currentPage, postsPerPage, totalPosts, paginate, nextPage,
     <ul className="flex gap-1 w-fit mx-auto my-10 p-2">
       <li 
         onClick={previousPage}
-        className={'leading-[40px] w-[40px] h-[40px] rounded-full border border-slate-300 select-none cursor-pointer' + (currentPage==1 ? ' pointer-events-none opacity-0' : '' )}> 
+        className={'leading-[40px] w-[40px] h-[40px] rounded-full border border-slate-300 select-none cursor-pointer' + (currentPage==1 ? ' pointer-events-none opacity-50' : '' )}> 
         {'<'} 
       </li>
 
@@ -24,7 +24,7 @@ const Pagination = ({ currentPage, postsPerPage, totalPosts, paginate, nextPage,
 
       <li 
         onClick={nextPage}
-        className={'leading-[40px] w-[40px] h-[40px] rounded-full border border-slate-300 select-none cursor-pointer' + (currentPage==pages ? ' pointer-events-none opacity-0' : '')}> 
+        className={'leading-[40px] w-[40px] h-[40px] rounded-full border border-slate-300 select-none cursor-pointer' + (currentPage==pages ? ' pointer-events-none opacity-50' : '')}> 
         {'>'} 
       </li>
     </ul>
