@@ -8,7 +8,7 @@ const Part6 = () => {
         <div className="flex xl:mx-auto flex-wrap xl:gap-x-[31.75px] xl:gap-y-[62px] lg:gap-[20px] lg:mr-[40px] xl:mr-auto l mt-[92px] border border-transparent  xl:w-[1250px] lg:w-full md:w-[769px] w-[600px] gap-x-3 gap-y-10">
              <div className='w-[287.5px] h-[340px]  rounded last:mb-20   xl:mx-0 lg:mx-0 md:mx-auto '>
                    
-                    <select id='select' className='bg-[#f3fcf8] w-[280px] h-[50px] tracking-[0.060rem] text-[19px] rounded-lg shadow-md outline-none text-gray-800'>
+                    <select id='select' className='bg-[#f3fcf8] w-[280px] h-[50px] tracking-[0.060rem] text-[19px] rounded-lg shadow-md outline-none text-gray-800 pb-2 pr-2'>
                         
                         <option>مرتب سازی بر اثاث قیمت</option>
                         <option>قدیمی ترین ها</option>

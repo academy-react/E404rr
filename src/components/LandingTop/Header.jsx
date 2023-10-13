@@ -5,16 +5,20 @@ const Header = () => {
   return (
     <>
                   {/* part 1 */}
-      <nav className="w-full  xl:w-[1250px] h-[70px]  border border-transparent lg:w-[1024px] xl:mx-auto xl:my-5 flex  leading-17.5 rounded bg-[#f3fcf8]">
+      <nav className="w-full  xl:w-[1250px] h-[70px] relative  border border-transparent lg:w-[100%] xl:mx-auto xl:my-5 flex  leading-17.5 rounded bg-[#f3fcf8]">
+      <input type="checkbox" name="" id="menu" className="hidden " />
+      <label htmlFor="menu">
       <div className="mt-4  xl:opacity-0 xl:hidden lg:opacity-0 lg:hidden mr-[30px] ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 fill-green-700">
           <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
           </svg>
       </div>
+      </label>
       <div className=" w-[40px] h-[35.33px] inline-block xl:mt-[3.75px] mt-[4px] mr-[10px] lg:mr-[30px] xl:mr-[23px] ">
         <img src={logo3} alt="" className="xl:mt-[15px] mt-[8px] xl:h-[38px] xl:w-[40px] h-[50px] w-[50px]" />
       </div>
-        <ul className="hidden xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex text-[#323E73]">
+      <div className=" hidden lg:bg-transparent lg:w-auto lg:h-auto lg:block lg:relative w-[300px] h-[800px] absolute right-0 top-0 bg-gray-300">
+      <ul className=" xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex text-[#323E73]">
             <li className=""><NavLink to = "/">خانه</NavLink></li>
             <li className=""><NavLink to="/course">دوره ها</NavLink></li>
             <li className=""><NavLink to="/introducing-teachers">معرفی مدرسین</NavLink></li>
@@ -24,6 +28,7 @@ const Header = () => {
             <li className=""><NavLink to="/contact-us">تماس با ما</NavLink></li>
             <li className=""><NavLink to="/about-we">درباره ما</NavLink></li>
         </ul>
+      </div>
           {/* icon2 */}
         <div className="xl:w-[45px] w-[40px]  xl:h-[45px] h-[40px] md:mr-[530px] lg:mr-16  xl:mr-48 mr-[355px] mt-[12.5px]  rounded-full bg-green-700 flex items-center justify-center ">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 stroke-white">

@@ -8,10 +8,10 @@ const Part2 = () => {
   return (
         <>
             {/* part 2 */}
-    <div className=" xl:w-[1250px] lg:w-[1024px] w-full h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
-      <div className="xl:basis-1/2 w-[768px] lg:w-full border border-transparent md:text-center lg:text-center xl:text-right">
-        <h2 className=" text-gray-600 text-[24px] mt-10 xl:mr-16 md:mr-[0] mr-16 lg:mr-">  آموزش برنامه نویسی,خود آموزیو ورود به بازار کار </h2>
-        <p className=" mt-4 mr-[142px] md:mr-[0px] xl:mr-[142px] lg:mr-0 text-gray-500 text-[21px]">حرفه ای شدن را از امروز شروع کن</p>
+    <div className=" xl:w-[1250px] w-full h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
+      <div className="xl:basis-1/2 w-[768px]  border border-transparent md:text-center  xl:text-right">
+        <h2 className=" text-gray-600 text-[24px] mt-10 xl:mr-16 md:mr-[0] mr-16 lg:mr-[260px]">  آموزش برنامه نویسی,خود آموزیو ورود به بازار کار </h2>
+        <p className=" mt-4 mr-[142px] md:mr-[0px] xl:mr-[142px] lg:mr-[260px] text-gray-500 text-[21px]">حرفه ای شدن را از امروز شروع کن</p>
         <div className="w-[510px] h-[50px]  border border-transparent mr-[60px] mt-5 mb-5 relative">
         <input className="border border-transparent pr-5 focus:placeholder:opacity-0 caret-green-600  placeholder-green-600 w-full h-full outline-none rounded-xl md:mr-[60px] lg:mr-[200px] lg:mt-[10px] xl:mt-auto  xl:mr-0 " type="search" placeholder="جستوجو دوره های مختلف..." />
           <div className="absolute top-[10px] lg:top-[20px] xl:top-[10px] left-[10px] md:left-[-40px] lg:left-[-190px] xl:left-[10px]">
