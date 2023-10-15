@@ -6,7 +6,7 @@ const Header = () => {
     <>
                   {/* part 1 */}
       <nav className="w-full  xl:w-[1250px] h-[70px] relative  border border-transparent lg:w-[100%] xl:mx-auto xl:my-5 flex  leading-17.5 rounded bg-[#f3fcf8]">
-      <input type="checkbox" name="" id="menu" className="hidden " />
+      <input type="checkbox" name="" id="menu" className="hidden peer " />
       <label htmlFor="menu">
       <div className="mt-4  xl:opacity-0 xl:hidden lg:opacity-0 lg:hidden mr-[30px] ">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 fill-green-700">
@@ -17,8 +17,13 @@ const Header = () => {
       <div className=" w-[40px] h-[35.33px] inline-block xl:mt-[3.75px] mt-[4px] mr-[10px] lg:mr-[30px] xl:mr-[23px] ">
         <img src={logo3} alt="" className="xl:mt-[15px] mt-[8px] xl:h-[38px] xl:w-[40px] h-[50px] w-[50px]" />
       </div>
-      <div className=" hidden lg:bg-transparent lg:w-auto lg:h-auto lg:block lg:relative w-[300px] h-[800px] absolute right-0 top-0 bg-gray-300">
-      <ul className=" xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex text-[#323E73]">
+      <div className=" peer-checked:block hidden z-50 lg:bg-transparent lg:w-auto lg:h-auto lg:block lg:relative w-[300px] lg:top-0 h-auto pb-10 absolute right-0 top-[-10px] bg-[#38e497]">
+        <label htmlFor="menu" className="lg:hidden inline-block mr-[270px]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+        </svg>
+        </label>
+      <ul className=" xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex lg:text-[#323E73] text-black">
             <li className=""><NavLink to = "/">خانه</NavLink></li>
             <li className=""><NavLink to="/course">دوره ها</NavLink></li>
             <li className=""><NavLink to="/introducing-teachers">معرفی مدرسین</NavLink></li>
