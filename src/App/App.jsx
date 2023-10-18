@@ -1,3 +1,4 @@
+import Maghalat from '../screens/Maghalat/Maghalat'
 import { Header } from '../components/LandingTop/Header';
 import { Courses } from '../screens/Courses/Courses';
 import  {Landing}  from '../screens/landingTop/LandingTop';
@@ -30,7 +31,6 @@ const App = createBrowserRouter([
         {path: "/gift-code" , element: <p>کد تخفیف</p>},
         {path: "/support" , element:<p>پشتیبانی</p>},
         {path: "/shopping" , element:<p>سبد خرید</p>}
-
       ]
   },
   {path:"/login", element: <p>ورود</p>},
