@@ -1,8 +1,10 @@
 import React from 'react'
 import forgetImg from '../../assets/img/forgetImg.png'
 import FormInput from '../../components/common/FormInput'
+
 import * as yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { NavLink } from 'react-router-dom'
 
 const ForgetPass = () => {
   const validation = yup.object({
@@ -29,7 +31,7 @@ const ForgetPass = () => {
 
             <button type='submit' className='bg-lighter-green/[.65] text-dark-blue/95 mx-auto mt-16 px-6 py-2 rounded-lg' >دریافت کد</button>
 
-            <a href="#" className='block mt-10 text-darker-green underline font-semibold'>بازگشت به صفحه اصلی</a>
+            <NavLink to="/" className='block mt-10 text-darker-green underline font-semibold'>بازگشت به صفحه اصلی</NavLink>
           </div>
         </Form>
       </Formik>

@@ -14,8 +14,8 @@ const Part5 = () => {
 
        <div className='flex border border-transparent xl:mr-[220px] mr-2'>
        <div className='  xl:mr-[30px] relative '>
-       <input type="checkbox" id='input-one' className='accent-green-600   ' />
-       <label htmlFor="input-one" className='w-[20px]  h-[20px] border absolute mt-[26px] mr-[-30px] border-green-600  peer-[]: '>
+       <input type="checkbox" id='input-one' className='hidden peer accent-green-600   ' />
+       <label htmlFor="input-one" className='w-[20px]  h-[20px] border absolute mt-[26px] mr-[-30px] border-green-600 '>
        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4  text-green-600 peer-checked:text-white  ">
        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
        </svg>

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import openEye from '../../assets/img/openEye.png'
 import closedEye from '../../assets/img/closedEye.png'
@@ -50,7 +51,7 @@ const LoginEmail = ({ handlePhone }) => {
 
         <div className='flex justify-between mt-5 text-darker-green font-semibold'>
           <span onClick={handlePhone} className='cursor-pointer'>ورود با شماره تلفن</span>
-          <a href="#">پسورد را فراموش کردم</a>
+          <NavLink to="/forget">پسورد را فراموش کردم</NavLink>
         </div>
 
         <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >ورود</button>
