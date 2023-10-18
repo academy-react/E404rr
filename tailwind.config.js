@@ -9,14 +9,13 @@ export default {
       fontFamily : {
         vazir : ['Vazir'] 
       },
-        colors:{
-          'abi' : 'blue' 
-        },
-        width: {
-          '312.5': '78.125rem',
-          '25' : '7.25rem',
-          '71.875' : '17.96875rem' 
-        },
+      colors: {
+        'dark-blue': 'rgb(50, 62, 115)',
+        'darker-green': '#23A455',
+        'lighter-green': '#82D8B9',
+        'danger': 'rgb(220, 53, 69)',
+      },
+        
         height: {
           '17.5': '4.375rem',
           "100" : "25rem",

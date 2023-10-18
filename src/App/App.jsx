@@ -1,4 +1,3 @@
-
 import { Header } from '../components/LandingTop/Header';
 import { Courses } from '../screens/Courses/Courses';
 import  {Landing}  from '../screens/landingTop/LandingTop';
@@ -14,7 +13,6 @@ import {
   NavLink,
   useParams,
 } from "react-router-dom";
-
 
 const App = createBrowserRouter([
   {
