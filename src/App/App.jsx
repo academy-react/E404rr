@@ -30,7 +30,9 @@ const App = createBrowserRouter([
         {path: "/free-learn" , element: <p>آموزش های رایگان</p>},
         {path: "/best-teachers" , element: <p>بهترین معلمان</p>},
         {path: "/gift-code" , element: <p>کد تخفیف</p>},
-        {path: "/support" , element:<p>پشتیبانی</p>}
+        {path: "/support" , element:<p>پشتیبانی</p>},
+        {path: "/shopping" , element:<p>سبد خرید</p>}
+
       ]
   },
   {path:"/login", element: <p>ورود</p>},
