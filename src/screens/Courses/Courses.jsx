@@ -1,5 +1,5 @@
 import React from 'react'
-import { Part5 } from '../../components/Courses/part5'
+import { Part5 } from '../../components/Courses/Part5'
 import { Part6 } from '../../components/Courses/Part6'
 
 const Courses = () => {

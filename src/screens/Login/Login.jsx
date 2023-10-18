@@ -1,3 +1,4 @@
+import { NavLink, Outlet } from "react-router-dom";
 import { useState } from 'react'
 import loginImg from '../../assets/img/loginImg.png'
 import LoginEmail from '../../components/Login/LoginEmail'
@@ -15,16 +16,16 @@ const Login = () => {
         <div className="flex flex-col md:flex-row lg:gap-16 mx-6">
           <div className="flex flex-col justify-center text-center min-w-[15rem]">
             <div className="bg-lighter-green/[.65] flex flex-row gap-4 mx-auto my-4 px-2 py-2 rounded-3xl">
-              <a href='register' className='px-5 py-1 rounded-2xl'>ثبت نام</a>
-              <a href='login' className='bg-white shadow-md shadow-gray-300 px-5 py-1 rounded-2xl'>ورود کاربر</a>
+              <NavLink to='/register' className='px-5 py-1 rounded-2xl'>ثبت نام</NavLink>
+              <NavLink to='/login' className='bg-white shadow-md shadow-gray-300 px-5 py-1 rounded-2xl'>ورود کاربر</NavLink>
             </div>
 
             {phone? <LoginPhone /> : 
                     <LoginEmail handlePhone={handlePhone} />}
 
             <div className='flex justify-between mt-5 text-darker-green underline font-semibold'>
-              <a href="#">بازگشت به صفحه اصلی</a>
-              <a href="#">ورود کارمندان</a>
+              <NavLink to="/">بازگشت به صفحه اصلی</NavLink>
+              <NavLink to="/">ورود کارمندان</NavLink>
             </div>
           </div>
           <div className="image-container shrink-0">
