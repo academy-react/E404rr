@@ -18,6 +18,7 @@ import {
   NavLink,
   useParams,
 } from "react-router-dom";
+import { Panel } from '../screens/Panel/Panel';
 
 const App = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const App = createBrowserRouter([
   {path:"/login", element: <Login />},
   {path:"/register", element: <Register />},
   {path:"/forget", element: <ForgetPass />},
+  {path:"/panel", element: <Panel />},
 
   { path: "*", element: <h1 className='text-red-600'>Error...</h1> },
 ]);

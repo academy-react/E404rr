@@ -14,7 +14,7 @@ const Part6 = () => {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </div>
-                    <select id='select' className='bg-[#f3fcf8] w-[280px] h-[50px] tracking-[0.060rem] text-[19px] rounded-lg shadow-md  outline-none text-gray-800 pb-2 pr-2 appearance-none'>
+                    <select id='select' className='bg-[#f3fcf8] w-[280px] h-[50px] tracking-[0.060rem] text-[19px] rounded-lg shadow-md  outline-none text-gray-800 pb-2 pr-2 appearance-none after:"hi"'>
                         <option>مرتب سازی بر اثاث قیمت</option>
                         <option>قدیمی ترین ها</option>
                         <option>جدید ترین ها</option>
