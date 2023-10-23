@@ -1,37 +1,9 @@
 
 
 import CourseDetailsPage from "../screens/CourseDetailPage/CourseDetailsPage";
-=======
 
 import Landing from "../screens/landing/Landing";
 import ArticleDetails from "../screens/ArticleDetails/ArticleDetails";
-
-
-
-function App() {
-  return (
-    <>
-
-      <CourseDetailsPage />
-    </>
-  );
-}
-=======
-=======
-
-      <Landing />
-    </>
-  );
-}
-
-export default App;
-
-      <div className="text-center my-10 border-2">Header</div>
-      <ArticleDetails />
-    </>
-  );
-}
-
 
 import Maghalat from '../screens/Maghalat/Maghalat'
 import Login from '../screens/Login/Login'
@@ -39,7 +11,6 @@ import Register from '../screens/Register/Register'
 import ForgetPass from '../screens/ForgetPass/ForgetPass'
 import { Header } from '../components/LandingTop/Header';
 import { Courses } from '../screens/Courses/Courses';
-import  {Landing}  from '../screens/landingTop/LandingTop';
 
 import {
   Route,
@@ -91,8 +62,6 @@ const App = createBrowserRouter([
 
 
 
-export default App;
-=======
 
 export default App;
 
