@@ -14,9 +14,10 @@ const Panel = () => {
                     <h3 className='text-green-600 text-[22px] before:content-["*"]  mt-[18px] mr-4' >اطلاعات شخصی کاربر</h3>
                     <Formik>
                         <Form>
+                           
                             <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[46px] mr-[30px]"/>
-                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mr-[116px]"/>
-                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[38px] mr-[30px]"/>
+                            <Field type="email" placeholder="ایمیل خود را وارد کنید " className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mr-[116px]"/>
+                            <Field  placeholder="سن خود را وارد کنید" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[38px] mr-[30px]"/>
                             <div className='inline-block  relative'>
                             <select id='select' className=' border border-[#DEC9E9] pr-3 rounded  w-[380px] h-[50px] mr-[116px]    outline-none text-[#aaa9a9]  appearance-none'>
                             <option>    وظیفه در سایت</option>
@@ -42,7 +43,7 @@ const Panel = () => {
                                   </div>
                                     <Field type="file" id="profile-select" className="hidden" />
                                     <label htmlFor="profile-select" className='mr-[10px] mt-1 '>
-                                    <div className='w-[140px] h-[55px] border relative hover:border-green-700 rounded'>
+                                    <div className='w-[140px] h-[55px] border relative hover:border-green-700 rounded pl-5'>
                                         <span className='leading-[50px] mr-5 text-green-600'>
                                             آپلود آواتار
                                         </span>
@@ -55,11 +56,10 @@ const Panel = () => {
                                     <span className='mt-5 text-green-600 mr-[15px]'>  تصویر خود را بارگذاری کنید ...  </span>
                                 </div>
                                 <div className='mt-[64px] text-white'>
-                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#9676BD] rounded-3xl'>ثبت </button>
-                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#37AF7E]  rounded-3xl'> موفق</button>
+                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#37AF7E] rounded-3xl'>ثبت </button>
                                     <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#B63356]  rounded-3xl'> حذف</button>
                                     <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#E79037]  rounded-3xl'> ویرایش</button>
-                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#87A8D8]  rounded-3xl'> جدید</button>
+9676BD
                                 </div>
                         </Form>
                     </Formik>
