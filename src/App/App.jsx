@@ -1,3 +1,15 @@
+
+import ArticleDetails from "../screens/ArticleDetails/ArticleDetails";
+
+function App() {
+  return (
+    <>
+      <div className="text-center my-10 border-2">Header</div>
+      <ArticleDetails />
+    </>
+  );
+}
+=======
 import Maghalat from '../screens/Maghalat/Maghalat'
 import Login from '../screens/Login/Login'
 import Register from '../screens/Register/Register'
@@ -54,4 +66,5 @@ const App = createBrowserRouter([
   { path: "*", element: <h1 className='text-red-600'>Error...</h1> },
 ]);
 
-export default App
+
+export default App;
