@@ -1,12 +1,23 @@
 
 
+import CourseDetailsPage from "../screens/CourseDetailPage/CourseDetailsPage";
+=======
+
 import Landing from "../screens/landing/Landing";
 import ArticleDetails from "../screens/ArticleDetails/ArticleDetails";
+
 
 
 function App() {
   return (
     <>
+
+      <CourseDetailsPage />
+    </>
+  );
+}
+=======
+=======
 
       <Landing />
     </>
@@ -20,6 +31,7 @@ export default App;
     </>
   );
 }
+
 
 import Maghalat from '../screens/Maghalat/Maghalat'
 import Login from '../screens/Login/Login'
@@ -80,4 +92,8 @@ const App = createBrowserRouter([
 
 
 export default App;
+=======
+
+export default App;
+
 
