@@ -19,6 +19,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { Panel } from '../screens/Panel/Panel';
+import { Navbar } from '../components/common/navbar/Navbar';
 
 const App = createBrowserRouter([
   {
@@ -41,7 +42,14 @@ const App = createBrowserRouter([
   {path:"/login", element: <Login />},
   {path:"/register", element: <Register />},
   {path:"/forget", element: <ForgetPass />},
-  {path:"/panel", element: <Panel />},
+  {path:"/panel", element: <Navbar /> , children:[
+    {path:"/panel" , element:<Panel/>},
+    {path:"/panel/dore" , element:<p>دوره ها</p>},
+    {path:"/panel/maghale" , element:<p> مقالات</p>},
+    {path:"/panel/dastebandi" , element:<p> دسته بندی</p>},
+    {path:"/panel/nazar" , element:<p> نظرات</p>}
+  ]
+},
 
   { path: "*", element: <h1 className='text-red-600'>Error...</h1> },
 ]);

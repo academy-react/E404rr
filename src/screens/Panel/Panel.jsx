@@ -6,19 +6,19 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 const Panel = () => {
   return (
         <>
-            <div className='flex'>
-            <Navbar/>
+      
+    
             {/* panel */}
-            <div className='border border-transparent shadow-xl w-[955px] h-[722px] mt-[23px] mr-[34px] '>
+            <div className='border border-transparent shadow-xl w-[955px] h-[722px] mt-[23px] mr-[34px] rounded-lg'>
                     
                     <h3 className='text-green-600 text-[22px] before:content-["*"]  mt-[18px] mr-4' >اطلاعات شخصی کاربر</h3>
                     <Formik>
                         <Form>
-                            <Field placeholder="نام کاربری" className="outline-none border pr-3 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[46px] mr-[30px]"/>
-                            <Field placeholder="نام کاربری" className="outline-none border pr-3  border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mr-[116px]"/>
-                            <Field placeholder="نام کاربری" className="outline-none border pr-3  border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[38px] mr-[30px]"/>
+                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[46px] mr-[30px]"/>
+                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mr-[116px]"/>
+                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[38px] mr-[30px]"/>
                             <div className='inline-block  relative'>
-                            <select id='select' className=' border border-[#DEC9E9] pr-3  w-[380px] h-[50px] mr-[116px]    outline-none text-[#aaa9a9]  appearance-none'>
+                            <select id='select' className=' border border-[#DEC9E9] pr-3 rounded  w-[380px] h-[50px] mr-[116px]    outline-none text-[#aaa9a9]  appearance-none'>
                             <option>    وظیفه در سایت</option>
                             <option>قدیمی ترین ها</option>
                             <option>جدید ترین ها</option>
@@ -30,7 +30,7 @@ const Panel = () => {
                             </svg>
                             </div>
                             </div>
-                            <Field placeholder="توضیحات ..." className="w-[875px] h-[150px] pr-3  outline-none border border-[#DEC9E9] hover:border-green-600 text-[#6247AA] mr-[30px] mt-[30px]"/>
+                            <Field placeholder="توضیحات ..." className="w-[875px] h-[150px] pr-3 rounded focus:placeholder:opacity-0  outline-none border border-[#DEC9E9] hover:border-green-600 text-[#6247AA] mr-[30px] mt-[30px]"/>
                         </Form>
                     </Formik>
 
@@ -42,7 +42,7 @@ const Panel = () => {
                                   </div>
                                     <Field type="file" id="profile-select" className="hidden" />
                                     <label htmlFor="profile-select" className='mr-[10px] mt-1 '>
-                                    <div className='w-[140px] h-[55px] border relative hover:border-green-700'>
+                                    <div className='w-[140px] h-[55px] border relative hover:border-green-700 rounded'>
                                         <span className='leading-[50px] mr-5 text-green-600'>
                                             آپلود آواتار
                                         </span>
@@ -64,7 +64,7 @@ const Panel = () => {
                         </Form>
                     </Formik>
             </div>
-            </div>
+            
         </>
   )
 }
