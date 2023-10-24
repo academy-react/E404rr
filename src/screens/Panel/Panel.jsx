@@ -59,7 +59,7 @@ const Panel = () => {
                                     <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#37AF7E] rounded-3xl'>ثبت </button>
                                     <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#B63356]  rounded-3xl'> حذف</button>
                                     <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#E79037]  rounded-3xl'> ویرایش</button>
-9676BD
+
                                 </div>
                         </Form>
                     </Formik>
