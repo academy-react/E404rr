@@ -17,7 +17,7 @@ import {
 
 const App = createBrowserRouter([
   {
-      path:"///" , element: <Header/> , children:[
+      path:"/" , element: <Header/> , children:[
         {path: "/" , element: <Landing/>},
         {path:"/course", element: <p>دوره ها</p>},
         {path:"/introducing-teachers", element: <p>معرفی مدرسین</p>},
