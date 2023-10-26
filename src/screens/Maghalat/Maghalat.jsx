@@ -59,7 +59,7 @@ const Maghalat = () => {
           <option value="">مرتب سازی بر اساس محبوبیت</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto my-10 px-28 text-right ">
+      <div className="flex container max-w-[1366px] min-h-[700px] mx-auto justify-between items-top flex-wrap max-lg:justify-center mb-16 text-right">
         {currentPosts.map((v, i) => (
           <ArticlesCard />
         ))}
