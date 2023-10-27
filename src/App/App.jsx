@@ -24,6 +24,7 @@ import {
 } from "react-router-dom";
 import { Panel } from "../screens/Panel/Panel";
 import { Navbar } from "../components/common/navbar/Navbar";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const App = createBrowserRouter([
   {

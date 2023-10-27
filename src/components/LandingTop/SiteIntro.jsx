@@ -8,7 +8,7 @@ const SiteIntro = () => {
         sequence={[
           // Same substring at the start will only be typed out once, initially
           1000,
-          "آموزش برنامه نویسی ، خودآموزی ، ورود به بازارکار ",
+          "آموزش برنامه نویسی ، خودآموزی ، ورود به بازار کار ",
         ]}
         wrapper="h2"
         speed={50}

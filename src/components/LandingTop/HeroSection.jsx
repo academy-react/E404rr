@@ -4,6 +4,15 @@ import HeroItems from "./HeroItems";
 import SiteIntro from "./SiteIntro";
 
 const HeroSection = () => {
+  // const styles = useSpring({
+  //   from: {
+  //     opacity: 0,
+  //   },
+  //   to: {
+  //     opacity: 1,
+  //   },
+  // });
+
   return (
     <>
       <div className=" max-w-[1366px] mx-auto w-full h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
