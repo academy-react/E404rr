@@ -9,17 +9,17 @@ const Panel = () => {
       
     
             {/* panel */}
-            <div className='border border-transparent shadow-xl w-[955px] h-[722px] mt-[23px] mr-[34px] rounded-lg'>
+            <div className='border border-transparent shadow-xl xl:w-[955px] lg:w-[700px] h-[722px] mt-[23px] mr-[34px] rounded-lg'>
                     
                     <h3 className='text-green-600 text-[22px] before:content-["*"]  mt-[18px] mr-4' >اطلاعات شخصی کاربر</h3>
                     <Formik>
                         <Form>
                            
-                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[46px] mr-[30px]"/>
-                            <Field type="email" placeholder="ایمیل خود را وارد کنید " className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mr-[116px]"/>
-                            <Field  placeholder="سن خود را وارد کنید" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[38px] mr-[30px]"/>
+                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[46px] xl:mr-[30px] lg:mr-[30px]"/>
+                            <Field type="email" placeholder="ایمیل خود را وارد کنید " className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] xl:mr-[116px] lg:mr-[30px]"/>
+                            <Field  placeholder="سن خود را وارد کنید" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[38px] xl:mr-[30px] lg:mr-[30px]"/>
                             <div className='inline-block  relative'>
-                            <select id='select' className=' border border-[#DEC9E9] pr-3 rounded  w-[380px] h-[50px] mr-[116px]    outline-none text-[#aaa9a9]  appearance-none'>
+                            <select id='select' className=' border border-[#DEC9E9] pr-3 rounded  xl:w-[380px] lg:w-[300px] h-[50px] xl:mr-[116px] lg:mr-[30px]   outline-none text-[#aaa9a9]  appearance-none'>
                             <option>    وظیفه در سایت</option>
                             <option>قدیمی ترین ها</option>
                             <option>جدید ترین ها</option>
@@ -31,7 +31,7 @@ const Panel = () => {
                             </svg>
                             </div>
                             </div>
-                            <Field placeholder="توضیحات ..." className="w-[875px] h-[150px] pr-3 rounded focus:placeholder:opacity-0  outline-none border border-[#DEC9E9] hover:border-green-600 text-[#6247AA] mr-[30px] mt-[30px]"/>
+                            <Field placeholder="توضیحات ..." className="xl:w-[875px] lg:w-[630px] h-[150px] pr-3 rounded focus:placeholder:opacity-0  outline-none border border-[#DEC9E9] hover:border-green-600 text-[#6247AA] mr-[30px] mt-[30px]"/>
                         </Form>
                     </Formik>
 
