@@ -14,7 +14,7 @@ const SiteIntro = () => {
         speed={50}
         // style={styles}
         repeat="0"
-        className="text-gray-600 text-[24px] mt-10 xl:mr-16 md:mr-[0] mr-16 lg:mr-[260px] "
+        className="text-[#323e73] text-center text-[24px] my-6"
         cursor={false}
       />
       <TypeAnimation
@@ -24,7 +24,7 @@ const SiteIntro = () => {
         // style={styles}
         del
         repeat="0"
-        className="mt-4 mr-[142px] md:mr-[0px] xl:mr-[142px] lg:mr-[260px] text-[#323e73] font-thin text-[20px]"
+        className=" text-[#323e73] text-center font-thin text-[20px] mb-8"
         cursor={false}
       />
       {/* <h2 className=" text-gray-600 text-[24px] mt-10 xl:mr-16 md:mr-[0] mr-16 lg:mr-[260px]">
