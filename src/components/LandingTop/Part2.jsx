@@ -24,30 +24,31 @@ const Part2 = () => {
         <div className="w-25 h-25 border border-transparent hover:scale-110 ">
             <div className="w-[65px] h-[65px] border border-transparent mx-auto">
               {/* learn */}
-                <NavLink to="/free-learn">    <img src={learn} alt="" /></NavLink>
+                  <img src={learn} alt="" />
             </div>
-              <NavLink to="/free-learn"><p className="text-[15px] mt-[16.5px] mr-2 text-gray-600">دوره های رایگان</p></NavLink>
+           
+                <p className="text-[15px] mt-[16.5px] mr-2 text-gray-600">دوره های رایگان</p>
           </div>
           <div className="w-25 h-25 border border-transparent  hover:scale-110">
           <div className="w-[65px] h-[65px] border border-transparent mx-auto">
             {/* teacher */}
-            <NavLink to="/best-teachers"> <img src={teacher} alt="" /></NavLink>
+             <img src={teacher} alt="" />
           </div>
-          <NavLink to="/best-teachers"><p className="text-[15px] mt-[16.5px] text-gray-600 mr-2">مدرسین مجرب</p></NavLink>
+  <p className="text-[15px] mt-[16.5px] text-gray-600 mr-2">مدرسین مجرب</p>
           </div>
           <div className="w-25 h-25  border border-transparent  hover:scale-110">
           <div className="w-[65px] h-[65px] border border-transparent mx-auto">
             {/* gift */}
-          <NavLink to="/gift-code">  <img src={gift} alt="" /></NavLink>
+         <img src={gift} alt="" />
           </div>
-            <NavLink to="/gift-code"><p className="text-[15px] mt-[16.5px] text-gray-600 mr-2">کد های تخفیف</p></NavLink>
+           <p className="text-[15px] mt-[16.5px] text-gray-600 mr-2">کد های تخفیف</p>
           </div>
           <div className="w-25 h-25 border border-transparent  hover:scale-110">
           <div className="w-[65px] h-[65px] border border-transparent mx-auto">
             {/* support */}
-              <NavLink to="/support"><img src={support} alt="" /></NavLink>
+            <img src={support} alt="" />
           </div>
-          <NavLink to="/support"><p className="text-[15px] mt-[16.5px] text-gray-600 mr-2">پشتیبانی 24/7</p></NavLink>
+            <p className="text-[15px] mt-[16.5px] text-gray-600 mr-2">پشتیبانی 24/7</p>
           </div>
         </div>
       </div>

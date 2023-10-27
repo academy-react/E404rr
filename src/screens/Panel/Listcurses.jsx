@@ -15,14 +15,14 @@ const Listcurses = () => {
         </div>
         <div className='w-[850px] h-[350px] shadow-xl rounded-xl bg-white  mt-[140px] mx-auto'>
             {/* top */}
-            <div className='h-[60px] border'>
+            <div className='h-[60px] border text-gray-500  bg-[#6edfac] border-transparent '>
                 <div className='mt-4'>
-                  <span className="mr-5 ">تصویر </span>
-                  <span className="mr-5 inline-block">نام دوره</span>
-                  <span className="mr-5 inline-block">استاد</span>
-                  <span className="mr-5 inline-block">تاریخ شروع</span>
-                  <span className="mr-5 inline-block">تاریخ پایان</span>
-                  <span className="mr-5 inline-block">قیمت</span>
+                  <span className="mr-[50px] ">تصویر </span>
+                  <span className="mr-[80px] inline-block">نام دوره</span>
+                  <span className="mr-[85px] inline-block">استاد</span>
+                  <span className="mr-[45px] inline-block">تاریخ شروع</span>
+                  <span className="mr-[45px] inline-block">تاریخ پایان</span>
+                  <span className="mr-[75px] inline-block">قیمت</span>
                 </div>
             </div>
             <div>

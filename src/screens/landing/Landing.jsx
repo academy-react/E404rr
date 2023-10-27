@@ -9,14 +9,14 @@ import { Part3 } from "../../components/LandingTop/Part3";
 const Landing = () => {
   return (
     <>
-          <div className="xl:w-[1250px] w-full xl:mx-auto h-auto  mb-96 ">
-        <Part2/>
-        <Part3/>
-        <Part4/>
-      <LastArticles />
-      <Teachers />
-      <FavCourses />
-      <Footer />
+          <div className="xl:w-[1250px] w-full xl:mx-auto h-auto  ">
+            <Part2/>
+            <Part3/>
+            <Part4/>
+            <LastArticles />
+            <Teachers />
+            <FavCourses />
+           <Footer />
       </div>
     </>
   );
