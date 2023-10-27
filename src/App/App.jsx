@@ -1,5 +1,5 @@
 import CourseDetailsPage from "../screens/CourseDetailPage/CourseDetailsPage";
-
+import TeachersPage from "../screens/TeachersPage/TeachersPage";
 import Landing from "../screens/landing/Landing";
 import ArticleDetails from "../screens/ArticleDetails/ArticleDetails";
 import Header from "../components/common/Header/Header";
@@ -32,7 +32,7 @@ const App = createBrowserRouter([
     children: [
       { path: "/", element: <Landing /> },
       { path: "/course", element: <Courses /> },
-      { path: "/introducing-teachers", element: <p>معرفی مدرسین</p> },
+      { path: "/introducing-teachers", element: <TeachersPage /> },
       { path: "/blog", element: <Maghalat /> },
       { path: "/Q&A", element: <p>پرسش و پاسخ</p> },
       { path: "/consultation-request", element: <p>درخواست مشاوره</p> },
