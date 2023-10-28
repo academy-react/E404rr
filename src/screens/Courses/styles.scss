@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,400i,600,600i,700,700i");
+
+html,
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  text-align: center;
+  margin: 0 auto;
+}
+$input-range-primary-color: #9b26b6 !default;
+$input-range-neutral-light-color: #e6e9ea !default;
+$input-range-disabled-color: #cccccc !default;
+
+/* input-range-slider */
+$input-range-slider-background: #ffffff !default;
+$input-range-slider-height: 1rem !default;
+$input-range-slider-width: 1rem !default;
+$input-range-slider-transition: transform 200ms ease-out,
+  box-shadow 200ms ease-out !default;
+$input-range-slider-container-transition: left 200ms ease-out !default;
+$input-range-slider-active-transform: scale(1.15) !default;
+$input-range-slider-disabled-background: $input-range-disabled-color !default;
+$input-range-slider-disabled-border: 1px solid $input-range-disabled-color !default;
+
+/* input-range-track */
+$input-range-track-background: $input-range-neutral-light-color !default;
+$input-range-track-height: 3px !default;
+$input-range-track-transition: left 200ms ease-out, width 200ms ease-out !default;
+$input-range-track-active-background: $input-range-primary-color !default;
+$input-range-track-disabled-background: $input-range-neutral-light-color !default;
+
+/* _input-range-slider.scss */
+.input-range__slider {
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $input-range-slider-height * 2;
+  width: $input-range-slider-width * 2;
+
+  margin-left: $input-range-slider-width * -1;
+  margin-top: $input-range-slider-height * -1;
+  outline: none;
+  position: absolute;
+  top: -1px;
+  transition: $input-range-slider-container-transition;
+
+  will-change: left;
+
+  &::before {
+    background: $input-range-slider-background;
+    border-radius: 100%;
+    display: block;
+    content: "";
+    height: $input-range-slider-height;
+    width: $input-range-slider-width;
+    transition: $input-range-slider-transition;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+    will-change: transform, box-shadow;
+    border: 2px solid $input-range-primary-color;
+  }
+
+  &:active::before {
+    transform: $input-range-slider-active-transform;
+  }
+
+  &:focus::before {
+    box-shadow: 0 0 0 5px rgba($input-range-primary-color, 0.2);
+  }
+
+  .input-range--disabled &::before {
+    background: $input-range-slider-disabled-background;
+    border: $input-range-slider-disabled-border;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+/* _input-range-label.scss */
+/* not imported */
+
+/* _input-range-label-container.scss */
+.input-range__label-container {
+  display: none;
+  .input-range__label--min,
+  .input-range__label--max {
+    display: none;
+  }
+}
+
+/* _input-range-track.scss */
+.input-range__track {
+  background: $input-range-track-background;
+  border-radius: $input-range-track-height;
+  cursor: pointer;
+  display: block;
+  height: $input-range-track-height;
+  position: relative;
+  transition: $input-range-track-transition;
+  will-change: left, width;
+
+  .input-range--disabled & {
+    background: $input-range-track-disabled-background;
+  }
+}
+
+.input-range__track--background {
+  margin-top: -0.5 * $input-range-track-height;
+  top: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.input-range__track--active {
+  background: $input-range-track-active-background;
+}
+
+/* input-range */
+.input-range {
+  height: $input-range-slider-height;
+  position: relative;
+  width: 100%;
+}

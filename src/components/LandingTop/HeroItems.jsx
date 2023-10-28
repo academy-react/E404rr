@@ -22,7 +22,7 @@ const HeroItems = () => {
         </NavLink>
       </div>
       <div className="w-25 h-25 border border-transparent  hover:scale-110">
-        <NavLink to="/best-teachers">
+        <NavLink to="/introducing-teachers">
           <div className="w-[65px] h-[65px] border border-transparent mx-auto">
             <img src={teacher} alt="" />
           </div>

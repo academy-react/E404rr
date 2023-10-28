@@ -8,8 +8,6 @@ import Login from "../screens/Login/Login";
 import Register from "../screens/Register/Register";
 import ForgetPass from "../screens/ForgetPass/ForgetPass";
 
-import { Courses } from "../screens/Courses/Courses";
-
 import {
   Route,
   RouterProvider,
@@ -25,6 +23,7 @@ import {
 import { Panel } from "../screens/Panel/Panel";
 import { Navbar } from "../components/common/navbar/Navbar";
 import ProgressBar from "@ramonak/react-progress-bar";
+import Courses from "../screens/Courses/Courses";
 
 const App = createBrowserRouter([
   {

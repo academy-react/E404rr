@@ -40,8 +40,8 @@ const Header = () => {
               <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
             </svg>
           </label>
-          <ul className=" xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex lg:text-[#323E73] text-black">
-            <li className="">
+          <ul className=" xl:gap-x-10 lg:gap-x-7  xl:w-auto mr-[23px] lg:flex xl:flex lg:text-[#323E73]">
+            <li className=" ">
               <NavLink to="/">خانه</NavLink>
             </li>
             <li className="">
