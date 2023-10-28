@@ -6,7 +6,7 @@ const Navbar = () => {
     
         <>
                       <div className='flex'>
-                 <nav className='border border-transparent xl:w-[326px] lg:w-[300px] h-[722px] mt-[23px] shadow-xl '>
+                 <nav className='border border-transparent xl:w-[326px] lg:w-[300px] md:w-[250px] sm:w-[200px] h-[722px] mt-[23px] shadow-xl '>
                 {/* top */}
                 <div className='border border-transparent h-[195px]  bg-[#f3fcf8]  relative'>
                     {/* img div */}
