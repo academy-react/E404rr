@@ -4,7 +4,7 @@ import Title from "../Title/Title";
 
 const NavLink = ({ title, path }) => {
   return (
-    <div className="container flex mx-auto max-w-[1366px]  m-16 items-center justify-between max-xl:px-10">
+    <div className="container flex mx-auto max-w-[1250px]  m-16 items-center justify-between max-xl:px-10">
       <Title title={title} />
       <LinkButton path={path} />
     </div>

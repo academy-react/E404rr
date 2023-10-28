@@ -45,7 +45,7 @@ const Maghalat = () => {
 
   return (
     <div className="container font-vazir mx-auto px-10 text-center">
-      <div className="flex flex-col max-w-[1366px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10">
+      <div className="flex flex-col max-w-[1250px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10">
         <div className="relative w-full md:w-[450px]">
           <TextInput type="text" placeholder="جستجو مقاله های مختلف..." />
           <img
@@ -59,7 +59,7 @@ const Maghalat = () => {
           <option value="">مرتب سازی بر اساس محبوبیت</option>
         </select>
       </div>
-      <div className="flex container max-w-[1366px] mx-auto justify-between items-center flex-wrap max-lg:justify-center mb-16 mt-10">
+      <div className="flex container max-w-[1250px] mx-auto justify-between items-center flex-wrap max-lg:justify-center mb-16 mt-10">
         {currentPosts.map((v, i) => (
           <ArticlesCard />
         ))}

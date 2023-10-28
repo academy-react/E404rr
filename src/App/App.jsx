@@ -37,7 +37,7 @@ const App = createBrowserRouter([
       { path: "/Q&A", element: <p>پرسش و پاسخ</p> },
       { path: "/consultation-request", element: <p>درخواست مشاوره</p> },
       { path: "/contact-us", element: <p>تماس با ما</p> },
-      { path: "/about-we", element: <p>درباره ما</p> },
+      { path: "/about-us", element: <p>درباره ما</p> },
       { path: "/free-learn", element: <p>آموزش های رایگان</p> },
       { path: "/best-teachers", element: <p>بهترین معلمان</p> },
       { path: "/gift-code", element: <p>کد تخفیف</p> },
