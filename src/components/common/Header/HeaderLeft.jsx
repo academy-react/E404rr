@@ -11,7 +11,7 @@ const HeaderLeft = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6 stroke-white"
+          className="w-6 h-6 max-lg:w-4 max-lg:h-4  stroke-white"
         >
           <path
             strokeLinecap="round"
@@ -22,12 +22,11 @@ const HeaderLeft = () => {
       </div>
       <NavLink to="/login">
         <div className="p-3 mx-2 bg-[#23A455] rounded-full flex cursor-pointer ">
-          <p className="text-sm">مهدیار شیرزاد</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6 border-1 border-[#000] mr-2 stroke-white fill-white "
+            className="w-6 h-6 border-1 max-lg:w-4 max-lg:h-4 border-[#000]  stroke-white fill-white "
           >
             <path
               fillRule="evenodd"

@@ -5,7 +5,7 @@ import styles from "./TeachersPage.module.css";
 const TeachersAvatar = () => {
   return (
     <div
-      className={` ${styles.avatar} border-2 border-[#323e73] w-[370px] h-[370px] rounded-xl `}
+      className={` ${styles.avatar} border-2 border-[#23A455] w-[370px] h-[370px] rounded-xl `}
     >
       <img
         src={avatar}
