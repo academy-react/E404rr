@@ -2,16 +2,18 @@ import React from "react";
 
 const TeachersInfo = () => {
   return (
-    <div>
-      <p className="text-[#323e73] text-2xl font-extrabold mb-4">
+    <div className="max-lg:mt-10  px-32">
+      <p className="text-[#323e73] text-2xl max-lg:text-lg   font-extrabold mb-4">
         دکتر امیر ابراهیمی
       </p>
-      <p className="text-[#323e73] text-lg font-bold mb-3">مدیریت</p>
-      <p className="text-[#323e73] max-w-[400px] mb-3">
+      <p className="text-[#323e73] text-lg max-lg:text-base font-bold mb-3">
+        مدیریت
+      </p>
+      <p className="text-[#323e73] max-w-[400px] max-lg:text-sm mb-3">
         مدرس در آموزشگاه، مدرس در دانشگاه علم و فناوری مازندران مستقر در بهشهر،
         مدرس دوره های وب
       </p>
-      <p className="text-[#323e73] flex">
+      <p className="text-[#323e73] max-lg:text-sm flex">
         amirEbrahimi.info@gmail.com
         <svg
           className="w-5 mr-2 items-center"
