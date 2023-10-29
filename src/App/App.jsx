@@ -25,6 +25,7 @@ import { Navbar } from "../components/common/navbar/Navbar";
 import ProgressBar from "@ramonak/react-progress-bar";
 import Courses from "../screens/Courses/Courses";
 import ContactUs from "../screens/ContactUs/ContactUs";
+import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
 
 const App = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ const App = createBrowserRouter([
       { path: "/introducing-teachers", element: <TeachersPage /> },
       { path: "/blog", element: <Maghalat /> },
       { path: "/contact-us", element: <ContactUs /> },
+      { path: "/consultation-req", element: <ConsultaitionReq /> },
       { path: "/about-us", element: <p>درباره ما</p> },
       { path: "/free-learn", element: <p>آموزش های رایگان</p> },
       { path: "/best-teachers", element: <p>بهترین معلمان</p> },
