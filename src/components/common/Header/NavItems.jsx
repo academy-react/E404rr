@@ -17,8 +17,8 @@ const NavItems = () => {
         <li>بلاگ</li>
       </NavLink>
 
-      <NavLink className={activeClass} to="/Q&A">
-        <li>پرسش و پاسخ</li>
+      <NavLink className={activeClass} to="/consultation-request">
+        <li>درخواست مشاوره</li>
       </NavLink>
       <NavLink className={activeClass} to="/about-us">
         <li>درباره ما</li>
