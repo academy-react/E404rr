@@ -11,7 +11,7 @@ const Panel = () => {
             {/* panel */}
             <div className='border border-transparent shadow-xl xl:w-[955px] lg:w-[700px] md:w-[490px] sm:w-[405px] h-[722px] mt-[23px] mr-[34px] rounded-lg'>
                     
-                    <h3 className='text-green-600 text-[22px] before:content-["*"]  mt-[18px] md:mr-4 sm:mr-1' >اطلاعات شخصی کاربر</h3>
+                    <h3 className='text-green-600 text-[22px] before:content-["*"] before:text-gray-600 mt-[18px] md:mr-4 sm:mr-1' >اطلاعات شخصی کاربر</h3>
                     <Formik>
                         <Form>
                            
