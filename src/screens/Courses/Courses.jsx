@@ -1,14 +1,18 @@
-import React from 'react'
-import { Part5 } from '../../components/Courses/Part5'
-import { Part6 } from '../../components/Courses/Part6'
+import React from "react";
+import CourseNav from "./CourseNav";
+import CourseFilter from "./CourseFilter";
+import CourseCountainer from "./CourseCountainer";
 
 const Courses = () => {
   return (
-        <>
-            <Part5/>
-            <Part6/>
-        </>
-  )
-}
+    <>
+      <CourseNav />
+      <div className="container max-w-[1255px] mx-auto flex justify-between items-start">
+        <CourseFilter />
+        <CourseCountainer />
+      </div>
+    </>
+  );
+};
 
-export  {Courses}
+export default Courses;
