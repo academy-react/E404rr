@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUsForm = () => {
   return (
-    <div className="w-[45%] px-8">
+    <div className="xl:w-[45%] px-8 mt-20 xl:mt-0">
       <p className=" font-bold text-lg">
         پیشنهادات، انتقادات، یا شکایات خود را برای ما می توانید ارسال کنید.
       </p>

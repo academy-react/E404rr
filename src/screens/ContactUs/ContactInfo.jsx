@@ -4,14 +4,14 @@ import Address from "../../components/common/footer/Address";
 
 const ContactInfo = () => {
   return (
-    <div className="w-[60%] px-8">
-      <div>
+    <div className="xl:w-[60%] px-8">
+      <div className="xl:w-full w-[50%] mx-auto">
         <div className="w-full px-14 rounded-lg shadow-md">
           <img className="w-full" src={AI} alt="" />
         </div>
       </div>
       <div className="mt-12">
-        <div className="flex items-start">
+        <div className="flex items-start xl:w-full w-[80%] mx-auto">
           <svg
             className="h-3 w-3 md:h-10 md:w-10 mr-9 "
             xmlns="http://www.w3.org/2000/svg"
@@ -38,14 +38,14 @@ const ContactInfo = () => {
               />
             </g>
           </svg>
-          <p className="text-xl mx-2">
+          <p className="xl:text-xl mx-2">
             ساری ، میدان خزر ، جاده دریا ، بعداز دنیای آرزو قبل از روزبهان جنب
             املاک ملایی ، ساختمان سپهر ، طبقه 1 ، پژوهشگاه سپهر
           </p>
         </div>
-        <div className="flex items-start mt-5 px-10">
+        <div className="flex items-start mt-5 xl:w-full w-[80%] mx-auto px-10">
           <svg
-            className="h-6 w-6 ml-2"
+            className="xl:w-6 w-3 ml-2"
             viewBox="0 0 32 32"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -85,11 +85,11 @@ const ContactInfo = () => {
               </g>
             </g>
           </svg>
-          <p className="text-lg">011-123456789</p>
+          <p className="xl:text-lg">011-123456789</p>
         </div>
-        <div className="flex items-start mt-5 px-10">
+        <div className="flex items-start xl:w-full w-[80%] mx-auto mt-5 px-10">
           <svg
-            className="w-6 ml-2"
+            className="xl:w-6 w-3 ml-2"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
