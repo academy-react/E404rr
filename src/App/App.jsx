@@ -7,6 +7,7 @@ import Maghalat from "../screens/Maghalat/Maghalat";
 import Login from "../screens/Login/Login";
 import Register from "../screens/Register/Register";
 import ForgetPass from "../screens/ForgetPass/ForgetPass";
+import AboutUs from "../screens/AboutUs/AboutUs";
 
 import {
   Route,
@@ -38,7 +39,7 @@ const App = createBrowserRouter([
       { path: "/blog", element: <Maghalat /> },
       { path: "/contact-us", element: <ContactUs /> },
       { path: "/consultation-req", element: <ConsultaitionReq /> },
-      { path: "/about-us", element: <p>درباره ما</p> },
+      { path: "/about-us", element: <AboutUs /> },
       { path: "/free-learn", element: <p>آموزش های رایگان</p> },
       { path: "/best-teachers", element: <p>بهترین معلمان</p> },
       { path: "/gift-code", element: <p>کد تخفیف</p> },
