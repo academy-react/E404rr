@@ -28,7 +28,7 @@ import { Panel } from '../screens/Panel/Panel';
 import { Navbar } from '../components/common/navbar/Navbar';
 import { Listcurses } from "../screens/Panel/Listcurses";
 import { Mylistcurses } from "../screens/Panel/Mylistcurses";
-import { Dashbord } from "../screens/Panel/dashbord";
+import { Dashbord } from "../screens/Panel/Dashbord";
 
 const App = createBrowserRouter([
   {
@@ -51,6 +51,9 @@ const App = createBrowserRouter([
   {path:"/login", element: <Login />},
   {path:"/register", element: <Register />},
   {path:"/forget", element: <ForgetPass />},
+
+
+  
   {path:"/panel", element: <Navbar /> , children:[
     {path:"/panel" , element:<Dashbord/>},
     {path:"/panel/listcurses" , element: <Listcurses/>},
