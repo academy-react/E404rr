@@ -1,4 +1,5 @@
-
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 
 const Taghvim = () => {
   return (
@@ -33,7 +34,7 @@ const Taghvim = () => {
             </div> */}
 
 
-       
+          <Calendar />
          </div>
         </>
 
