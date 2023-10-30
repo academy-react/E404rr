@@ -2,6 +2,7 @@ import React from "react";
 import CourseNav from "./CourseNav";
 import CourseFilter from "./CourseFilter";
 import CourseCountainer from "./CourseCountainer";
+import Footer from "../../components/common/footer/Footer";
 
 const Courses = () => {
   return (
@@ -11,6 +12,7 @@ const Courses = () => {
         <CourseFilter />
         <CourseCountainer />
       </div>
+      <Footer />
     </>
   );
 };

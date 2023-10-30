@@ -16,14 +16,14 @@ const ConsultationForm = () => {
         />
       </div>
       <div className="w-1/2 mt-8 mx-auto">
-        <label htmlFor="name" className="px-6 text-lg font-bold">
+        <label htmlFor="phoneNumber" className="px-6 text-lg font-bold">
           شماره موبایل
         </label>
         <input
           className="focus:outline-none w-full mx-auto px-6 py-2 my-5 shadow-md focus:placeholder:opacity-0 bg-[#fbfbfb] shadow-gray-200 rounded-lg placeholder-[#323E73] placeholder:text-[13px]"
           type="text"
           name=""
-          id="name"
+          id="phoneNumber"
           placeholder="0912XXXXXXX"
         />
       </div>
