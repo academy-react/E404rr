@@ -4,7 +4,7 @@ import 'react-calendar/dist/Calendar.css';
 const Taghvim = () => {
   return (
         <>
-                         <div className='h-[225px] w-[840px] mr-16 border border-transparent shadow mt-5 bg-white rounded'>
+                         <div className='   mr-16   mt-5 '>
             {/* top
             <div className='h-[50px] border-b border-transparent'>
                 <div className='float-right text-center  w-[100px] h-full rounded relative  border-transparent bg-[#f3fcf8] text-gray-500'>
@@ -34,7 +34,7 @@ const Taghvim = () => {
             </div> */}
 
 
-          <Calendar />
+          <Calendar  className="border border-transparent shadow rounded w-[400px]"/>
          </div>
         </>
 
