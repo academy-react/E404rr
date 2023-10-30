@@ -21,8 +21,8 @@ import {
   NavLink,
   useParams,
 } from "react-router-dom";
-import { Panel } from '../screens/Panel/Panel';
-import { Navbar } from '../components/common/navbar/Navbar';
+import { Panel } from "../screens/Panel/Panel";
+import { Navbar } from "../components/common/navbar/Navbar";
 import { Listcurses } from "../screens/Panel/Listcurses";
 import { Mylistcurses } from "../screens/Panel/Mylistcurses";
 import { Dashbord } from "../screens/Panel/Dashbord";
@@ -30,6 +30,7 @@ import { Dashbord } from "../screens/Panel/Dashbord";
 import Courses from "../screens/Courses/Courses";
 import ContactUs from "../screens/ContactUs/ContactUs";
 import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
+import Cart from "../screens/Cart/Cart";
 
 const App = createBrowserRouter([
   {
@@ -47,24 +48,23 @@ const App = createBrowserRouter([
       { path: "/best-teachers", element: <p>بهترین معلمان</p> },
       { path: "/gift-code", element: <p>کد تخفیف</p> },
       { path: "/support", element: <p>پشتیبانی</p> },
-      { path: "/shopping", element: <p>سبد خرید</p> },
+      { path: "/Cart", element: <Cart /> },
     ],
   },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
   { path: "/forget", element: <ForgetPass /> },
 
-
-
-
-  {path:"/panel", element: <Navbar /> , children:[
-    {path:"/panel" , element:<Dashbord/>},
-    {path:"/panel/listcurses" , element: <Listcurses/>},
-    {path:"/panel/editprofile" , element:<Panel/>},
-    {path:"/panel/mycurses" , element: <Mylistcurses/>}
-
-  ]
-},
+  {
+    path: "/panel",
+    element: <Navbar />,
+    children: [
+      { path: "/panel", element: <Dashbord /> },
+      { path: "/panel/listcurses", element: <Listcurses /> },
+      { path: "/panel/editprofile", element: <Panel /> },
+      { path: "/panel/mycurses", element: <Mylistcurses /> },
+    ],
+  },
 
   { path: "*", element: <h1 className="text-red-600">Error...</h1> },
 ]);
