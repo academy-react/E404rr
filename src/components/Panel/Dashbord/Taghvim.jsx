@@ -1,5 +1,5 @@
-// import Calendar from "react-calendar";
-// import 'react-calendar/dist/Calendar.css';
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 
 const Taghvim = () => {
   return (
@@ -32,9 +32,9 @@ const Taghvim = () => {
               <p className="inline-block">پنجشنبه</p>
               <p className="inline-block">جمعه</p>
             </div> */}
-  <p>aa</p>
 
-          {/* <Calendar /> */}
+
+          <Calendar />
          </div>
         </>
 
