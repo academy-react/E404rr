@@ -9,17 +9,17 @@ const Panel = () => {
       
     
             {/* panel */}
-            <div className='border border-transparent shadow-xl w-[955px] h-[722px] mt-[23px] mr-[34px] rounded-lg'>
+            <div className='border border-transparent shadow-xl xl:w-[955px] lg:w-[700px] md:w-[490px] sm:w-[405px] h-[722px] mt-[23px] mr-[34px] rounded-lg'>
                     
-                    <h3 className='text-green-600 text-[22px] before:content-["*"]  mt-[18px] mr-4' >اطلاعات شخصی کاربر</h3>
+                    <h3 className='text-green-600 text-[22px] before:content-["*"] before:text-gray-600 mt-[18px] md:mr-4 sm:mr-1' >اطلاعات شخصی کاربر</h3>
                     <Formik>
                         <Form>
                            
-                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[46px] mr-[30px]"/>
-                            <Field type="email" placeholder="ایمیل خود را وارد کنید " className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mr-[116px]"/>
-                            <Field  placeholder="سن خود را وارد کنید" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 w-[380px] h-[50px] mt-[38px] mr-[30px]"/>
+                            <Field placeholder="نام کاربری" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[46px] xl:mr-[30px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>
+                            <Field type="email" placeholder="ایمیل خود را وارد کنید " className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] xl:mr-[116px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>
+                            <Field  placeholder="سن خود را وارد کنید" className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[38px] xl:mr-[30px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>
                             <div className='inline-block  relative'>
-                            <select id='select' className=' border border-[#DEC9E9] pr-3 rounded  w-[380px] h-[50px] mr-[116px]    outline-none text-[#aaa9a9]  appearance-none'>
+                            <select id='select' className=' border border-[#DEC9E9] pr-3 rounded  xl:w-[380px] lg:w-[300px] md:w-[197px] sm:w-[197px] h-[50px] xl:mr-[116px] lg:mr-[30px] md:mr-[30px] sm:mr-1   outline-none text-[#aaa9a9]  appearance-none'>
                             <option>    وظیفه در سایت</option>
                             <option>قدیمی ترین ها</option>
                             <option>جدید ترین ها</option>
@@ -31,19 +31,19 @@ const Panel = () => {
                             </svg>
                             </div>
                             </div>
-                            <Field placeholder="توضیحات ..." className="w-[875px] h-[150px] pr-3 rounded focus:placeholder:opacity-0  outline-none border border-[#DEC9E9] hover:border-green-600 text-[#6247AA] mr-[30px] mt-[30px]"/>
+                            <Field placeholder="توضیحات ..." className="xl:w-[875px] lg:w-[630px] md:w-[422.5px] sm:w-[397px] h-[150px] pr-3 rounded focus:placeholder:opacity-0  outline-none border border-[#DEC9E9] hover:border-green-600 text-[#6247AA] md:mr-[30px] sm:mr-1 mt-[30px]"/>
                         </Form>
                     </Formik>
 
                     <Formik>
                         <Form>
                                 <div className='flex border border-transparent mt-[47px] '>
-                                   <div className='w-[60px] h-[60px] border border-transparent rounded-full mr-[50px]'>
+                                   <div className='w-[60px] h-[60px] border border-transparent rounded-full md:mr-[50px] sm:mr-1'>
                                   <img src={emptyprofile} alt="" className='w-full h-full rounded-full' />
                                   </div>
                                     <Field type="file" id="profile-select" className="hidden" />
-                                    <label htmlFor="profile-select" className='mr-[10px] mt-1 '>
-                                    <div className='w-[140px] h-[55px] border relative hover:border-green-700 rounded pl-5'>
+                                    <label htmlFor="profile-select" className='md:mr-[10px] sm:mr-1 mt-1 '>
+                                    <div className='w-[140px] h-[55px] border relative hover:border-green-700 rounded md:pl-5 sm:pl-1'>
                                         <span className='leading-[50px] mr-5 text-green-600'>
                                             آپلود آواتار
                                         </span>
@@ -53,13 +53,13 @@ const Panel = () => {
 
                                     </div>
                                     </label>
-                                    <span className='mt-5 text-green-600 mr-[15px]'>  تصویر خود را بارگذاری کنید ...  </span>
+                                    <span className='mt-5 text-green-600 md:mr-[15px] sm:mr-1'>  تصویر خود را بارگذاری کنید ...  </span>
                                 </div>
                                 <div className='mt-[64px] text-white'>
-                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#37AF7E] rounded-3xl'>ثبت </button>
-                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#B63356]  rounded-3xl'> حذف</button>
-                                    <button type='submit' className='border w-[138px] h-[40px] mr-[30px] bg-[#E79037]  rounded-3xl'> ویرایش</button>
-9676BD
+                                    <button type='submit' className='border w-[138px] h-[40px] lg:mr-[30px] md:mr-[30px] md:inline-block sm:block sm:mx-auto bg-[#37AF7E] rounded-3xl'>ثبت </button>
+                                    <button type='submit' className='border w-[138px] h-[40px] lg:mr-[30px] md:mr-[5px]  md:inline-block sm:block sm:mx-auto bg-[#B63356]  rounded-3xl'> حذف</button>
+                                    <button type='submit' className='border w-[138px] h-[40px] lg:mr-[30px] md:mr-[5px]  md:inline-block sm:block sm:mx-auto bg-[#E79037]  rounded-3xl'> ویرایش</button>
+
                                 </div>
                         </Form>
                     </Formik>
