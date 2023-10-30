@@ -23,7 +23,7 @@ import {
 } from "react-router-dom";
 import { Panel } from "../screens/Panel/Panel";
 import { Navbar } from "../components/common/navbar/Navbar";
-import ProgressBar from "@ramonak/react-progress-bar";
+
 import Courses from "../screens/Courses/Courses";
 import ContactUs from "../screens/ContactUs/ContactUs";
 import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
