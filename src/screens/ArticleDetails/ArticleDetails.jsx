@@ -16,4 +16,4 @@ const ArticleDetails = () => {
   );
 };
 
-export default ArticleDetails;
+export  {ArticleDetails}
