@@ -6,16 +6,16 @@ const ExistFilter = () => {
     <div className={`${styles.existFilter} mt-10 px-5 py-3 rounded-lg `}>
       <p className="text-lg font-bold text-[#323E73]">موجودی دوره</p>
       <div className="flex items-center my-3 text-[#323E73]">
-        <input className="checked:accent-[#198643]" type="checkbox" />
-        <p className="mr-4">به اتمام رسیده</p>
+        <input id="end" className="checked:accent-[#198643]" type="checkbox" />
+        <label htmlFor="end" className="mr-4">به اتمام رسیده</label>
       </div>
       <div className="flex items-center my-3 text-[#323E73]">
-        <input className="checked:accent-[#198643]" type="checkbox" />
-        <p className="mr-4">در حال برگزاری</p>
+        <input id="live" className="checked:accent-[#198643]" type="checkbox" />
+        <label htmlFor="live" className="mr-4">در حال برگزاری</label>
       </div>
       <div className="flex items-center my-3 text-[#323E73]">
-        <input className="checked:accent-[#198643]" type="checkbox" />
-        <p className="mr-4">همه</p>
+        <input id="all" className="checked:accent-[#198643]" type="checkbox" />
+        <label htmlFor="all" className="mr-4">همه</label>
       </div>
     </div>
   );
