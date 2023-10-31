@@ -1,14 +1,12 @@
 import CourseImg from "./CourseImg";
 import CourseInfo from "./CourseInfo";
 import CourseDetails from "./CourseDetails";
-import {
-  useNavigate,
-} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 import styles from "./CourseCard.module.css";
 
 const CourseCard = () => {
+
 
     const navigate = useNavigate();
     const goCourse = () =>{
@@ -24,7 +22,7 @@ const CourseCard = () => {
       <CourseDetails />
     </div>
       </button>
-  );
-};
+
+  ) }
 
 export default CourseCard;
