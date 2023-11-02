@@ -1,7 +1,7 @@
 import CourseDetailsPage from "../screens/CourseDetailPage/CourseDetailsPage";
 import TeachersPage from "../screens/TeachersPage/TeachersPage";
 import Landing from "../screens/landing/Landing";
-import {ArticleDetails} from "../screens/ArticleDetails/ArticleDetails";
+import ArticleDetails from "../screens/ArticleDetails/ArticleDetails";
 import Header from "../components/common/Header/Header";
 import Maghalat from "../screens/Maghalat/Maghalat";
 import Login from "../screens/Login/Login";
@@ -36,7 +36,7 @@ const App = createBrowserRouter([
   {
     path: "/",
     element: <Header />,
-    
+
     children: [
       { path: "/", element: <Landing /> },
       { path: "/course", element: <Courses /> },
@@ -50,8 +50,8 @@ const App = createBrowserRouter([
       { path: "/gift-code", element: <p>کد تخفیف</p> },
       { path: "/support", element: <p>پشتیبانی</p> },
       { path: "/Cart", element: <Cart /> },
-      { path: "/ArticalePage", element: <ArticleDetails/> },
-      { path: "/CoursePage", element: <CourseDetailsPage/> },
+      { path: "/ArticalePage", element: <ArticleDetails /> },
+      { path: "/CoursePage", element: <CourseDetailsPage /> },
     ],
   },
   { path: "/login", element: <Login /> },
