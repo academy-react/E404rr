@@ -1,6 +1,11 @@
 import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const TeachersInfo = () => {
+  const navigate = useNavigate();
+  const goTeacherProfile = () => {
+    navigate("/teacher-profile");
+  };
   return (
     <div className="max-lg:mt-10  px-32">
       <p className="text-[#323e73] text-2xl max-lg:text-lg   font-extrabold mb-4">
@@ -40,6 +45,11 @@ const TeachersInfo = () => {
           </g>
         </svg>
       </p>
+      <NavLink onClick={goTeacherProfile}>
+        <button className="bg-[#1c543b] mt-8 px-6 py-4 text-white rounded-3xl">
+          نمایش پروفایل
+        </button>
+      </NavLink>
     </div>
   );
 };

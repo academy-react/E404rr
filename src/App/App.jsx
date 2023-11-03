@@ -31,6 +31,7 @@ import Courses from "../screens/Courses/Courses";
 import ContactUs from "../screens/ContactUs/ContactUs";
 import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
 import Cart from "../screens/Cart/Cart";
+import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
 
 const App = createBrowserRouter([
   {
@@ -48,6 +49,7 @@ const App = createBrowserRouter([
       { path: "/Cart", element: <Cart /> },
       { path: "/ArticalePage", element: <ArticleDetails /> },
       { path: "/CoursePage", element: <CourseDetailsPage /> },
+      { path: "/teacher-profile", element: <TeachersDetails /> },
     ],
   },
   { path: "/login", element: <Login /> },

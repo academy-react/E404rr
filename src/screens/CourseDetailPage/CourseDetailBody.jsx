@@ -14,7 +14,7 @@ const CourseDetailBody = () => {
         <div className="text-2xl text-[#323E73] font-black">نظرات</div>
       </div>
       <div className=" ">
-        <CourseOpinions />
+        <CourseSummary />
       </div>
     </div>
   );
