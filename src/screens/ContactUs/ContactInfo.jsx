@@ -1,6 +1,5 @@
 import React from "react";
 import AI from "../../assets/img/AI.png";
-import Address from "../../components/common/footer/Address";
 
 const ContactInfo = () => {
   return (

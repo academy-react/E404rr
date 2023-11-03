@@ -11,7 +11,7 @@ const CourseHero = () => {
           <p className="text-[#ddd] my-3">
             یک فریم‌ورک برای توسعه در چند پلتفرم
           </p>
-          <button className="bg-[#f3fcf8] px-4 py-3 rounded-2xl">
+          <button className="bg-[#f3fcf8] px-4 py-3 mt-8 rounded-2xl">
             <p>ثبت نام در دوره</p>
           </button>
         </div>

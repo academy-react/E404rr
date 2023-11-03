@@ -32,11 +32,11 @@ const ArticleOpinion = () => {
         </div>
         <button
           type="submit"
-          className="flex bg-[#23A455] px-8 py-4 mt-5 cursor-pointer rounded-3xl w-[200px] text-black h-16 text-lg items-center "
+          className="flex bg-[#23A455] px-8 py-4 mt-5 cursor-pointer rounded-3xl w-[200px] text-white h-16 text-lg items-center "
         >
           <svg
             className="w-5 ml-2"
-            fill="#000000"
+            fill="#fff"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >

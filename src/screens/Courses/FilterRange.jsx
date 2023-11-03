@@ -57,7 +57,7 @@ const FilterRange = () => {
             className=""
             //disabled
             classes={classes}
-            step={5}
+            step={50000}
             min={0}
             max={10000000}
             value={val2}
