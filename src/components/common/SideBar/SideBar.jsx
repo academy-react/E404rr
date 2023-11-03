@@ -1,6 +1,9 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import { NavLink } from 'react-router-dom'
+import Hader from '../../Sidebar/Hader'
+
+
 
 const SideBar = () => {
   return (
@@ -69,6 +72,7 @@ const SideBar = () => {
                          </NavLink>
                 </div>
                 <div className='w-[985px] border h-[600px]  mr-[30px]  bg-[#F3F4F6] rounded-[36px] border-transparent'>
+                        <Hader/>
                     <Outlet/>
                 </div>
               
