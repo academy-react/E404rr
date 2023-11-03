@@ -6,6 +6,8 @@ import Footer from "../../components/common/footer/Footer";
 import maghaleImg from "../../assets/img/maghaleImg.png";
 import searchImg from "../../assets/img/search.svg";
 import ArticlesCard from "../../components/ArticlesCard/ArticlesCard";
+import ArticleCategory from "../ArticleDetails/ArticleCategory";
+import ArticlesLast from "../ArticleDetails/ArticlesLast";
 
 const Maghalat = () => {
   const [items, setItems] = useState([
@@ -55,24 +57,25 @@ const Maghalat = () => {
               className="absolute left-0 top-1/2 w-[20px] ml-4 -translate-y-1/2 rounded-md cursor-pointer"
             />
           </div>
-          <select className="bg-white shadow-md shadow-gray-200 outline-none w-full md:w-fit px-6 py-2 rounded-md">
-            <option value="">مرتب سازی براساس تاریخ</option>
-            <option value="">مرتب سازی بر اساس محبوبیت</option>
-          </select>
         </div>
-        <div className="flex container max-w-[1250px] mx-auto justify-between items-center flex-wrap max-lg:justify-center mb-16 mt-10">
-          {currentPosts.map((v, i) => (
+        <div className="flex container max-w-[1250px] mx-auto justify-between items-start  mb-16 mt-10">
+          <div className="flex max-w-[65%] justify-between items-start flex-wrap max-lg:justify-center">
             <ArticlesCard />
-          ))}
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+            <ArticlesCard />
+          </div>
+          <div className="w-[30%]">
+            <ArticleCategory />
+            <ArticlesLast />
+          </div>
         </div>
-        <Pagination
-          currentPage={currentPage}
-          postsPerPage={postsPerPage}
-          totalPosts={items.length}
-          paginate={paginate}
-          previousPage={previousPage}
-          nextPage={nextPage}
-        />
       </div>
       <Footer />
     </>
