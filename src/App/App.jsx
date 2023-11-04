@@ -32,6 +32,7 @@ import ContactUs from "../screens/ContactUs/ContactUs";
 import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
 import Cart from "../screens/Cart/Cart";
 import { SideBar } from "../components/common/SideBar/SideBar";
+import PishKhan from "../screens/Panel2/PishKhan";
 
 const App = createBrowserRouter([
   {
@@ -77,7 +78,7 @@ const App = createBrowserRouter([
     path: "/panel2",
     element: <SideBar/>,
     children: [
-      { path: "/panel2", element: <p>پیشخوان</p> },
+      { path: "/panel2", element: <PishKhan/> },
       { path: "/panel2/2", element: <p>دوره های من</p> },
       { path: "/panel2/3", element: <p>تیکت ها</p> },
       { path: "/panel2/4", element: <p>ویرایش پروفایل</p> },
