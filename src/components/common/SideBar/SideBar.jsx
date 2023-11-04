@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import Hader from '../../Sidebar/Hader'
-
+import logo3 from "../../../assets/img/logo3.png"
 
 
 const SideBar = () => {
@@ -10,6 +10,13 @@ const SideBar = () => {
         <>
             <div className='flex mt-[30px]'>
                 <div className='w-[250px] h-[559px] border mr-[45px] border-transparent'>
+
+                <NavLink to="/">
+                        <div className='w-20 h-20 absolute'>
+                            <img src={logo3} alt="" />
+                        </div>
+                        <h2 className='text-[24px] absolute text-green-600 mr-[80px] mt-[25px]'>E404ROR</h2>
+                    </NavLink>
          
                          <NavLink to="/panel2" className="w-full h-full" >
                          <div className="w-[224px] h-[40px] border mt-[100px] rounded-lg bg-[#2ED573] border-transparent  ">
