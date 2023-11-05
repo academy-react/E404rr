@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 const TiketItems = () => {
+    const navigate = useNavigate();
+    const goAdd = () =>{
+        navigate("/panel2/Addticket")
+      }
   return (
     <>
                                                     <div className='flex flex-wrap border border-transparent mt-[50px] '>
@@ -51,7 +56,7 @@ const TiketItems = () => {
                     </div>
                 </div>
 
-                <div className="w-[194px] h-[80px] bg-blue-500 mt-[15px] border border-transparent rounded-xl mr-[30px] flex items-center ">
+                <div onClick={goAdd} className="w-[194px] cursor-pointer h-[80px] bg-blue-500 mt-[15px] border border-transparent rounded-xl mr-[30px] flex items-center ">
                     <div className='w-[68px] h-[68px] border border-transparent mr-[5px] rounded-xl bg-opacity-20 flex items-center justify-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-[36px] h-[36px] text-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -61,7 +66,7 @@ const TiketItems = () => {
 
                     </div>
         
-                    <div className='border border-transparent w-auto h-full text-white mr-[5px] flex justify-center items-center '>
+                    <div  className=' border border-transparent w-auto h-full text-white mr-[5px] flex justify-center items-center '>
                           <p className=' text-[20px]'>  تیکت جدید</p>
                           
 

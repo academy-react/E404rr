@@ -7,6 +7,7 @@ const Tiket = () => {
         <>
             <TiketItems/>
             <Tiketqus/>
+
         </>
   )
 }
