@@ -35,6 +35,7 @@ import { SideBar } from "../components/common/SideBar/SideBar";
 import PishKhan from "../screens/Panel2/PishKhan";
 import MyCourses from "../screens/Panel2/MyCourses";
 import { Tiket } from "../screens/Panel2/Tiket";
+import { EditProfile } from "../screens/Panel2/EditProfile";
 
 const App = createBrowserRouter([
   {
@@ -83,7 +84,7 @@ const App = createBrowserRouter([
       { path: "/panel2", element: <PishKhan/> },
       { path: "/panel2/2", element:<MyCourses/> },
       { path: "/panel2/3", element: <Tiket/> },
-      { path: "/panel2/4", element: <p>ویرایش پروفایل</p> },
+      { path: "/panel2/4", element: <EditProfile/> },
       { path: "/panel2/Addticket", element: <>ssss</> },
     ],
   },
