@@ -29,7 +29,7 @@ const AboutUs = () => {
               نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
             </p>
           </div>
-          <div className="w-1/2 rounded-lg">
+          <div className="w-1/2 rounded-lg hidden lg:block">
             <img className="w-full rounded-lg" src={about1} alt="" />
           </div>
         </div>
