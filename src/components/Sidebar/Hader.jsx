@@ -25,7 +25,7 @@ const Hader = () => {
                                    <div className="w-[56px] h-[56px] border border-transparent rounded-full ml-[30px]">
                                         <img src={emptyprofile} alt="" className='w-full h-full rounded-full block' />
                                    </div>
-                                   {/* تغییر حالت روز و شب */}
+                                   {/* تغییر حالت روز و شب
                                    <div onClick={handleClick} className="w-[56px] h-[56px]  border border-transparent rounded-full bg-white ml-[15px] flex items-center justify-center  ">
                                    {isNightMode ? (
                                                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  text-gray-700 ">
@@ -39,7 +39,7 @@ const Hader = () => {
                                                                                                        </svg>
                                         )}
   
-                                   </div>
+                                   </div> */}
                                    {/* مدال اعلان ها */}
                             <div className='relative '>
                             <div onClick={openModal} className="w-[56px] h-[56px]  border border-transparent rounded-full bg-white ml-[15px] flex items-center justify-center   ">

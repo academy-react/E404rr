@@ -8,22 +8,22 @@ import logo3 from "../../../assets/img/logo3.png"
 const activeClass = ({ isActive}) => 
     isActive ? "w-[224px] h-[40px] border mt-[16px] rounded-lg bg-green-600  border-transparent text-white  block " : "w-[224px] h-[40px] border mt-[16px] rounded-lg bg-transparent border-transparent  block" ;
     
-  const activeP = ({isActive}) =>
-   isActive ? "text-white inline-block mt-[7px] mr-[10px]" : "text-black inline-block mt-[7px] mr-[10px]";
 const SideBar = () => {
   return (
         <>
             <div className='flex mt-[30px]'>
-                <div className='w-[250px] h-[559px] border mr-[45px] border-transparent'>
 
-                {/* <NavLink to="/">
+                                <NavLink to="/" className="absolute mr-[30px]">
                         <div className='w-20 h-20 absolute'>
                             <img src={logo3} alt="" />
                         </div>
                         <h2 className='text-[24px] absolute text-green-600 mr-[80px] mt-[25px]'>E404ROR</h2>
-                    </NavLink> */}
+                    </NavLink>
+                <div className='w-[250px] h-[559px] border mr-[45px] border-transparent mt-[100px]'>
+
+
          
-                         <NavLink to="/panel2" className={activeClass} >
+                         <NavLink end to="/panel2"  className={activeClass}  >
 
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block   mr-[5px]">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -35,7 +35,7 @@ const SideBar = () => {
                          </NavLink>
     
 
-
+                        
 
                          <NavLink to="/panel2/2"  className={activeClass}>
                          
@@ -73,7 +73,7 @@ const SideBar = () => {
                             </p>
                     
                          </NavLink>
-                         <NavLink to="" >
+                         <NavLink to="/logout" >
                          <div className="w-[224px] h-[40px] border mt-[16px] rounded-lg  border-transparent  ">
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-[5px] inline-block">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
@@ -85,7 +85,7 @@ const SideBar = () => {
                         </div>
                          </NavLink>
                 </div>
-                <div className='w-[985px] border min-h-[600px] h-auto pb-[30px]  mr-[30px]  bg-[#F3F4F6] rounded-[36px] border-transparent'>
+                <div className='w-[985px] border min-h-[600px] h-auto pb-[30px]  mr-[30px]  bg-[#f3fcf8] rounded-[36px] border-transparent'>
                         <Hader/>
                     <Outlet/>
                 </div>

@@ -36,6 +36,7 @@ import PishKhan from "../screens/Panel2/PishKhan";
 import MyCourses from "../screens/Panel2/MyCourses";
 import { Tiket } from "../screens/Panel2/Tiket";
 import { EditProfile } from "../screens/Panel2/EditProfile";
+import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
 
 const App = createBrowserRouter([
   {
@@ -81,11 +82,11 @@ const App = createBrowserRouter([
     path: "/panel2",
     element: <SideBar/>,
     children: [
-      { path: "/panel2", element: <PishKhan/> },
+      { path: "/panel2" , element: <PishKhan/> },
       { path: "/panel2/2", element:<MyCourses/> },
       { path: "/panel2/3", element: <Tiket/> },
       { path: "/panel2/4", element: <EditProfile/> },
-      { path: "/panel2/Addticket", element: <>ssss</> },
+      { path: "/panel2/Addticket", element: <Addtiket/> },
     ],
   },
 
