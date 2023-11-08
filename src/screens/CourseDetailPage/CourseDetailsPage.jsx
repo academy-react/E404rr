@@ -1,15 +1,23 @@
-import CourseDescription from "./CourseDescription";
-import CourseSummary from "./CourseSummary";
+import Footer from "../../components/common/footer/Footer";
+import flutter from "../../assets/img/flutter.png";
+import CourseHero from "./CourseHero";
+import CourseDetailBody from "./CourseDetailBody";
+import WillLearn from "../../components/common/CourseCard/WillLearn";
+import CourseRequirements from "./CourseRequirements";
+import StudentsBought from "./StudentsBought";
 
 const CourseDetailsPage = () => {
   return (
-    <div>
-      <div className="text-center my-10">Header</div>
-      <div className="container max-w-[1366px] mx-auto flex justify-between items-start">
-        <CourseSummary />
-        <CourseDescription />
+    <>
+      <div className="mb-10 max-w-[1250px] mx-auto">
+        <CourseHero />
+        <WillLearn />
+        <CourseDetailBody />
+        <CourseRequirements />
+        <StudentsBought />
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

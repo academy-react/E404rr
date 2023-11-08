@@ -41,13 +41,13 @@ const useStyles = makeStyles(
 );
 
 const FilterRange = () => {
-  const [val2, setVal2] = React.useState([0, 100]);
+  const [val2, setVal2] = React.useState([0, 10000000]);
 
   const classes = useStyles();
 
   return (
     <div
-      className={` App mt-8 ${styles.filterRange} rounded-lg px-5 text-[#323E73]`}
+      className={` App mt-8 ${styles.filterRange} rounded-lg px-5 py-3 text-[#323E73]`}
     >
       <h1 className="text-right font-extrabold text-lg w-full">محدوده قیمت</h1>
 
@@ -57,9 +57,9 @@ const FilterRange = () => {
             className=""
             //disabled
             classes={classes}
-            step={5}
+            step={50000}
             min={0}
-            max={100}
+            max={10000000}
             value={val2}
             onChange={(ev, v) => setVal2(v)}
             onChangeCommitted={(ev, v) => console.log(v)}

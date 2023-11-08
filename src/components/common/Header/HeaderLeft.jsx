@@ -1,29 +1,68 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import ShoppingNum from "./ShoppingNum";
 
 const HeaderLeft = () => {
   return (
     <div className="flex">
       <NavLink to="/Cart">
-        <div className="p-3 mx-2 bg-[#23A455] rounded-full flex cursor-pointer ">
+        <div className="p-3 relative mx-2 bg-[#23A455] rounded-full flex cursor-pointer ">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            className="w-6"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6 max-lg:w-4 max-lg:h-4  stroke-white"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-            />
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              {" "}
+              <path
+                d="M3 3H4.37144C5.31982 3 6.13781 3.66607 6.32996 4.59479L8.67004 15.9052C8.86219 16.8339 9.68018 17.5 10.6286 17.5H17.5"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>{" "}
+              <path
+                d="M6.82422 7H19.6743C20.3386 7 20.8183 7.6359 20.6358 8.27472L19.6217 11.8242C19.2537 13.1121 18.0765 14 16.7371 14H8.27734"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>{" "}
+              <circle
+                cx="16.5"
+                cy="20.5"
+                r="0.5"
+                fill="#fff"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></circle>{" "}
+              <circle
+                cx="0.5"
+                cy="0.5"
+                r="0.5"
+                transform="matrix(1 0 0 -1 10 21)"
+                fill="#fff"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></circle>{" "}
+            </g>
           </svg>
+          <ShoppingNum />
         </div>
       </NavLink>
       <NavLink to="/login">
-        <div className="p-3 mx-2 bg-[#23A455] rounded-full flex cursor-pointer ">
+        <div className="p-3 mx-2  bg-[#23A455] rounded-full flex cursor-pointer ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
