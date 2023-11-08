@@ -40,7 +40,7 @@ import { EditProfile } from "../screens/Panel2/EditProfile";
 import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
 
 import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
- development
+
 
 const App = createBrowserRouter([
   {
