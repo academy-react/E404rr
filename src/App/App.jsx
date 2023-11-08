@@ -31,7 +31,16 @@ import Courses from "../screens/Courses/Courses";
 import ContactUs from "../screens/ContactUs/ContactUs";
 import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
 import Cart from "../screens/Cart/Cart";
+
+import { SideBar } from "../components/common/SideBar/SideBar";
+import PishKhan from "../screens/Panel2/PishKhan";
+import MyCourses from "../screens/Panel2/MyCourses";
+import { Tiket } from "../screens/Panel2/Tiket";
+import { EditProfile } from "../screens/Panel2/EditProfile";
+import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
+
 import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
+ development
 
 const App = createBrowserRouter([
   {
@@ -64,6 +73,21 @@ const App = createBrowserRouter([
       { path: "/panel/listcurses", element: <Listcurses /> },
       { path: "/panel/editprofile", element: <Panel /> },
       { path: "/panel/mycurses", element: <Mylistcurses /> },
+    ],
+  },
+
+
+
+  // پیشخوان
+  {
+    path: "/panel2",
+    element: <SideBar/>,
+    children: [
+      { path: "/panel2" , element: <PishKhan/> },
+      { path: "/panel2/2", element:<MyCourses/> },
+      { path: "/panel2/3", element: <Tiket/> },
+      { path: "/panel2/4", element: <EditProfile/> },
+      { path: "/panel2/Addticket", element: <Addtiket/> },
     ],
   },
 
