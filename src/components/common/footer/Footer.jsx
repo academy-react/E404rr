@@ -1,20 +1,16 @@
-import Access from "./Access";
-import Address from "./Address";
 import Brand from "./Brand";
-import Common from "./Common";
-import Contact from "./Contact";
-import Trust from "./Trust";
+import ContactMethod from "./ContactMethod";
+import FooterLinks from "./FooterLinks";
+import WorkingTime from "./WorkingTime";
 
 const Footer = () => {
   return (
-    <div className="bg-[#3c6e71] text-[#E1F7ED54]">
-      <footer className="container flex  flex-col md:flex-row   mx-auto items-stretch	justify-between	 pt-8 max-w-[1366px] min-h-[420px] text-[#f2fcf8]">
-        <Access />
-        <Common />
-        <Contact />
-        <Trust />
+    <div className="bg-[#3c6e71] pb-10 ">
+      <footer className="container flex  flex-col md:flex-row   mx-auto items-stretch	justify-between	 pt-8 max-w-[1100px] mb-14 text-[#f2fcf8]">
+        <ContactMethod />
+        <FooterLinks />
+        <WorkingTime />
       </footer>
-      <Address />
       <Brand />
     </div>
   );

@@ -1,7 +1,7 @@
 import CourseDetailsPage from "../screens/CourseDetailPage/CourseDetailsPage";
 import TeachersPage from "../screens/TeachersPage/TeachersPage";
 import Landing from "../screens/landing/Landing";
-import {ArticleDetails} from "../screens/ArticleDetails/ArticleDetails";
+import ArticleDetails from "../screens/ArticleDetails/ArticleDetails";
 import Header from "../components/common/Header/Header";
 import Maghalat from "../screens/Maghalat/Maghalat";
 import Login from "../screens/Login/Login";
@@ -31,6 +31,7 @@ import Courses from "../screens/Courses/Courses";
 import ContactUs from "../screens/ContactUs/ContactUs";
 import ConsultaitionReq from "../screens/ConsultaitionReq/ConsultaitionReq";
 import Cart from "../screens/Cart/Cart";
+
 import { SideBar } from "../components/common/SideBar/SideBar";
 import PishKhan from "../screens/Panel2/PishKhan";
 import MyCourses from "../screens/Panel2/MyCourses";
@@ -38,11 +39,14 @@ import { Tiket } from "../screens/Panel2/Tiket";
 import { EditProfile } from "../screens/Panel2/EditProfile";
 import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
 
+import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
+ development
+
 const App = createBrowserRouter([
   {
     path: "/",
     element: <Header />,
-    
+
     children: [
       { path: "/", element: <Landing /> },
       { path: "/course", element: <Courses /> },
@@ -51,13 +55,10 @@ const App = createBrowserRouter([
       { path: "/contact-us", element: <ContactUs /> },
       { path: "/consultation-req", element: <ConsultaitionReq /> },
       { path: "/about-us", element: <AboutUs /> },
-      { path: "/free-learn", element: <p>آموزش های رایگان</p> },
-      { path: "/best-teachers", element: <p>بهترین معلمان</p> },
-      { path: "/gift-code", element: <p>کد تخفیف</p> },
-      { path: "/support", element: <p>پشتیبانی</p> },
       { path: "/Cart", element: <Cart /> },
-      { path: "/ArticalePage", element: <ArticleDetails/> },
-      { path: "/CoursePage", element: <CourseDetailsPage/> },
+      { path: "/ArticalePage", element: <ArticleDetails /> },
+      { path: "/CoursePage", element: <CourseDetailsPage /> },
+      { path: "/teacher-profile", element: <TeachersDetails /> },
     ],
   },
   { path: "/login", element: <Login /> },
