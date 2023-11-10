@@ -2,23 +2,18 @@ import axios from "axios";
 import CourseCard from "../CourseCard/CourseCard";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { getLastCoursesList } from "../../../core/services/api/course";
 
 const CoursesRow = () => {
 
   const [lastCoursesList , setLastCoursesList] = useState([]);
 
-  const getLastCoursesList = async () => {
-    console.log("Fetching started ...");
-    //url => https://api-academy.iran.liara.run/api/Home/GetCoursesTop?Count=5
-
-    const result = await axios.get(
-      "https://api-academy.iran.liara.run/api/Home/GetCoursesTop?Count=4"
-    );
-    console.log(result.data);
-    setLastCoursesList(result.data)
-  }
+  const getList = async () => {
+    const courses = await getLastCoursesList(5);
+    setLastCoursesList(courses.slice(-4))  
+  } 
   useEffect(() =>{
-      getLastCoursesList();
+      getList();
   },[]);
   return (
       <>
