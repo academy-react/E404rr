@@ -1,4 +1,4 @@
-const CourseDetails = () => {
+const CourseDetails = ({cost}) => {
   return (
     <div className="flex justify-between mx-2 items-center py-3 border-t mt-2">
       <div className="flex items-center">
@@ -40,9 +40,14 @@ const CourseDetails = () => {
             </g>
           </svg>
         </span>
+
+        {/* تاریخ */}
         <p className="m-1 text-[12px] text-[#323E73]">7:28:00</p>
       </div>
-      <p className="text-[#23A455] text-[12px]">500,000 تومان</p>
+
+
+      {/* قیمت */}
+      <p className="text-[#23A455] text-[12px]">{cost} تومان</p>
     </div>
   );
 };

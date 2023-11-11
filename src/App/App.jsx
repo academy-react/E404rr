@@ -40,6 +40,7 @@ import { EditProfile } from "../screens/Panel2/EditProfile";
 import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
 
 import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
+import { E404ror } from "../screens/404/E404ror";
 
 
 const App = createBrowserRouter([
@@ -91,7 +92,7 @@ const App = createBrowserRouter([
     ],
   },
 
-  { path: "*", element: <h1 className="text-red-600">Error...</h1> },
+  { path: "*", element: <E404ror/> },
 ]);
 
 export default App;
