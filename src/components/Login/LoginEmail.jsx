@@ -6,16 +6,16 @@ import FormInput from '../common/FormInput'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 
-const LoginEmail = ({ handlePhone }) => {
+const LoginEmail = ({ handlePhone  , loginUser}) => {
   const validation = yup.object({
     email: yup.string().email("ایمیل وارد شده نادرست است.").required("لطفا پر کنید."),
     password: yup.string()
     .required("لطفا پر کنید.")
     .min(8, "اندازه رمز کوتاه است, حداقل ۸ حرف باشد.")
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-      "رمز باید شامل حداقل یک حرف کوچک, یک حرف بزرگ, یک عدد و یک حرف خاص باشد."
-    )
+    // .matches(
+    //   /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+    //   "رمز باید شامل حداقل یک حرف کوچک, یک حرف بزرگ, یک عدد و یک حرف خاص باشد."
+    // )
   })
 
   const [passVisible, setPassVisible] = useState(false)
@@ -26,7 +26,7 @@ const LoginEmail = ({ handlePhone }) => {
   return (
     <Formik 
     initialValues={{ email: '', password: '' }}
-    onSubmit={() => alert('form submited')}
+    onSubmit={loginUser}
     validationSchema={validation}>
 
 
@@ -54,7 +54,7 @@ const LoginEmail = ({ handlePhone }) => {
           <NavLink to="/forget">پسورد را فراموش کردم</NavLink>
         </div>
 
-        <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >ورود</button>
+        <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg'  >ورود</button>
       </Form>
     </Formik>
   )

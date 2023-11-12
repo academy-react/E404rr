@@ -1,8 +1,19 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SliderCart from "./SliderCart";
+import { getTeachers } from "../../core/services/api/Teachers";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Slider() {
+  const [teachersList , setTeachersList] = useState([]);
+  const getList = async () => {
+    const teachers = await getTeachers(5);
+    setTeachersList(teachers)  
+  } 
+  useEffect(() =>{
+      getList();
+  },[]);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -37,12 +48,12 @@ export default function Slider() {
           "mobile",
         ]}
       >
-        <SliderCart />
-        <SliderCart />
-        <SliderCart />
-        <SliderCart />
-        <SliderCart />
-        <SliderCart />
+        
+        {teachersList.map((item , index) => {
+          return(
+            <SliderCart  Name={item.fullName}/>
+          )
+        })}
       </Carousel>
     </>
   );

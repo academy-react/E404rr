@@ -3,12 +3,39 @@ import { useState } from "react";
 import loginImg from "../../assets/img/loginImg.png";
 import LoginEmail from "../../components/Login/LoginEmail";
 import LoginPhone from "../../components/Login/LoginPhone";
+import { loginAPI } from "../../core/services/api/auth";
+import { useEffect } from "react";
+import { setItem } from "../../core/services/common/storage.services.js";
+import { getProfile } from "../../core/services/api/user.js";
 
 const Login = () => {
   const [phone, setPhone] = useState(false);
   const handlePhone = () => {
     setPhone(!phone);
   };
+
+  const loginUser = async () => {
+
+    const userObj = {
+
+      "phoneOrGmail": "masg1377@gmail.com",
+      "password": "123456",
+      "rememberMe": true
+    }
+    const user = await loginAPI(userObj);
+
+    console.log(user.token);
+    setItem('token', user.token);
+  }
+
+  const getProfileFunc = async () => {
+      const user = await getProfile(user);
+      console.log(user)
+  }
+  useEffect(() => {
+      loginUser();
+      getProfileFunc();
+  })
 
   return (
     <div className="flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue">
@@ -27,7 +54,7 @@ const Login = () => {
               </NavLink>
             </div>
 
-            {phone ? <LoginPhone /> : <LoginEmail handlePhone={handlePhone} />}
+            {phone ? <LoginPhone /> : <LoginEmail handlePhone={handlePhone} onSubmit={loginUser}/>}
 
             <div className="flex justify-between mt-5 text-darker-green underline font-semibold">
               <NavLink to="/">بازگشت به صفحه اصلی</NavLink>
