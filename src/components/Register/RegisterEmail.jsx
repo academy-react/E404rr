@@ -5,7 +5,7 @@ import FormInput from '../common/FormInput'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 
-const RegisterEmail = ({ handlePhone }) => {
+const RegisterEmail = () => {
   const validation = yup.object({
     email: yup.string().email("ایمیل وارد شده نادرست است.").required("لطفا پر کنید."),
     password: yup.string()
@@ -33,7 +33,7 @@ const RegisterEmail = ({ handlePhone }) => {
   return (
     <Formik 
       initialValues={{ email: '', password: '', passRepeat: '' }}
-      onSubmit={handlePhone}
+      onSubmit={() => {}}
       validationSchema={validation}>
 
         <Form>

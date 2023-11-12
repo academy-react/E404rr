@@ -4,9 +4,10 @@ import RegisterEmail from '../../components/Register/RegisterEmail'
 import RegisterPhone from '../../components/Register/RegisterPhone'
 
 const Register = () => {
-  const [phone, setPhone] = useState(false)
+  const [phone, setPhone] = useState(true)
   const handlePhone = () => {
     setPhone(!phone)
+    console.log("hello")
   }
 
   return (
@@ -18,8 +19,7 @@ const Register = () => {
               <a href='register' className='bg-white shadow-md shadow-gray-300 px-5 py-1 rounded-2xl'>ثبت نام</a>
               <a href='login' className='px-5 py-1 rounded-2xl'>ورود کاربر</a>
             </div>
-            {phone? <RegisterPhone /> : 
-                    <RegisterEmail handlePhone={handlePhone} />}
+            {phone? <RegisterPhone handlePhone={handlePhone} /> : <RegisterEmail/>}
               <div className='flex justify-between mt-5 text-darker-green underline font-semibold'>
               <a href="#">بازگشت به صفحه اصلی</a>
               <a href="#">ورود کارمندان</a>

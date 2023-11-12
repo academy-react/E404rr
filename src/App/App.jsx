@@ -1,6 +1,7 @@
 import { Header } from '../components/LandingTop/Header';
 import { Courses } from '../screens/Courses/Courses';
 import  {Landing}  from '../screens/landingTop/LandingTop';
+import Register from '../screens/Register/Register.jsx'
 import {
   Route,
   RouterProvider,
@@ -33,7 +34,8 @@ const App = createBrowserRouter([
 
       ]
   },
-  {path:"/login", element: <p>ورود</p>},
+  {path:"/login", element: <Register />},
+  {path:"/register", element: <Register />},
 
   { path: "*", element: <h1 className='text-red-600'>Error...</h1> },
 ]);
