@@ -37,14 +37,16 @@ const LoginEmail = ({ handlePhone, loginUser }) => {
         <p className="m-9 text-xl">وارد حساب کاربری خود شوید</p>
         <div className="relative pb-4 lg:w-[25rem]">
           <Field
-            name="email"
+            name="phoneOrGmail"
             type="text"
             placeholder="ایمیل"
-            component={FormInput}
+            // component={FormInput}
             // value={Formik.value.phoneOrGmail}
+            className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+
           />
           <ErrorMessage
-            name="email"
+            name="phoneOrGmail"
             component={"p"}
             className="absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]"
           />
@@ -56,7 +58,9 @@ const LoginEmail = ({ handlePhone, loginUser }) => {
               name="password"
               type={passVisible ? "text" : "password"}
               placeholder="رمز"
-              component={FormInput}
+              // component={FormInput}
+              className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+
               // value={Formik.value.password}
             />
             <span
