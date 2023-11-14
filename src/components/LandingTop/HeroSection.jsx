@@ -4,6 +4,7 @@ import HeroItems from "./HeroItems";
 import searchImg from "../../assets/img/search.svg";
 
 import SiteIntro from "./SiteIntro";
+import { useState } from "react";
 
 const HeroSection = () => {
   // const styles = useSpring({
@@ -15,13 +16,14 @@ const HeroSection = () => {
   //   },
   // });
 
+
   return (
     <>
       <div className=" max-w-[1250px] mx-auto w-full h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
         <div className="lg:w-1/2 w-full flex flex-col justify-center">
           <SiteIntro />
           <div className="relative  md:w-[450px] mx-auto mt-14">
-            <TextInput type="text" placeholder="جستجو مقاله های مختلف..." />
+            <TextInput type="text" placeholder="جستجو مطالب های مختلف..." />
             <img
               src={searchImg}
               onClick={(v) => console.log(v)}

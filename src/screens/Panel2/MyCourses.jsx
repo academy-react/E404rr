@@ -1,6 +1,6 @@
 import React from 'react'
 import { MyCursesItems } from '../../components/Sidebar/MyCurses/MyCursesItems'
-import CourseCard from "../../components/common/CourseCard/CourseCard";
+import CourseCard from "../../components/common/CourseCard/CourseCardForLanding";
 
 const MyCourses = () => {
   return (

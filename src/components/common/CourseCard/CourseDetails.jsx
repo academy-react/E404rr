@@ -1,4 +1,4 @@
-const CourseDetails = ({cost}) => {
+const CourseDetails = ({cost , cost2}) => {
   return (
     <div className="flex justify-between mx-2 items-center py-3 border-t mt-2">
       <div className="flex items-center">
@@ -47,7 +47,7 @@ const CourseDetails = ({cost}) => {
 
 
       {/* قیمت */}
-      <p className="text-[#23A455] text-[12px]">{cost} تومان</p>
+      <p className="text-[#23A455] text-[12px]">{cost } {cost2}  تومان</p>
     </div>
   );
 };

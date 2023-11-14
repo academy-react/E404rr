@@ -5,7 +5,7 @@ const LastCourses = () => {
 
   return (
     <section>
-      <NavLink title="آخرین دوره ها" path="مشاهده همه دوره ها" />
+      <NavLink title="آخرین دوره ها" path="مشاهده همه دوره ها" url="/Course" />
       <CoursesRow />
     </section>
   );

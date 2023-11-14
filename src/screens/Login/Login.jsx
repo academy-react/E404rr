@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import loginImg from "../../assets/img/loginImg.png";
 import LoginEmail from "../../components/Login/LoginEmail";
@@ -15,27 +15,35 @@ const Login = () => {
   };
 
   const loginUser = async () => {
-
     const userObj = {
+      phoneOrGmail: "",
+      password: "",
+      rememberMe: true,
+    };
 
-      "phoneOrGmail": "masg1377@gmail.com",
-      "password": "123456",
-      "rememberMe": true
-    }
+  
     const user = await loginAPI(userObj);
 
     console.log(user.token);
-    setItem('token', user.token);
-  }
+    setItem("token", user.token);
+    if (user) {
+        navigate("")
+    }
+    else{
+        alert("وارد نشدین")
+    }
+  };
+
+  const navigate = useNavigate();
 
   const getProfileFunc = async () => {
-      const user = await getProfile(user);
-      console.log(user)
-  }
+    const user = await getProfile(user);
+    console.log(user);
+  };
   useEffect(() => {
-      loginUser();
-      getProfileFunc();
-  })
+    loginUser();
+    getProfileFunc();
+  });
 
   return (
     <div className="flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue">
@@ -54,7 +62,11 @@ const Login = () => {
               </NavLink>
             </div>
 
-            {phone ? <LoginPhone /> : <LoginEmail handlePhone={handlePhone} onSubmit={loginUser}/>}
+            {phone ? (
+              <LoginPhone />
+            ) : (
+              <LoginEmail handlePhone={handlePhone} onSubmit={loginUser} />
+            )}
 
             <div className="flex justify-between mt-5 text-darker-green underline font-semibold">
               <NavLink to="/">بازگشت به صفحه اصلی</NavLink>

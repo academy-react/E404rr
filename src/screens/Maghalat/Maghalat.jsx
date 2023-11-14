@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 import Pagination from "../../components/Maghalat/Pagination";
 import TextInput from "../../components/common/TextInput";
@@ -8,6 +8,7 @@ import searchImg from "../../assets/img/search.svg";
 import ArticlesCard from "../../components/ArticlesCard/ArticlesCard";
 import ArticleCategory from "../ArticleDetails/ArticleCategory";
 import ArticlesLast from "../ArticleDetails/ArticlesLast";
+import { getAllNews } from "../../core/services/api/AllNews";
 
 const Maghalat = () => {
   const [items, setItems] = useState([
@@ -45,6 +46,21 @@ const Maghalat = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
 
+
+
+
+
+
+  const [allNewsList , setAllNewsList] = useState([]);
+
+  const getList = async () => {
+    const courses = await getAllNews();
+    setAllNewsList(courses.slice())  
+  } 
+  useEffect(() =>{
+      getList();
+  },[]);
+
   return (
     <>
       <div className="container font-vazir mx-auto px-10 text-center">
@@ -60,16 +76,18 @@ const Maghalat = () => {
         </div>
         <div className="flex container max-w-[1250px] mx-auto justify-between items-start  mb-16 mt-10">
           <div className="flex max-w-[65%] justify-between items-start flex-wrap max-lg:justify-center">
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
-            <ArticlesCard />
+          {allNewsList.map((item , index) => {
+              return(
+                <ArticlesCard 
+                    key={index} 
+                    title={item.categoryName}
+                    minidesc={item.miniDescribe}
+                      img={item.currentImageAddressTumb}
+                      startDate={item.insertDate}
+                />
+              )
+          })}
+
           </div>
           <div className="w-[30%]">
             <ArticleCategory />

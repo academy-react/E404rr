@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard from "../../components/common/CourseCard/CourseCard";
+import CourseCard from "../../components/common/CourseCard/CourseCardForLanding";
 
 const TeachersCourse = () => {
   return (

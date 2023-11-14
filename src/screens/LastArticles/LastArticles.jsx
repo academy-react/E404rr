@@ -4,7 +4,7 @@ import NavLink from "../../components/common/NavLink/NavLink";
 const LastArticles = () => {
   return (
     <div>
-      <NavLink title="آخرین مقالات سایت" path="مشاهده همه مقالات" />
+      <NavLink title="آخرین مقالات سایت" path="مشاهده همه مقالات" url="/blog" />
       <ArticlesRow />
     </div>
   );

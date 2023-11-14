@@ -1,4 +1,4 @@
-import CourseCard from "../CourseCard/CourseCard";
+import CourseCard from "../CourseCard/CourseCardForLanding";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { getLastCoursesList } from "../../../core/services/api/course";
@@ -18,7 +18,7 @@ const CoursesRow = () => {
       <>
             <div className="flex container max-w-[1250px] mx-auto justify-between items-center flex-wrap max-lg:justify-center mb-16 mt-10">
           {lastCoursesList.map((item , index) => {
-              return <CourseCard key={index} title={item.title} desc={item.desc} teacherName={item.teacherName} cost={item.cost} /> ;
+              return <CourseCard key={index} title={item.title} desc={item.desc} teacherName={item.teacherName} cost={item.cost} likeCount={item.likeCount} /> ;
       
           })}
     </div>

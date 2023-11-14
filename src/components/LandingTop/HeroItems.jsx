@@ -8,7 +8,8 @@ import styles from "./HeroSection.module.css";
 const HeroItems = () => {
   return (
     <div
-      className={` ${styles.heroItems} flex mt-10  items-center justify-between max-w-[450px] mx-auto  gap-4 `}
+      className={` ${styles.heroItems} flex mt-10  items-center justify-between  mx-auto  gap-4 `}
+      // max-w-[450px]
     >
       <div className="w-25 h-25 border border-transparent hover:scale-110 ">
   

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const TeachersInfo = () => {
+const TeachersInfo = ({Name}) => {
   const navigate = useNavigate();
   const goTeacherProfile = () => {
     navigate("/teacher-profile");
@@ -9,7 +9,7 @@ const TeachersInfo = () => {
   return (
     <div className="max-lg:mt-10  px-32">
       <p className="text-[#323e73] text-2xl max-lg:text-lg   font-extrabold mb-4">
-        دکتر امیر ابراهیمی
+          {Name}
       </p>
       <p className="text-[#323e73] text-lg max-lg:text-base font-bold mb-3">
         مدیریت
