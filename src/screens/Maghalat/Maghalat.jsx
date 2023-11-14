@@ -12,18 +12,18 @@ import { getAllNews } from "../../core/services/api/AllNews";
 
 const Maghalat = () => {
   const [items, setItems] = useState([
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
-    { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
+    // { title: "مقاله", date: "1400/03/11" },
   ]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
@@ -74,7 +74,7 @@ const Maghalat = () => {
             />
           </div>
         </div>
-        <div className="flex container max-w-[1250px] mx-auto justify-between items-start  mb-16 mt-10">
+        <div className="flex flex-wrap container max-w-[1250px] mx-auto justify-between items-start  mb-16 mt-10">
           <div className="flex max-w-[65%] justify-between items-start flex-wrap max-lg:justify-center">
           {allNewsList.map((item , index) => {
               return(
@@ -92,7 +92,18 @@ const Maghalat = () => {
           <div className="w-[30%]">
             <ArticleCategory />
             <ArticlesLast />
+
+            
           </div>
+          <ul className="border h-auto flex mt-[100px] mb-32  justify-center border-transparent mr-[275px] ">
+        <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center "> {"<"} </li>
+            <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">1</li>
+            <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">2</li>
+            <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">{"..."}</li>
+            <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">10</li>
+            <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">  {">"} </li>
+
+         </ul>
         </div>
       </div>
       <Footer />
