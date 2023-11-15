@@ -11,39 +11,30 @@ import { useParams } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import { rgb } from "@react-spring/shared";
 const Landing = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const ColorRgb = "rgb(22, 163 ,74)";
-  const { id } = useParams();
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+  // const [data, setData] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const ColorRgb = "rgb(22, 163 ,74)";
+  // const { id } = useParams();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        const result = { id, otherData: "..." };
-        setData(result);
-      } catch (error) {
-        console.error("error fetching data :", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  });
+  //       const result = { id, otherData: "..." };
+  //       setData(result);
+  //     } catch (error) {
+  //       console.error("error fetching data :", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // });
   return (
     <>
       <div className=" w-full xl:mx-auto h-auto">
-        {loading ? (
-          <div className="flex items-center justify-center h-[70vh]">
-            <BeatLoader
-              size={25}
-              color={ColorRgb}
-              loading={true}
-              className=""
-            />
-          </div>
-        ) : (
-          <>
+
+          
             <HeroSection />
             <CoursesLogo />
 
@@ -53,8 +44,8 @@ const Landing = () => {
 
             <LastArticles />
             <Footer />
-          </>
-        )}
+          
+        
       </div>
     </>
   );

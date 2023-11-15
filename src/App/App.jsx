@@ -8,7 +8,6 @@ import Login from "../screens/Login/Login";
 import Register from "../screens/Register/Register";
 import ForgetPass from "../screens/ForgetPass/ForgetPass";
 import AboutUs from "../screens/AboutUs/AboutUs";
-
 import {
   Route,
   RouterProvider,
@@ -58,7 +57,7 @@ const App = createBrowserRouter([
       { path: "/about-us", element: <AboutUs /> },
       { path: "/Cart", element: <Cart /> },
       { path: "/ArticalePage", element: <ArticleDetails /> },
-      { path: "/CoursePage", element: <CourseDetailsPage /> },
+      { path: "/CoursePage/:title", element: <CourseDetailsPage /> },
       { path: "/teacher-profile", element: <TeachersDetails /> },
     ],
   },
@@ -93,6 +92,6 @@ const App = createBrowserRouter([
   },
 
   { path: "*", element: <E404ror/> },
-]);
+] );
 
 export default App;
