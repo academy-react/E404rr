@@ -9,6 +9,7 @@ import ArticlesCard from "../../components/ArticlesCard/ArticlesCard";
 import ArticleCategory from "../ArticleDetails/ArticleCategory";
 import ArticlesLast from "../ArticleDetails/ArticlesLast";
 import { getAllNews } from "../../core/services/api/AllNews";
+import axios from "axios";
 
 const Maghalat = () => {
   const [items, setItems] = useState([
@@ -61,12 +62,62 @@ const Maghalat = () => {
       getList();
   },[]);
 
+
+
+  const [searchInput, setSearchInput] = useState('');
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://api-academy.iran.liara.run/api/News/GetListNewsCategory${searchInput}`);
+        setResults(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    // Avoid making unnecessary requests on initial render
+    if (searchInput.trim() !== '') {
+      fetchData();
+    } else {
+      setResults([]); // Clear results when searchInput is empty
+    }
+  }, [searchInput]);
+
   return (
     <>
       <div className="container font-vazir mx-auto px-10 text-center">
         <div className="flex flex-col max-w-[1250px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10">
           <div className="relative w-full md:w-[450px]">
-            <TextInput type="text" placeholder="جستجو مقاله های مختلف..." />
+            {/* <TextInput type="text" placeholder="جستجو مقاله های مختلف..." /> */}
+
+
+            <input
+        id="searchInput"
+        value={searchInput}
+        placeholder={"خبر مورد نظر خود را سرچ کنید"}
+        type={"text"}
+        onChange={(e) => setSearchInput(e.target.value)}
+        className="focus:outline-none w-full px-6 py-2 shadow-md focus:placeholder:opacity-0 shadow-gray-200 rounded-lg placeholder-darker-green"
+      />
+
+      {(searchInput.trim() !== '' && results.length > 0) && (
+        <div className="absolute bg-white w-[300px] h-[200px]">
+          <ul>
+            {results.map((item, index) => (
+              <>
+              <li key={index}>{item.categoryName}</li>
+              </>
+            ))}
+          </ul>
+        </div>
+      )}
+
+
+
+
+
             <img
               src={searchImg}
               onClick={(v) => console.log(v)}
