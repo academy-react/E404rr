@@ -3,7 +3,7 @@ import React from 'react'
 const PishKhanItems = () => {
   return (
         <>
-                        <div className='flex flex-wrap border border-transparent mt-[50px] '>
+                        <div className='flex flex-wrap border border-transparent mt-[50px] ' data-aos="fade-up">
                 <div className="w-[240px] h-[84px] bg-yellow-500 border border-transparent rounded-xl mr-[30px] flex items-center ">
                     <div className='w-[68px] h-[68px] border border-transparent mr-[5px] rounded-xl bg-white bg-opacity-20 flex items-center justify-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[36px] h-[36px] text-white">

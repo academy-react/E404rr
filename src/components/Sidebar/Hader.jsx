@@ -48,9 +48,18 @@ const Hader = () => {
                                     </svg>
                             </div>
 
-                                   {isModalOpen && (
+    
+
+                            </div>
+                        </div>
+
+
+                        
+                    </header>
+
+                    {isModalOpen && (
                                     <>
-                                            <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div>
+                                            <div className='fixed top-0 left-0 w-[1366px] ml-[-40px] h-full backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div>
                                             <div className="absolute mt-[10px] left-10 w-[384px] h-[145px] bg-white rounded-2xl border border-transparent shadow    ">
                                     
                                     <div className="relative ">
@@ -70,10 +79,6 @@ const Hader = () => {
                                     </>
         
                                  )}
-
-                            </div>
-                        </div>
-                    </header>
         </>
   )
 }

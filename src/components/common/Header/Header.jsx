@@ -5,6 +5,8 @@ import HeaderLeft from "./HeaderLeft";
 import MobileNav from "./MobileNav";
 import { useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   const [data, setData] = useState(null);
@@ -32,9 +34,15 @@ const Header = () => {
     fetchData();
   }, [id, location.key]);  
 
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <>
-      <nav className="container max-w-[1250px] mx-auto mt-3 h-[70px] flex items-center justify-between px-14 mb-10 rounded-lg bg-[#f3fcf8]">
+      <nav   data-aos="fade-up"   className="container max-w-[1250px] mx-auto mt-3 h-[70px] flex items-center justify-between px-14 mb-10 rounded-lg bg-[#f3fcf8]">
         <MobileNav />
         <Logo />
         <HeaderNav />
@@ -50,6 +58,8 @@ const Header = () => {
           <Outlet />
         </>
       )}
+
+
     </>
   );
 };

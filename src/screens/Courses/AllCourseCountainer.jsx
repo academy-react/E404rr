@@ -15,7 +15,7 @@ const AllCourseCountainer = () => {
       getList();
   },[]);
   return (
-    <div className="flex flex-wrap max-w-[900px] items-start justify-between mt-8">
+    <div className="flex flex-wrap max-w-[900px] items-start justify-between mt-8" data-aos="fade-up">
         {CoursesList.map((item , index) => {
                 return(
                   <CourseCardForAllCourse 

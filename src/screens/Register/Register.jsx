@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import registerImg from '../../assets/img/registerImg.png'
 import RegisterEmail from '../../components/Register/RegisterEmail'
 import RegisterPhone from '../../components/Register/RegisterPhone'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
@@ -10,8 +12,14 @@ const Register = () => {
     console.log("hello")
   }
 
+  
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className='flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue'>
+    <div className='flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue' data-aos="fade-up">
       <div className="w-full md:w-max bg-[url('assets/img/background.png')] bg-cover p-4 mx-6 rounded-2xl overflow-hidden">
         <div className="flex flex-col md:gap:5 lg:gap-12 md:flex-row mx-6">
           <div className="flex flex-col justify-center text-center min-w-[15rem]">

@@ -6,7 +6,7 @@ import CourseOpinions from "./CourseOpinions";
 
 const CourseDetailBody = () => {
   return (
-    <div className=" bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white rounded-3xl px-10 py-8 mt-10">
+    <div className=" bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white rounded-3xl px-10 py-8 mt-10" data-aos="fade-up">
       <div className="flex items-center   gap-10 ">
         <div className="text-2xl text-[#323E73] font-black">درباره دوره</div>
         <div className="text-2xl text-[#323E73] font-black">مدرس دوره</div>

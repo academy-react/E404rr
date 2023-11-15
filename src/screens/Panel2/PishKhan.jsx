@@ -6,8 +6,10 @@ import { Pishkhanqus } from '../../components/Sidebar/PishKhan/Pishkhanqus';
 const PishKhan = () => {
   return (
         <>
-            <PishKhanItems/>
+         
+          <PishKhanItems/>
             <Pishkhanqus/>
+      
             
         </>
   )

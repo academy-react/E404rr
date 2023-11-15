@@ -42,6 +42,7 @@ import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
 import { E404ror } from "../screens/404/E404ror";
 
 
+
 const App = createBrowserRouter([
   {
     path: "/",
@@ -57,7 +58,7 @@ const App = createBrowserRouter([
       { path: "/about-us", element: <AboutUs /> },
       { path: "/Cart", element: <Cart /> },
       { path: "/ArticalePage", element: <ArticleDetails /> },
-      { path: "/CoursePage/:title", element: <CourseDetailsPage /> },
+      { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
       { path: "/teacher-profile", element: <TeachersDetails /> },
     ],
   },
@@ -66,13 +67,13 @@ const App = createBrowserRouter([
   { path: "/forget", element: <ForgetPass /> },
 
   {
-    path: "/panel",
+    path: "/panel2",
     element: <Navbar />,
     children: [
-      { path: "/panel", element: <Dashbord /> },
-      { path: "/panel/listcurses", element: <Listcurses /> },
-      { path: "/panel/editprofile", element: <Panel /> },
-      { path: "/panel/mycurses", element: <Mylistcurses /> },
+      { path: "/panel2", element: <Dashbord /> },
+      { path: "/panel2/listcurses", element: <Listcurses /> },
+      { path: "/panel2/editprofile", element: <Panel /> },
+      { path: "/panel2/mycurses", element: <Mylistcurses /> },
     ],
   },
 
@@ -80,14 +81,14 @@ const App = createBrowserRouter([
 
   // پیشخوان
   {
-    path: "/panel2",
+    path: "/panel",
     element: <SideBar/>,
     children: [
-      { path: "/panel2" , element: <PishKhan/> },
-      { path: "/panel2/2", element:<MyCourses/> },
-      { path: "/panel2/3", element: <Tiket/> },
-      { path: "/panel2/4", element: <EditProfile/> },
-      { path: "/panel2/Addticket", element: <Addtiket/> },
+      { path: "/panel" , element: <PishKhan/> },
+      { path: "/panel/2", element:<MyCourses/> },
+      { path: "/panel/3", element: <Tiket/> },
+      { path: "/panel/4", element: <EditProfile/> },
+      { path: "/panel/Addticket", element: <Addtiket/> },
     ],
   },
 

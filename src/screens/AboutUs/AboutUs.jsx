@@ -8,8 +8,8 @@ import Footer from "../../components/common/footer/Footer";
 const AboutUs = () => {
   return (
     <>
-      <div className="container max-w-[1250px] mx-auto px-10 mb-20">
-        <div className="flex items-center justify-between">
+      <div className="container max-w-[1250px] mx-auto px-10 mb-20"   data-aos="fade-up">
+        <div className="flex items-center justify-between"   data-aos="fade-up">
           <div className="w-1/2">
             <div className="flex items-center">
               <div className="w-[70px] h-[70px] ">
@@ -33,7 +33,8 @@ const AboutUs = () => {
             <img className="w-full rounded-lg" src={about1} alt="" />
           </div>
         </div>
-        <div className="container flex items-center justify-between  bg-[#f3fcf8] rounded-3xl px-28 py-6 mt-10 text-center text-[#323e73] font-bold ">
+        <div   data-aos="fade-up"
+         className="container flex items-center justify-between  bg-[#f3fcf8] rounded-3xl px-28 py-6 mt-10 text-center text-[#323e73] font-bold ">
           <div>
             <p className="text-2xl my-5 ">محصولات</p>
             <p className="text-lg">61</p>
@@ -51,7 +52,7 @@ const AboutUs = () => {
             <p className="text-lg">18</p>
           </div>
         </div>
-        <div className="flex items-center justify-between mt-20">
+        <div className="flex items-center justify-between mt-20"   data-aos="fade-up">
           <div className="w-1/2 px-10">
             <div>
               <img className="w-full" src={about2} alt="" />

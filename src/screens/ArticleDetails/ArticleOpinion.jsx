@@ -3,14 +3,14 @@ import python from "../../assets/img/python.png";
 
 const ArticleOpinion = () => {
   return (
-    <div className="px-10 mt-10 text-[#323E73]">
-      <div className="flex items-center">
+    <div className="px-10 mt-10 text-[#323E73]" data-aos="fade-up">
+      <div className="flex items-center" data-aos="fade-up">
         <img className="w-[60px]" src={python} alt="" />
         <p className="text-3xl mx-3 font-black">دیدگاه شما</p>
       </div>
       <p className="mt-5">پذیرای نظرات و پیشنهادات شما عزیزان هستیم.</p>
-      <div className="border-2 border-[#ccc] rounded-3xl px-8 py-8 mt-10">
-        <textarea
+      <div className="border-2 border-[#ccc] rounded-3xl px-8 py-8 mt-10" data-aos="fade-up">
+        <textarea 
           className="bg-[#f7f6f6] min-h-[200px] max-h-[200px]  w-full py-5 px-3 rounded-2xl focus:outline-none  focus:placeholder:opacity-0"
           name=""
           id=""

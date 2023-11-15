@@ -7,8 +7,8 @@ import Footer from "../../components/common/footer/Footer";
 const TeachersDetails = () => {
   return (
     <>
-      <div className="container max-w-[1250px] mx-auto mt-20 flex items-start mb-10 justify-between px-20">
-        <div className="w-[60%]">
+      <div className="container max-w-[1250px] mx-auto mt-20 flex items-start mb-10 justify-between px-20" data-aos="fade-up">
+        <div className="w-[60%]" data-aos="fade-up">
           <div>
             <p className="text-gray-500 text-lg font-black">مدرس</p>
             <p className="text-4xl font-black mt-3">علی منصوریان</p>
@@ -29,7 +29,7 @@ const TeachersDetails = () => {
           <AboutTeacher />
           <TeachersCourse />
         </div>
-        <div className="w-[30%]">
+        <div className="w-[30%]" data-aos="fade-up">
           <TeacherAvatar />
           <div className="flex flex-col gap-6 mt-14">
             <div className="flex items-center justify-center px-6 py-4 p-2 shadow-sm  shadow-slate-300 rounded-2xl gap-3">

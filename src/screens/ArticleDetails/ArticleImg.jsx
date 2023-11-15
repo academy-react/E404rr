@@ -3,7 +3,7 @@ import img from "../../assets/img/ArticleDetails/Article.png";
 
 const ArticleImg = () => {
   return (
-    <div className="text-[#323E73]">
+    <div className="text-[#323E73]" data-aos="fade-up">
       <div>
         <img className="rounded-3xl max-w-[888px] h-auto" src={img} alt="" />
         <div className="flex items-center justify-between px-14 mt-8  bg-gradient-to-bl from-[#f3fcf8] to-white rounded-2xl   ">

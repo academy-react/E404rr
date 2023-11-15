@@ -3,8 +3,8 @@ import python from "../../assets/img/python.png";
 
 const ArticleCategory = () => {
   return (
-    <div>
-      <div className="flex items-center text-white bg-[#23A455] text-xl max-w-[300px] font-bold py-4 px-6 rounded-3xl">
+    <div     data-aos="fade-up">
+      <div className="flex items-center text-white bg-[#23A455] text-xl max-w-[300px] font-bold py-4 px-6 rounded-3xl" data-aos="fade-up">
         دسته بندی
       </div>
       <div className="mt-5 bg-gradient-to-bl from-[#f3fcf8] to-white rounded-3xl px-6 py-4 max-w-[300px] text-[#323E73]">

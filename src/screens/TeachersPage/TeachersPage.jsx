@@ -17,7 +17,7 @@ const TeachersPage = () => {
   },[]);
   return (
     <>
-      <div>
+      <div data-aos="fade-up">
       <TeachersTitle />
         {allTeacherList.map((item , index) => {
             return(

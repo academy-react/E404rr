@@ -62,6 +62,7 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
   
       <div
         className={`${styles.courseCard} hover:scale-105     w-[287.5px]  max-lg:mx-10 max-xl:my-10 rounded mb-8 `}
+        data-aos="fade-up"
       >
 
 <div>

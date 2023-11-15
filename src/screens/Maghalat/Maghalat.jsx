@@ -87,13 +87,13 @@ const Maghalat = () => {
 
   return (
     <>
-      <div className="container font-vazir mx-auto px-10 text-center">
-        <div className="flex flex-col max-w-[1250px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10">
-          <div className="relative w-full md:w-[450px]">
+      <div className="container font-vazir mx-auto px-10 text-center" data-aos="fade-up">
+        <div className="flex flex-col max-w-[1250px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10"data-aos="fade-up">
+          <div className="relative w-full md:w-[450px]" data-aos="fade-up">
             {/* <TextInput type="text" placeholder="جستجو مقاله های مختلف..." /> */}
 
 
-            <input
+            <input 
         id="searchInput"
         value={searchInput}
         placeholder={"خبر مورد نظر خود را سرچ کنید"}
@@ -125,7 +125,7 @@ const Maghalat = () => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap container max-w-[1250px] mx-auto justify-between items-start  mb-16 mt-10">
+        <div className="flex flex-wrap container max-w-[1250px] mx-auto justify-between items-start  mb-16 mt-10"data-aos="fade-up">
           <div className="flex max-w-[65%] justify-between items-start flex-wrap max-lg:justify-center">
           {allNewsList.map((item , index) => {
               return(
@@ -141,18 +141,20 @@ const Maghalat = () => {
 
           </div>
           <div className="w-[30%]">
-            <ArticleCategory />
+          <ArticleCategory />
             <ArticlesLast />
 
             
           </div>
-          <ul className="border h-auto flex mt-[100px] mb-32  justify-center border-transparent mr-[275px] ">
-        <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center "> {"<"} </li>
+          <ul className="border h-auto flex mt-[100px] mb-32  justify-center border-transparent mr-[275px] " >
+   
+            <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center " > {"<"} </li>
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">1</li>
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">2</li>
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">{"..."}</li>
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">10</li>
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">  {">"} </li>
+    
 
          </ul>
         </div>

@@ -19,7 +19,8 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className=" max-w-[1250px] mx-auto w-full h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] ">
+      <div className=" max-w-[1250px] mx-auto w-full h-[400px] border border-transparent  rounded-lg xl:mt-9 mt-5 flex flex-row bg-[#f3fcf8] "
+       data-aos="fade-up">
         <div className="lg:w-1/2 w-full flex flex-col justify-center">
           <SiteIntro />
           <div className="relative  md:w-[450px] mx-auto mt-14">

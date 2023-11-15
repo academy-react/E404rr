@@ -26,7 +26,7 @@ const EditProfile = () => {
                         </Form>
                     </Formik> */}
 
-                    <div className="flex flex-wrap border border-transparent pb-5">
+                    <div className="flex flex-wrap border border-transparent pb-5" data-aos="fade-up">
                         
                           <div className='flex w-[80%] h-auto border mx-auto mt-[50px] border-transparent '>
                             <div className='border border-transparent rounded-full w-[120px] h-[120px] '>

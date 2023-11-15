@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 const Addtiket = () => {
   return (
         <>
-            <div className='w-[90%] h-auto pb-5  bg-white rounded-2xl mx-auto mt-[60px] '>
+            <div className='w-[90%] h-auto pb-5  bg-white rounded-2xl mx-auto mt-[60px] ' data-aos="fade-up">
                 <div className='w-[95%] mx-auto border-b  h-auto p-3'>
                     <h3 className='text-[22px] mr-[-10px] '> ارسال تیکت</h3>
                 </div>

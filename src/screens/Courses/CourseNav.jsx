@@ -3,6 +3,7 @@ import TextInput from "../../components/common/TextInput";
 import searchImg from "../../assets/img/search.svg";
 import axios from "axios";
 
+
 const Part5 = () => {
 
 
@@ -28,7 +29,7 @@ const Part5 = () => {
   }, [searchInput]);
 
   return (
-    <div className="bg-[#f3fcf8] container max-w-[1250px] mx-auto rounded-lg py-3 px-10 flex justify-start">
+    <div className="bg-[#f3fcf8] container max-w-[1250px] mx-auto rounded-lg py-3 px-10 flex justify-start " data-aos="fade-up">
       <div className="relative  md:w-[450px] ">
         {/* <TextInput type="text" placeholder="جستجو مقاله های مختلف..." /> */}
 

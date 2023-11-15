@@ -2,7 +2,7 @@ import React from "react";
 
 const WillLearn = () => {
   return (
-    <div className="flex flex-col mt-10 border-2 border-[#ccc] rounded-3xl px-10 py-8">
+    <div className="flex flex-col mt-10 border-2 border-[#ccc] rounded-3xl px-10 py-8" data-aos="fade-up">
       <p className="text-2xl">چه چیز هایی خواید آموخت</p>
       <div className="mt-3">
         <div className="flex items-center gap-2 my-3">

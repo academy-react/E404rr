@@ -5,7 +5,7 @@ import img from "../../assets/img/Landing/02.png";
 const Cart = () => {
   return (
     <>
-      <div className="container max-w-[1250px] mx-auto mb-20 flex justify-between items-start ">
+      <div className="container max-w-[1250px] mx-auto mb-20 flex justify-between items-start "   data-aos="fade-up">
         <div className="w-[60%] border-2 px-12 py-10 rounded-3xl bg-[#bbdecf7e]">
           <div className="flex justify-between items-center  pb-4 mt-4 text-[#323E73] bg-[#f3fcf8] px-6 py-4 rounded-3xl text-lg font-bold">
             <div className=" rounded-lg w-40">

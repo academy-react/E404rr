@@ -3,7 +3,7 @@ import NavLink from "../../components/common/NavLink/NavLink";
 
 const LastArticles = () => {
   return (
-    <div>
+    <div   data-aos="fade-up"  >
       <NavLink title="آخرین مقالات سایت" path="مشاهده همه مقالات" url="/blog" />
       <ArticlesRow />
     </div>

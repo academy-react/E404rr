@@ -4,7 +4,7 @@ import AboutCourse from "./AboutCourse";
 
 const CourseHero = () => {
   return (
-    <div className=" bg-[#1c543b] px-20 rounded-3xl">
+    <div className=" bg-[#1c543b] px-20 rounded-3xl" data-aos="fade-up">
       <div className=" flex items-center justify-between ">
         <div className="max-w-[35%] ">
           <h2 className="text-5xl my-4 font-black text-white">متخصص فلاتر</h2>

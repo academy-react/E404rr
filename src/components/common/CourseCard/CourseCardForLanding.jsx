@@ -46,12 +46,13 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
 
   const navigate = useNavigate();
   const goCourse = () => {
-    navigate(`/CoursePage/${title}`);
+    navigate(`/CoursePage/:id`);
   };
 
   return (
     <div
       className={`${styles.courseCard} hover:scale-105     w-[287.5px]  max-lg:mx-10 max-xl:my-10 rounded mb-8 `}
+      data-aos="fade-up"
     >
       <div>
         <img src={poster} alt="" />

@@ -6,7 +6,7 @@ import img from "../../assets/img/consultational.jpg";
 const ConsultaitionReq = () => {
   return (
     <>
-      <div className="container max-w-[1250px] mx-auto flex xl:justify-between justify-center mb-20 items-center">
+      <div   data-aos="fade-up"  className="container max-w-[1250px] mx-auto flex xl:justify-between justify-center mb-20 items-center">
         <div className="xl:w-1/2 w-full text-[#323e73]">
           <p className="text-center text-4xl font-extrabold mt-8">
             در کنار شما هستیم

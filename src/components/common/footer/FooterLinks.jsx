@@ -1,5 +1,6 @@
 import React from "react";
 import lamp from "../../../assets/img/lamp.png";
+import { NavLink } from "react-router-dom";
 
 const FooterLinks = () => {
   return (
@@ -8,10 +9,10 @@ const FooterLinks = () => {
         <img className="w-[50px]" src={lamp} alt="" />
         <p className="text-4xl font-black">پیوندها</p>
       </div>
-      <p>صفحه اصلی</p>
-      <p> دوره ها</p>
-      <p>درباره ما</p>
-      <p>تماس با ما</p>
+      <NavLink to="/">صفحه اصلی</NavLink>
+      <NavLink to="/Course"> دوره ها</NavLink>
+      <NavLink to="/about-us">درباره ما</NavLink>
+      <NavLink to="/contact-us">تماس با ما</NavLink>
     </div>
   );
 };
