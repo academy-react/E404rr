@@ -41,7 +41,7 @@ const CourseDetailsPage = () => {
     <>
       <div className="mb-10 max-w-[1250px] mx-auto" data-aos="fade-up">
 
-        <p>title : {{_id}.courseId}</p>
+        <p>title : {course?.teacherName}</p>
         <CourseHero />
         <WillLearn />
         <CourseDetailBody />

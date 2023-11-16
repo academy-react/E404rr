@@ -46,7 +46,7 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
 
   const navigate = useNavigate();
   const goCourse = () => {
-    navigate(`/CoursePage/:id`);
+    navigate(`/CoursePage/:${id}`);
   };
 
   return (
