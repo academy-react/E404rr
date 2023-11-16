@@ -41,25 +41,16 @@ const Hader = () => {
   
                                    </div> */}
                                    {/* مدال اعلان ها */}
-                            <div className='relative '>
+                            <div className='relative z-[500]'>
                             <div onClick={openModal} className="w-[56px] h-[56px]  border border-transparent rounded-full bg-white ml-[15px] flex items-center justify-center   ">
                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  text-gray-700">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                     </svg>
                             </div>
 
-    
-
-                            </div>
-                        </div>
-
-
-                        
-                    </header>
-
-                    {isModalOpen && (
+                            {isModalOpen && (
                                     <>
-                                            <div className='fixed top-0 left-0 w-[1366px] ml-[-40px] h-full backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div>
+                                            <div className='fixed top-0 left-0 w-[1366px] ml-[-40px] mt-[-50px] h-[109%]  backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div>
                                             <div className="absolute mt-[10px] left-10 w-[384px] h-[145px] bg-white rounded-2xl border border-transparent shadow    ">
                                     
                                     <div className="relative ">
@@ -79,6 +70,15 @@ const Hader = () => {
                                     </>
         
                                  )}
+
+                            </div>
+                        </div>
+
+
+                        
+                    </header>
+
+
         </>
   )
 }
