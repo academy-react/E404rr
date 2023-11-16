@@ -14,9 +14,9 @@ const MobileNav = () => {
         for="toggle_nav"
         class={`${styles.labelToggleNav} absolute top-[-10px]`}
       >
-        <span className={` ${styles.line} ${styles.lineTop} `}></span>
-        <span className={` ${styles.line} lineMid `}></span>
-        <span className={` ${styles.line} lineBottom `}></span>
+        <span className={` ${styles.line} ${styles.lineTop}   text-green-600`} ></span>
+        <span className={` ${styles.line} lineMid   text-green-600`}></span>
+        <span className={` ${styles.line} lineBottom  text-green-600`}></span>
       </label>
       <ul className={` ${styles.listNavMobile} `}>
         <NavItems />

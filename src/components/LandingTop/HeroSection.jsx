@@ -23,7 +23,7 @@ const HeroSection = () => {
        data-aos="fade-up">
         <div className="lg:w-1/2 w-full flex flex-col justify-center">
           <SiteIntro />
-          <div className="relative  md:w-[450px] mx-auto mt-14">
+          <div className="relative  md:w-[450px] w-[350px] mx-auto mt-14">
             <TextInput type="text" placeholder="جستجو مطالب های مختلف..." />
             <img
               src={searchImg}

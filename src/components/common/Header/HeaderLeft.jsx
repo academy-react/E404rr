@@ -67,7 +67,7 @@ const HeaderLeft = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6 border-1 max-lg:w-4 max-lg:h-4 border-[#000]  stroke-white fill-white "
+            className="w-6 h-6 border-1  border-[#000]  stroke-white fill-white "
           >
             <path
               fillRule="evenodd"
