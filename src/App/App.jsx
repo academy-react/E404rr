@@ -45,6 +45,8 @@ import CourseSummary from "../screens/CourseDetailPage/CourseSummary"
 import TeacherSummary from "../screens/CourseDetailPage/TeacherSummary"
 import CourseTopics from "../screens/CourseDetailPage/CourseTopics"
 import CourseOpinions from "../screens/CourseDetailPage/CourseOpinions"
+import { About } from "../screens/ArticleDetails/detailskid/About";
+import { Comment } from "../screens/ArticleDetails/detailskid/Comment";
 
 
 
@@ -62,7 +64,11 @@ const App = createBrowserRouter([
       { path: "/consultation-req", element: <ConsultaitionReq /> },
       { path: "/about-us", element: <AboutUs /> },
       { path: "/Cart", element: <Cart /> },
-      { path: "/ArticalePage", element: <ArticleDetails />  },
+      { path: "/ArticalePage/:id", element: <ArticleDetails />, children :[
+          {path: "/ArticalePage/:id", element : <About/>},
+          {path: "/ArticalePage/:id/comment", element : <Comment/>}
+
+      ] },
       { path: "/CoursePage/:id", element: <CourseDetailsPage /> ,children: [
         {path: "/CoursePage/:id" , element : <CourseSummary/>},
         {path: "/CoursePage/:id/modares" , element : <TeacherSummary/>},

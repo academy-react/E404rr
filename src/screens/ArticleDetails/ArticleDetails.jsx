@@ -12,7 +12,7 @@ const ArticleDetails = () => {
         <div className="w-[65%]" data-aos="fade-up">
         <ArticleImg />
         <ArticleBody />
-          <ArticleOpinion />
+        <ArticleOpinion />
         </div>
         <div className="w-[30%]" data-aos="fade-up">
         <ArticleCategory />
