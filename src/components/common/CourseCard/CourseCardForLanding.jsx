@@ -46,7 +46,7 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
 
   const navigate = useNavigate();
   const goCourse = () => {
-    navigate(`/CoursePage/:${id}`);
+    navigate(`/CoursePage/${id}`);
   };
 
   return (
@@ -160,7 +160,6 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
           </svg>
           <span className=" cursor-pointer" onClick={goCourse}>
             مطالعه
-            {id}
           </span>
         </div>
       </div>
