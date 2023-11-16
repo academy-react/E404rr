@@ -61,4 +61,4 @@ const CourseSummary = () => {
   );
 };
 
-export default CourseSummary;
+export default CourseSummary 

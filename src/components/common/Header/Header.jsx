@@ -19,6 +19,7 @@ const YourDiv = tw.div`
   text-white
   p-4
   cursor-pointer
+  transition-all
    
 `;
 
@@ -83,7 +84,7 @@ const Header = () => {
     <>
       <nav
         data-aos="fade-up"
-        className="container  max-w-[1250px] mx-auto mt-3 h-[70px] flex items-center justify-between px-14 mb-10 rounded-lg bg-[#f3fcf8]"
+        className="container   max-w-[1250px] mx-auto mt-3 h-[70px] flex items-center justify-between px-14 mb-10 rounded-lg bg-[#f3fcf8]"
       >
         <MobileNav />
         <Logo />
@@ -91,7 +92,7 @@ const Header = () => {
         <HeaderLeft />
       </nav>
 
-      <YourDiv show={showDiv} onClick={scrollToTop} className={showDiv ? ``  : `  hidden
+      <YourDiv    data-aos="fade-up" show={showDiv} onClick={scrollToTop} className={showDiv ? ``  : `  hidden transition-all
   z-50
   bottom-8
   right-8

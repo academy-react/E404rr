@@ -2,8 +2,14 @@ import React from "react";
 
 const ArticleBody = () => {
   return (
-    <div className=" px-14 flex flex-col py-10 mt-10 rounded-3xl bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white" data-aos="fade-up">
-      <div className="px-10 flex items-center gap-7 text-2xl mb-7" data-aos="fade-up">
+    <div
+      className=" px-14 flex flex-col py-10 mt-10 rounded-3xl bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white"
+      data-aos="fade-up"
+    >
+      <div
+        className="px-10 flex items-center gap-7 text-2xl mb-7"
+        data-aos="fade-up"
+      >
         <button className="py-2 border-b-2  border-[#323E73] ">
           <p>توضیحات</p>
         </button>
@@ -11,7 +17,10 @@ const ArticleBody = () => {
           <p>دیدگاه ها</p>
         </button>
       </div>
-      <div className=" border-2 border-[#ccc] rounded-3xl p-6" data-aos="fade-up">
+      <div
+        className=" border-2 border-[#ccc] rounded-3xl p-6"
+        data-aos="fade-up"
+      >
         <article className="leading-10 ">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
@@ -25,7 +34,10 @@ const ArticleBody = () => {
           سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
         </article>
       </div>
-      <div className="mt-6 flex items-center justify-between border-1 border-t pt-8" data-aos="fade-up">
+      <div
+        className="mt-6 flex items-center justify-between border-1 border-t pt-8"
+        data-aos="fade-up"
+      >
         <p>توسط : مهدیار شیرزاد</p>
         <div className="flex items-center justify-between ">
           <svg

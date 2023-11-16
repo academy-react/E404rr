@@ -41,6 +41,11 @@ import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
 import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
 import { E404ror } from "../screens/404/E404ror";
 
+import CourseSummary from "../screens/CourseDetailPage/CourseSummary"
+import TeacherSummary from "../screens/CourseDetailPage/TeacherSummary"
+import CourseTopics from "../screens/CourseDetailPage/CourseTopics"
+import CourseOpinions from "../screens/CourseDetailPage/CourseOpinions"
+
 
 
 const App = createBrowserRouter([
@@ -57,8 +62,16 @@ const App = createBrowserRouter([
       { path: "/consultation-req", element: <ConsultaitionReq /> },
       { path: "/about-us", element: <AboutUs /> },
       { path: "/Cart", element: <Cart /> },
-      { path: "/ArticalePage", element: <ArticleDetails /> },
+      { path: "/ArticalePage", element: <ArticleDetails />  },
+      { path: "/CoursePage/:id", element: <CourseDetailsPage /> ,children: [
+        {path: "/CoursePage/:id" , element : <CourseSummary/>},
+        {path: "/CoursePage/:id/modares" , element : <TeacherSummary/>},
+        {path: "/CoursePage/:id/sarfasl" , element : <CourseTopics/>},
+        {path: "/CoursePage/:id/comment" , element : <CourseOpinions/>},
+      ] },
       { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
+      { path: "/teacher-profile", element: <TeachersDetails /> },
+  
       { path: "/teacher-profile", element: <TeachersDetails /> },
     ],
   },
