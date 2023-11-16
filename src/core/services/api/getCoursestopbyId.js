@@ -8,6 +8,7 @@ const GetCourseById = async (id) => {
     return result.data.result;;
   } catch (error) {
     console.log(error);
+    console.log(id + "id");
   }
 };
 
