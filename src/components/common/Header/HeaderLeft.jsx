@@ -4,7 +4,7 @@ import ShoppingNum from "./ShoppingNum";
 
 const HeaderLeft = () => {
   return (
-    <div className="flex">
+    <div className="flex"   data-aos="fade-up">
       <NavLink to="/Cart">
         <div className="p-3 relative mx-2 bg-[#23A455] rounded-full flex cursor-pointer ">
           <svg

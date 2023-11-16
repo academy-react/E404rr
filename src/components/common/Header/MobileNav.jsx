@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 
 const MobileNav = () => {
   return (
-    <div className={`${styles.navMobile} relative text-[14px]  text-[#323E73]`}>
+    <div className={`${styles.navMobile} relative text-[14px]  text-[#323E73]`} >
       <input
         className={`${styles.toggleNav} hidden`}
         id="toggle_nav"
