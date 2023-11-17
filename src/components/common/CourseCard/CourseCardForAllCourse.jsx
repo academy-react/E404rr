@@ -8,7 +8,7 @@ import poster from "../../../assets/img/Landing/02.png";
 
 import styles from "./CourseCard.module.css";
 
-const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount  }) => {
+const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount , id}) => {
 
   const [isClicked , setIsClicked] = useState(false); 
   const [isClicked2 , setIsClicked2] = useState(false); 
@@ -55,7 +55,7 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
 
   const navigate = useNavigate();
   const goCourse = () => {
-    navigate("/CoursePage");
+    navigate(`/CoursePage/${id}`);
   };
 
   return (

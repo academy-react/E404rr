@@ -24,6 +24,7 @@ const ArticlesRow = () => {
               minidesc={item.miniDescribe}
                img={item.currentImageAddressTumb}
                 startDate={item.insertDate}
+                id={item.id}
                   /> 
         })}
     </div>

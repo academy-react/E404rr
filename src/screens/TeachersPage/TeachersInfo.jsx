@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const TeachersInfo = ({Name}) => {
+const TeachersInfo = ({Name , id}) => {
   const navigate = useNavigate();
   const goTeacherProfile = () => {
-    navigate("/teacher-profile");
+    navigate(`/teachers/profile/${id}`);
   };
   return (
     <div className="max-lg:mt-10  px-32">
@@ -45,11 +45,11 @@ const TeachersInfo = ({Name}) => {
           </g>
         </svg>
       </p>
-      <NavLink onClick={goTeacherProfile}>
-        <button className="bg-[#1c543b] mt-8 px-6 py-4 text-white rounded-3xl">
+      {/* <NavLink onClick={goTeacherProfile}> */}
+        <button onClick={goTeacherProfile} className="bg-[#1c543b] mt-8 px-6 py-4 text-white rounded-3xl">
           نمایش پروفایل
         </button>
-      </NavLink>
+      {/* </NavLink> */}
     </div>
   );
 };

@@ -17,7 +17,7 @@ const Courses = () => {
     <>
       <CourseNav />
       <div className="container max-w-[1255px] mx-auto flex-wrap flex justify-between items-start">
-        <CourseFilter />
+      <CourseFilter />
         <AllCourseCountainer/>
  
         <ul className="border h-auto flex mt-[100px] mb-32 w-full justify-center border-transparent mr-[50px] ">

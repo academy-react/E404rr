@@ -10,7 +10,7 @@ const NavItems = () => {
       <NavLink className={activeClass} to="/Course">
         <li>دوره ها</li>
       </NavLink>
-      <NavLink className={activeClass} to="/introducing-teachers">
+      <NavLink className={activeClass} to="/teachers">
         <li>معرفی مدرسین</li>
       </NavLink>
       <NavLink className={activeClass} to="/blog">

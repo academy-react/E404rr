@@ -24,6 +24,7 @@ const TeachersPage = () => {
               <TeachersContainer 
               Name={item.fullName}
               key={index}
+              id={item.teacherId}
          />
             )
         })}

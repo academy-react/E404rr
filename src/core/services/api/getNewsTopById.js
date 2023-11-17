@@ -2,10 +2,10 @@ import http from '../interceptor'
 
 
 const GetNewsById = async (id) => {
-  // url  https://acadapi.etacorealtime.ir/api/
+  // url  https://acadapi.etacorealtime.ir/api/News/:Id
   try {
-    const result = await http.get(`/Home/GetCourseDetails?CourseId=${id}`);
-    return result.data.result;;
+    const result = await http.get(`/News/GetNewsCategory?${id}`);
+    return result;
   } catch (error) {
     console.log(error);
     console.log(id + "id");

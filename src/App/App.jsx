@@ -58,7 +58,7 @@ const App = createBrowserRouter([
     children: [
       { path: "/", element: <Landing /> },
       { path: "/course", element: <Courses /> },
-      { path: "/introducing-teachers", element: <TeachersPage /> },
+      { path: "/teachers", element: <TeachersPage /> },
       { path: "/blog", element: <Maghalat /> },
       { path: "/contact-us", element: <ContactUs /> },
       { path: "/consultation-req", element: <ConsultaitionReq /> },
@@ -76,7 +76,7 @@ const App = createBrowserRouter([
         {path: "/CoursePage/:id/comment" , element : <CourseOpinions/>},
       ] },
       { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
-      { path: "/teacher-profile", element: <TeachersDetails /> },
+      { path: "/teachers/profile/:id", element: <TeachersDetails /> },
   
       { path: "/teacher-profile", element: <TeachersDetails /> },
     ],

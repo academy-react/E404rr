@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 
-const ArticleBtn = ({ path }) => {
+const ArticleBtn = ({ path , id }) => {
   const navigate = useNavigate();
   const goArt = () => {
-    navigate("/ArticalePage");
+    navigate(`/ArticalePage/${id}`);
   };
   return (
     <button

@@ -11,30 +11,38 @@ import { getLastCoursesList } from "../../core/services/api/course";
 import { useParams } from "react-router-dom";
 import { GetCourseById } from "../../core/services/api/getCoursestopbyId";
 
-
 const CourseDetailsPage = () => {
-      const [Course , setCourse] = useState([]);
-      const {_id} = useParams();
-      const GetCourseApiById = async () => {
-        const course = await GetCourseById(_id);
-        setCourse(course);
-        console.log("see course: " + course);
-      };
-      useEffect(() => {
-        GetCourseApiById();
-      }, [])
+  // const [Course , setCourse] = useState([]);
+  const [data, setData] = useState([]);
+  const UserId = useParams().id;
+  const GetCourseApiById = async () => {
+    const items = await GetCourseById(UserId);
+    setData(items);
+    console.log("see course: " + data);
+  };
+  useEffect(() => {
+    GetCourseApiById();
+  }, [UserId]);
   return (
     <>
-      <div className="mb-10 max-w-[1250px] mx-auto" data-aos="fade-up">
+      {UserId ? (
+        <>
+          <div className="mb-10 max-w-[1250px] mx-auto" data-aos="fade-up">
+            <p>title : {data.title}</p>
+            <p>title : {data.cost}</p>
+            <p>title : {data.courseId}</p>
 
-        <p>title : {Course ?.title}</p>
-        <CourseHero />
-        <WillLearn />
-        <CourseDetailBody />
-        <CourseRequirements />
-        <StudentsBought />
-      </div>
-      <Footer />
+            <CourseHero />
+            <WillLearn />
+            <CourseDetailBody />
+            <CourseRequirements />
+            <StudentsBought />
+          </div>
+          <Footer />
+        </>
+      ) : (
+        <p> چیزی وجود ندارد</p>
+      )}
     </>
   );
 };
