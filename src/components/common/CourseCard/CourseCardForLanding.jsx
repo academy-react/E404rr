@@ -8,8 +8,8 @@ import poster from "../../../assets/img/Landing/02.png";
 import styles from "./CourseCard.module.css";
 
 const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [isClicked2, setIsClicked2] = useState(false);
+  const [isClicked, setIsClicked] = useState(true);
+  const [isClicked2, setIsClicked2] = useState(true);
 
   const [selectedSvg, setSelectedSvg] = useState(null);
 
@@ -113,7 +113,7 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
             stroke-width="1.5"
             stroke="currentColor"
             className={`w-8 h-8  text-gray-600 ${
-              isClicked === 1 ? "text-blue-600" : ""
+              isClicked  ? "text-blue-600" : ""
             }`}
             onClick={handleClick}
           >
