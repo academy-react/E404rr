@@ -24,7 +24,6 @@ const ArticleDetails = () => {
     <>
       <div className="container max-w-[1366px] mx-auto flex items-start justify-between mb-10" data-aos="fade-up">
         <div className="w-[65%]" data-aos="fade-up">
-          <p> id: {data.id}</p>
         <ArticleImg />
         <ArticleBody />
         <ArticleOpinion />

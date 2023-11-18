@@ -1,17 +1,29 @@
-import React from "react";
+import {React , useState , useEffect} from "react";
 import TeacherAvatar from "../TeachersPage/TeachersAvatar";
 import AboutTeacher from "./AboutTeacher";
 import TeachersCourse from "./TeachersCourse";
 import Footer from "../../components/common/footer/Footer";
+import { GetAllTeacherById } from "../../core/services/api/GetTeacherAllByID";
+import { useParams } from "react-router-dom";
 
 const TeachersDetails = () => {
+    const [data, setData] = useState([]);
+  const UserId = useParams().id;
+  const GetAllTeacherApiById = async () => {
+    const items = await GetAllTeacherById(UserId);
+    setData(items);
+    console.log("see course: " + data);
+  };
+  useEffect(() => {
+    GetAllTeacherApiById();
+  }, [UserId]);
   return (
     <>
       <div className="container max-w-[1250px] mx-auto mt-20 flex items-start mb-10 justify-between px-20" data-aos="fade-up">
         <div className="w-[60%]" data-aos="fade-up">
           <div>
             <p className="text-gray-500 text-lg font-black">مدرس</p>
-            <p className="text-4xl font-black mt-3">علی منصوریان</p>
+            <p className="text-4xl font-black mt-3">{data.fullName} </p>
           </div>
           <div className="mt-6 text-lg font-extralight">
             توسعه دهنده و مدرس اصلی

@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { Tab2 } from "../../components/Tab/Tab2";
+import { About } from "./detailskid/About";
+import { Comment } from "./detailskid/Comment";
 
 const ArticleBody = () => {
 
   const activeClass = ({ isActive}) => 
   isActive ? "py-2 border-b-2  border-[#323E73] " : "py-2 border-b-2  border-[#323E73] border-transparent" ;
+
+  const [activeTab, setActiveTab] = useState('tab1');
+
+  const openTab = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   
   return (
     <div
@@ -15,18 +25,23 @@ const ArticleBody = () => {
         className="px-10 flex items-center gap-7 text-2xl mb-7"
         data-aos="fade-up"
       >
-      
-          <NavLink to={"/ArticalePage/:id"} className={activeClass} end>توضیحات</NavLink>
+
+          <Tab2 label="توضیحات" active={activeTab === 'tab1'} onClick={() => openTab('tab1')} />
+          <Tab2 label="دیدگاه ها" active={activeTab === 'tab2'} onClick={() => openTab('tab2')} />
      
      
-          <NavLink to="/ArticalePage/:id/comment" className={activeClass}>دیدگاه ها</NavLink>
 
       </div>
       <div
         className=" border-2 border-[#ccc] rounded-3xl p-6"
         data-aos="fade-up"
       >
-          <Outlet/>
+       <div id="tab1" className={`tab-content ${activeTab === 'tab1' ? 'block' : 'hidden'}`}>
+       <About/>
+        </div>
+        <div id="tab2" className={`tab-content ${activeTab === 'tab2' ? 'block' : 'hidden'}`}>
+        <Comment/>
+        </div>
       </div>
       <div
         className="mt-6 flex items-center justify-between border-1 border-t pt-8"

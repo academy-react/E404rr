@@ -69,12 +69,7 @@ const App = createBrowserRouter([
           {path: "/ArticalePage/:id/comment", element : <Comment/>}
 
       ] },
-      { path: "/CoursePage/:id", element: <CourseDetailsPage /> ,children: [
-        {path: "/CoursePage/:id" , element : <CourseSummary/>},
-        {path: "/CoursePage/:id/modares" , element : <TeacherSummary/>},
-        {path: "/CoursePage/:id/sarfasl" , element : <CourseTopics/>},
-        {path: "/CoursePage/:id/comment" , element : <CourseOpinions/>},
-      ] },
+      { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
       { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
       { path: "/teachers/profile/:id", element: <TeachersDetails /> },
   
