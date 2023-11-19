@@ -4,11 +4,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import RegisterVerify from './RegisterVerify'
 
-const RegisterPhone = ({handlePhone}) => {
+const RegisterPhone = ({handlePhone , onSubmit}) => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [verify, setVerify] = useState(false)
-  const handleVerify = (val) => {
-    setPhoneNumber(val.phone)
+  const handleVerify = (values) => {
+    setPhoneNumber(values.phone)
     setVerify(!verify) 
   }
 
@@ -19,7 +19,7 @@ const RegisterPhone = ({handlePhone}) => {
 
   return (
     <Formik 
-    initialValues={{ phone: '' }}
+    initialValues={{ phone: "" }}
     onSubmit={handleVerify}
     validationSchema={validation}>
 
@@ -38,9 +38,9 @@ const RegisterPhone = ({handlePhone}) => {
               <ErrorMessage name='phone' component={'p'} className='absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]' />
             </div>
 
-            <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
+            <button type='submit'  className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
           </div>
-        ) : <RegisterVerify handlePhone={handlePhone} phoneNumber={phoneNumber} /> }
+        ) : <RegisterVerify  phoneNumber={phoneNumber} /> }
       </Form>
     </Formik>
   )

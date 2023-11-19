@@ -5,12 +5,21 @@ import RegisterPhone from '../../components/Register/RegisterPhone'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink } from 'react-router-dom';
+import { Value } from 'sass';
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
   const handlePhone = () => {
     setPhone(!phone)
     console.log("hello")
+  }
+
+
+  const CodeNumber = async (values) => {
+    console.log(values , "values");
+    const UserObj = {
+      phoneNumber: values.phone
+    }
   }
 
   
@@ -28,7 +37,26 @@ const Register = () => {
               <a href='register' className='bg-white shadow-md shadow-gray-300 px-5 py-1 rounded-2xl'>ثبت نام</a>
               <a href='login' className='px-5 py-1 rounded-2xl'>ورود کاربر</a>
             </div>
-            {phone? <RegisterPhone handlePhone={handlePhone} /> : <RegisterEmail/>}
+            {phone?
+            
+            
+            <RegisterPhone handlePhone={handlePhone} onSubmit={CodeNumber}/>
+            
+            
+            : 
+            
+            
+            
+            
+            <RegisterEmail/> 
+            
+            // <> <p>s</p></>
+            
+            
+            
+            
+            
+            }
               <div className='flex justify-between mt-5 text-darker-green underline font-semibold'>
               <NavLink to="/">بازگشت به صفحه اصلی</NavLink>
               </div>
