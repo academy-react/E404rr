@@ -7,7 +7,7 @@ const TeachersInfo = ({Name , id}) => {
     navigate(`/teachers/profile/${id}`);
   };
   return (
-    <div className="max-lg:mt-10  px-32">
+    <div className="max-lg:mt-10  px-32" data-aos="fade-up">
       <p className="text-[#323e73] text-2xl max-lg:text-lg   font-extrabold mb-4">
           {Name}
       </p>

@@ -5,12 +5,14 @@ import styles from "./TeachersPage.module.css";
 const TeachersAvatar = () => {
   return (
     <div
-      className={` ${styles.avatar} border-2 border-[#23A455] max-w-[370px] h-auto max-lg:h-[300px] max-lg:w-[300px]  rounded-xl `}
+      className={` ${styles.avatar} border-2 border-[#23A455] max-w-[370px] h-auto max-lg:h-[300px] max-lg:w-[300px]  rounded-xl ` }
+      data-aos="fade-up"
     >
       <img
         src={avatar}
         className="p-8 hover:scale-105 cursor-pointer rounded-xl"
         alt=""
+        data-aos="fade-up"
       />
     </div>
   );

@@ -4,6 +4,7 @@ import RegisterEmail from '../../components/Register/RegisterEmail'
 import RegisterPhone from '../../components/Register/RegisterPhone'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { NavLink } from 'react-router-dom';
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
@@ -29,8 +30,7 @@ const Register = () => {
             </div>
             {phone? <RegisterPhone handlePhone={handlePhone} /> : <RegisterEmail/>}
               <div className='flex justify-between mt-5 text-darker-green underline font-semibold'>
-              <a href="#">بازگشت به صفحه اصلی</a>
-              <a href="#">ورود کارمندان</a>
+              <NavLink to="/">بازگشت به صفحه اصلی</NavLink>
               </div>
             </div>
 
