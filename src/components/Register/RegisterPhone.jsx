@@ -21,6 +21,7 @@ const RegisterPhone = ({handlePhone , onSubmit}) => {
     <Formik 
     initialValues={{ phone: "" }}
     onSubmit={handleVerify}
+    
     validationSchema={validation}>
 
       <Form>

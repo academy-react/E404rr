@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink } from 'react-router-dom';
 import { Value } from 'sass';
+import { SignAPISetFirst } from '../../core/services/api/signSetFirst';
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
@@ -14,10 +15,9 @@ const Register = () => {
     console.log("hello")
   }
 
-
   const CodeNumber = async (values) => {
     console.log(values , "values");
-    const UserObj = {
+    const SignAPISetFirst = {
       phoneNumber: values.phone
     }
   }
