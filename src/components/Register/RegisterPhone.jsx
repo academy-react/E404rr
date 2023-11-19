@@ -4,12 +4,19 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import RegisterVerify from './RegisterVerify'
 
-const RegisterPhone = ({handlePhone , onSubmit}) => {
+const RegisterPhone = ({handlePhone , SignUser}) => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [verify, setVerify] = useState(false)
   const handleVerify = (values) => {
     setPhoneNumber(values.phone)
     setVerify(!verify) 
+  }
+
+  const handleSubmit = (values , actions) => {
+    SignUser(values , actions)
+
+
+    handleVerify(values , actions)
   }
 
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -19,9 +26,8 @@ const RegisterPhone = ({handlePhone , onSubmit}) => {
 
   return (
     <Formik 
-    initialValues={{ phone: "" }}
-    onSubmit={handleVerify}
-    
+    initialValues={{ phone: '' }}
+    onSubmit={handleSubmit}
     validationSchema={validation}>
 
       <Form>
@@ -39,9 +45,9 @@ const RegisterPhone = ({handlePhone , onSubmit}) => {
               <ErrorMessage name='phone' component={'p'} className='absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]' />
             </div>
 
-            <button type='submit'  className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
+            <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
           </div>
-        ) : <RegisterVerify  phoneNumber={phoneNumber} /> }
+        ) : <RegisterVerify handlePhone={handlePhone} phoneNumber={phoneNumber} /> }
       </Form>
     </Formik>
   )

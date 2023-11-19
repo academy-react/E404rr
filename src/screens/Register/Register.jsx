@@ -5,7 +5,7 @@ import RegisterPhone from '../../components/Register/RegisterPhone'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink } from 'react-router-dom';
-import { Value } from 'sass';
+import { Field , Form , Formik } from 'formik';
 import { SignAPISetFirst } from '../../core/services/api/signSetFirst';
 
 const Register = () => {
@@ -15,11 +15,21 @@ const Register = () => {
     console.log("hello")
   }
 
-  const CodeNumber = async (values) => {
-    console.log(values , "values");
-    const SignAPISetFirst = {
-      phoneNumber: values.phone
-    }
+
+  const SignUser = async (values) => {
+    console.log(values);
+    const userObj = {
+   
+        phoneNumber: values.phone 
+  
+    };
+
+  
+    const user = await SignAPISetFirst(userObj); 
+
+    console.log(user , "userrr");
+
+
   }
 
   
@@ -34,29 +44,50 @@ const Register = () => {
         <div className="flex flex-col md:gap:5 lg:gap-12 md:flex-row mx-6">
           <div className="flex flex-col justify-center text-center min-w-[15rem]">
             <div className="bg-lighter-green/[.65] flex flex-row gap-4 mx-auto my-4 px-2 py-2 rounded-3xl">
-              <a href='register' className='bg-white shadow-md shadow-gray-300 px-5 py-1 rounded-2xl'>ثبت نام</a>
-              <a href='login' className='px-5 py-1 rounded-2xl'>ورود کاربر</a>
+              <NavLink to='/register' className='bg-white shadow-md shadow-gray-300 px-5 py-1 rounded-2xl'>ثبت نام</NavLink>
+              <NavLink to='/login' className='px-5 py-1 rounded-2xl'>ورود کاربر</NavLink>
             </div>
-            {phone?
-            
-            
-            <RegisterPhone handlePhone={handlePhone} onSubmit={CodeNumber}/>
-            
-            
-            : 
-            
-            
-            
-            
-            <RegisterEmail/> 
-            
-            // <> <p>s</p></>
+            {phone? 
             
             
             
             
             
-            }
+              // <Formik      initialValues={{ phone: '' }}  onSubmit={SignUser}>
+              //   <Form>
+
+              //     <>
+                  
+              //     <Field 
+              //   name="phone"
+              //   type="text"
+              //   placeholder="شماره تلفن همراه" 
+              // />
+
+              //   <button type="submit" className='border'> submit</button>
+              //     </>
+
+         
+              //   </Form>
+
+                  
+              // </Formik>
+            
+            <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser}/> 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            : <RegisterEmail/>}
               <div className='flex justify-between mt-5 text-darker-green underline font-semibold'>
               <NavLink to="/">بازگشت به صفحه اصلی</NavLink>
               </div>
