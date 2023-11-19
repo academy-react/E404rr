@@ -129,14 +129,17 @@ const Maghalat = () => {
           <div className="flex max-w-[65%] justify-between items-start flex-wrap max-lg:justify-center">
           {allNewsList.map((item , index) => {
               return(
-                <ArticlesCard 
-                    key={index} 
-                    title={item.categoryName}
-                    minidesc={item.miniDescribe}
-                      img={item.currentImageAddressTumb}
-                      startDate={item.insertDate}
-                      id={item.id}
-                />
+                  <>
+                        <ArticlesCard 
+                        key={index} 
+                        title={item.title}
+                        miniDescribe={item.miniDescribe}
+                          img={item.currentImageAddressTumb}
+                          startDate={item.insertDate}
+                          id={item.id}
+                        />
+                                          
+                  </>
               )
           })}
 

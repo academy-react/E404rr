@@ -1,5 +1,5 @@
 import { useState } from "react";
-const ArticleInfo = ({title}) => {
+const ArticleInfo = ({title , miniDescribe}) => {
 
   const [isClicked , setIsClicked] = useState(false); 
   const [isClicked2 , setIsClicked2] = useState(false); 
@@ -44,7 +44,7 @@ const ArticleInfo = ({title}) => {
   return (
     <div className="mx-3 mt-6 mb-3">
       <p className="text-xs	text-[#198643]">  {title}</p>
-      <h5 className="mt-3 text-[#323E73]">میشه یه شبه برنامه نویس شد ؟</h5>
+      <h5 className="mt-3 text-[#323E73]"> {miniDescribe}</h5>
       <div className="flex items-center mt-4 border border-transparent">
         <svg
           className="w-4 h-4"

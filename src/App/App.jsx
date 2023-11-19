@@ -64,13 +64,9 @@ const App = createBrowserRouter([
       { path: "/consultation-req", element: <ConsultaitionReq /> },
       { path: "/about-us", element: <AboutUs /> },
       { path: "/Cart", element: <Cart /> },
-      { path: "/ArticalePage/:id", element: <ArticleDetails />, children :[
-          {path: "/ArticalePage/:id", element : <About/>},
-          {path: "/ArticalePage/:id/comment", element : <Comment/>}
-
-      ] },
+      { path: "/ArticalePage/:id", element: <ArticleDetails />} , 
       { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
-      { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
+      // { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
       { path: "/teachers/profile/:id", element: <TeachersDetails /> },
   
       { path: "/teacher-profile", element: <TeachersDetails /> },

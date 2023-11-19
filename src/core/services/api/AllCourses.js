@@ -4,9 +4,9 @@ export const getAllCourses = async (count) => {
         console.log("Fetching started ...");
         //https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0
         const result = await http.get
-        (`/Home/GetCoursesTop?Count=5`);
+        (`/Home/GetCoursesWithPagination`);
 
-        return result;
+        return result.courseFilterDtos;
         
       } catch (error) {
             console.log(error);

@@ -3,7 +3,7 @@ import ArticleImg from "./ArticleImg";
 import ArticleInfo from "./ArticleInfo";
 import styles from "./ArticlesCard.module.css";
 
-const ArticlesCard = ({img , title , id}) => {
+const ArticlesCard = ({img , title , id , miniDescribe}) => {
 
 
 
@@ -14,7 +14,7 @@ const ArticlesCard = ({img , title , id}) => {
       data-aos="fade-up"
     >
       <ArticleImg img={img} />
-      <ArticleInfo title={title}/>
+      <ArticleInfo title={title} miniDescribe={miniDescribe}/>
       <ArticleAction  id={id}/>
     </div>
   );

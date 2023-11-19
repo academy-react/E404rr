@@ -30,7 +30,7 @@ const CourseDetailsPage = () => {
           <div className="mb-10 max-w-[1250px] mx-auto" data-aos="fade-up">
             <p>title : {data.title}</p>
             <p>title : {data.cost}</p>
-            <p>title : {data.courseId}</p>
+            <p>title : {data.courseStatusName}</p>
 
             <CourseHero />
             <WillLearn />
