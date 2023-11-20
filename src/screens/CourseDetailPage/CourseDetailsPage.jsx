@@ -28,15 +28,17 @@ const CourseDetailsPage = () => {
       {UserId ? (
         <>
           <div className="mb-10 max-w-[1250px] mx-auto" data-aos="fade-up">
-            <p>title : {data.title}</p>
-            <p>title : {data.cost}</p>
-            <p>title : {data.courseStatusName}</p>
-
-            <CourseHero />
+            <CourseHero
+              title={data.title}
+              teacherName={data.teacherName}
+              courseLevelName={data.courseLevelName}
+              describe={data.describe}
+              courseStatusName={data.courseStatusName}
+            />
             <WillLearn />
             <CourseDetailBody />
             <CourseRequirements />
-            <StudentsBought />
+            {/* <StudentsBought /> */}
           </div>
           <Footer />
         </>

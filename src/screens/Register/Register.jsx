@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import { NavLink } from 'react-router-dom';
 import { Field , Form , Formik } from 'formik';
 import { SignAPISetFirst } from '../../core/services/api/signSetFirst';
+import { SignAPISetTwo } from '../../core/services/api/signsettwo';
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
@@ -21,6 +22,7 @@ const Register = () => {
     const userObj = {
    
         phoneNumber: values.phone 
+      
   
     };
 
@@ -30,6 +32,21 @@ const Register = () => {
     console.log(user , "userrr");
 
 
+  }
+
+  const SignTwo = async (values) => {
+    const CodeObj = {
+  
+        // phoneNumber: values.phone  , 
+         verifyCode: values.code
+  
+    }
+
+
+    const user2 = await SignAPISetTwo(CodeObj) 
+
+
+    console.log(user2 , "user doooo");
   }
 
   
@@ -53,7 +70,7 @@ const Register = () => {
             
             
             
-              // <Formik      initialValues={{ phone: '' }}  onSubmit={SignUser}>
+              // <Formik      initialValues={{ phone: '' }}  onSubmit={SignTwo}>
               //   <Form>
 
               //     <>
@@ -73,7 +90,7 @@ const Register = () => {
                   
               // </Formik>
             
-            <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser}/> 
+            <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} SignTwo={SignTwo}/> 
             
             
             
