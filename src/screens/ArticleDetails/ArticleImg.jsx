@@ -1,15 +1,19 @@
 import React from "react";
 import img from "../../assets/img/ArticleDetails/Article.png";
 
-const ArticleImg = () => {
+const ArticleImg = ({title , currentView}) => {
   return (
     <div className="text-[#323E73]" data-aos="fade-up">
       <div>
         <img className="rounded-3xl max-w-[888px] h-auto" src={img} alt="" />
         <div className="flex items-center justify-between px-14 mt-8  bg-gradient-to-bl from-[#f3fcf8] to-white rounded-2xl   ">
-          <p className="text-lg  px-6 py-4 font-bold ">الگوریتم چیست ؟</p>
+          {/* <p className="text-lg  px-6 py-4 font-bold ">الگوریتم چیست ؟</p> */}
+          <p className="text-lg  px-6 py-4 font-bold ">{title}</p>
+
           <p className="flex items-center  px-6 py-4  ">
-            <p className="mx-2">300</p>
+            {/* <p className="mx-2">300</p> */}
+            <p className="mx-2">{currentView}</p>
+
             <svg
               className="w-6"
               viewBox="0 0 24 24"

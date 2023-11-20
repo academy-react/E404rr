@@ -4,7 +4,7 @@ const activeClass = ({ isActive}) =>
 isActive ? "  text-2xl text-green-600 font-black" : "text-2xl text-[#323E73] font-black" ;
 
 
-const Tab2 = ({active , onClick , label}) => {
+const Tab2 = ({active , onClick , label }) => {
   return (
         <>
                 <div 

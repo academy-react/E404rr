@@ -4,7 +4,7 @@ import { Tab2 } from "../../components/Tab/Tab2";
 import { About } from "./detailskid/About";
 import { Comment } from "./detailskid/Comment";
 
-const ArticleBody = () => {
+const ArticleBody = ({addUserFullName , insertDate , describe}) => {
 
   const activeClass = ({ isActive}) => 
   isActive ? "py-2 border-b-2  border-[#323E73] " : "py-2 border-b-2  border-[#323E73] border-transparent" ;
@@ -26,7 +26,7 @@ const ArticleBody = () => {
         data-aos="fade-up"
       >
 
-          <Tab2 label="توضیحات" active={activeTab === 'tab1'} onClick={() => openTab('tab1')} />
+          <Tab2 label="توضیحات" active={activeTab === 'tab1'} onClick={() => openTab('tab1')}/>
           <Tab2 label="دیدگاه ها" active={activeTab === 'tab2'} onClick={() => openTab('tab2')} />
      
      
@@ -37,7 +37,7 @@ const ArticleBody = () => {
         data-aos="fade-up"
       >
        <div id="tab1" className={`tab-content ${activeTab === 'tab1' ? 'block' : 'hidden'}`}>
-       <About/>
+       <About   describe={describe}/>
         </div>
         <div id="tab2" className={`tab-content ${activeTab === 'tab2' ? 'block' : 'hidden'}`}>
         <Comment/>
@@ -47,7 +47,8 @@ const ArticleBody = () => {
         className="mt-6 flex items-center justify-between border-1 border-t pt-8"
         data-aos="fade-up"
       >
-        <p>توسط : مهدیار شیرزاد</p>
+        {/* <p>توسط : مهدیار شیرزاد</p> */}
+        <p> توسظ : {addUserFullName}</p>
         <div className="flex items-center justify-between ">
         <svg
             className="w-6"
@@ -79,7 +80,8 @@ const ArticleBody = () => {
               ></path>{" "}
             </g>
           </svg>
-          <p className="mx-3">10 آبان 1402</p>
+          {/* <p className="mx-3">10 آبان 1402</p> */}
+           <p className="mx-3"> {insertDate} </p>
         </div>
       </div>
     </div>

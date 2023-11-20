@@ -22,16 +22,22 @@ const ArticleDetails = () => {
   }, [UserId]);
   return (
     <>
-     <p>{data.title}</p>
-      <div className="container max-w-[1366px] mx-auto flex items-start justify-between mb-10" data-aos="fade-up">
+      <p>{data.title}</p>
+      <div
+        className="container max-w-[1366px] mx-auto flex items-start justify-between mb-10"
+        data-aos="fade-up"
+      >
         <div className="w-[65%]" data-aos="fade-up">
-          
-        <ArticleImg />
-        <ArticleBody />
-        <ArticleOpinion />
+          <ArticleImg title={data.title} currentView={data.currentView} />
+          <ArticleBody
+            addUserFullName={data.addUserFullName}
+            insertDate={data.insertDate}
+            describe={data.describe}
+          />
+          <ArticleOpinion />
         </div>
         <div className="w-[30%]" data-aos="fade-up">
-        <ArticleCategory />
+          <ArticleCategory />
           <ArticlesLast />
         </div>
       </div>
