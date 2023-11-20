@@ -28,7 +28,7 @@ const Login = () => {
     const userObj = {
       phoneOrGmail: values.phoneOrGmail,
       password: values.password,
-      rememberMe: true,
+      rememberMe: values.rememberMe,
     };
 
   
@@ -141,6 +141,7 @@ const Login = () => {
             className="absolute bottom-0 right-1/2 translate-x-1/2 text-danger max-w-[25rem]"
           />
         </div>
+        
 
         <div className="relative pb-4 lg:w-[25rem]">
           <div className="relative">
@@ -178,6 +179,11 @@ const Login = () => {
             ورود با شماره تلفن
           </span>
           <NavLink to="/forget">پسورد را فراموش کردم</NavLink>
+        </div>
+
+        <div className="absolute text-green-600 mt-[-60px]">
+              <label htmlFor="rr">مرا به یاد داشته باش</label>
+              <Field id="rr" type="checkbox"    name="rememberMe"/>
         </div>
 
         <button
