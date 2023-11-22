@@ -2,11 +2,12 @@ import CourseImg from "./CourseImg";
 import CourseInfo from "./CourseInfo";
 import CourseDetails from "./CourseDetails";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import poster from "../../../assets/img/Landing/02.png";
 
 
 import styles from "./CourseCard.module.css";
+import { AddDeleteLikeForCourses, AddDisLikeForCourses, AddLikeForCourses } from "../../../core/services/api/CourseAddCourseLike";
 
 const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount , id}) => {
 
@@ -20,24 +21,27 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
 
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
-
-  const handleClick = () => {
+  // const UserId =  id;
+  const handleClick = async () => {
     if (selectedSvg !== 1) {
       setSelectedSvg(1);
       setCount(count + 1);
-
+  
       if (selectedSvg === 2) {
         setCount2(count2 - 1);
-
+          
       }
+      const user = await AddLikeForCourses(id);
     } else {
       setSelectedSvg(null);
       setCount(count - 1);
-    
+      const user2 = await AddDeleteLikeForCourses()
     }
+
+   
   };
 
-  const handleClick2 = () => {
+  const handleClick2 = async () => {
     if (selectedSvg !== 2) {
       setSelectedSvg(2);
       setCount2(count2 + 1);
@@ -46,6 +50,7 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
         setCount(count - 1);
    
       }
+     const user =  await AddDisLikeForCourses(id)
     } else {
       setSelectedSvg(null);
       setCount2(count2 - 1);
@@ -58,6 +63,19 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
     navigate(`/CoursePage/${id}`);
   };
 
+
+ 
+  // const loginUser = async () => {
+  //   // console.log(values);
+  //   // const userObj = {
+  //   //   phoneOrGmail: values.phoneOrGmail,
+  //   //   password: values.password,
+  //   //   rememberMe: values.rememberMe,
+  //   // };
+  //   const user = await AddLikeForCourses(id);
+  
+   
+  // }
   return (
   
       <div
@@ -79,43 +97,7 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
       <h3 className="text-[#323E73] text-[15px] mb-4 font-medium	 	">
                {title}
       </h3>
-      <p className="flex items-center">
-        <svg
-          className="w-4 h-4"
-          version="1.1"
-          id="_x32_"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 512 512"
-          xml:space="preserve"
-          fill="#acacac"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <style type="text/css"> </style>
-            <g>
-              <path
-                class="st0"
-                d="M458.159,404.216c-18.93-33.65-49.934-71.764-100.409-93.431c-28.868,20.196-63.938,32.087-101.745,32.087 c-37.828,0-72.898-11.89-101.767-32.087c-50.474,21.667-81.479,59.782-100.398,93.431C28.731,448.848,48.417,512,91.842,512 c43.426,0,164.164,0,164.164,0s120.726,0,164.153,0C463.583,512,483.269,448.848,458.159,404.216z"
-              ></path>{" "}
-              <path
-                class="st0"
-                d="M256.005,300.641c74.144,0,134.231-60.108,134.231-134.242v-32.158C390.236,60.108,330.149,0,256.005,0 c-74.155,0-134.252,60.108-134.252,134.242V166.4C121.753,240.533,181.851,300.641,256.005,300.641z"
-              ></path>{" "}
-            </g>{" "}
-          </g>
-        </svg>
-
-        {/* // اسم معلم */}
-        <span className="inline-block m-1 text-[#323E73] font-extralight text-[13px]	">
-          {teacherName}
-        </span>
-      </p>
+   
       <div className=" flex my-3  flex-row-reverse gap-1 items-center border border-transparent w-auto h-auto">
 
       <span className="mt-2">{count + likeCount}</span>

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import poster from "../../../assets/img/Landing/02.png";
 
 import styles from "./CourseCard.module.css";
+import { AddDeleteLikeForCourses, AddDisLikeForCourses, AddLikeForCourses } from "../../../core/services/api/CourseAddCourseLike";
 
 const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
   const [isClicked, setIsClicked] = useState(true);
@@ -16,21 +17,25 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
 
-  const handleClick = () => {
+  const handleClick = async() => {
     if (selectedSvg !== 1) {
       setSelectedSvg(1);
       setCount(count + 1);
 
       if (selectedSvg === 2) {
         setCount2(count2 - 1);
+
       }
+      const user = await AddLikeForCourses(id);
     } else {
       setSelectedSvg(null);
       setCount(count - 1);
+      const user2 = await AddDeleteLikeForCourses()
     }
+  
   };
 
-  const handleClick2 = () => {
+  const handleClick2 =  async() => {
     if (selectedSvg !== 2) {
       setSelectedSvg(2);
       setCount2(count2 + 1);
@@ -38,6 +43,7 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id }) => {
       if (selectedSvg === 1) {
         setCount(count - 1);
       }
+      const user = await AddDisLikeForCourses(id);
     } else {
       setSelectedSvg(null);
       setCount2(count2 - 1);
