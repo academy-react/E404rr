@@ -11,6 +11,7 @@ import { SignAPISetTwo } from '../../core/services/api/signsettwo';
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
+  const [phoneNumber, setPhoneNumber] = useState()
   const handlePhone = () => {
     setPhone(!phone)
     console.log("hello")
@@ -25,7 +26,7 @@ const Register = () => {
       
   
     };
-
+    setPhoneNumber(values.phone)
   
     const user = await SignAPISetFirst(userObj); 
 
@@ -34,20 +35,20 @@ const Register = () => {
 
   }
 
-  const SignTwo = async (values) => {
-    const CodeObj = {
+  // const SignTwo = async (values) => {
+  //   const CodeObj = {
   
-        // phoneNumber: values.phone  , 
-         verifyCode: values.code
+  //        phoneNumber : phoneNumber ,
+  //        verifyCode: values.code
   
-    }
+  //   }
 
 
-    const user2 = await SignAPISetTwo(CodeObj) 
+  //   const user2 = await SignAPISetTwo(CodeObj) 
 
 
-    console.log(user2 , "user doooo");
-  }
+  //   console.log(user2 , "user doooo");
+  // }
 
   
   useEffect(() => {
@@ -90,7 +91,7 @@ const Register = () => {
                   
               // </Formik>
             
-            <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} SignTwo={SignTwo}/> 
+             <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} /> 
             
             
             

@@ -3,8 +3,10 @@ import CourseSummary from "./CourseSummary";
 import TeacherSummary from "./TeacherSummary";
 import CourseTopics from "./CourseTopics";
 import CourseOpinions from "./CourseOpinions";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { Tab } from "../../components/Tab/Tab";
+import { GetCourseApiByComentId } from "../../core/services/api/ComentCorses";
+import { useEffect } from "react";
 
 
 
@@ -15,8 +17,25 @@ const CourseDetailBody = () => {
   const openTab = (tabName) => {
     setActiveTab(tabName);
   };
+
+  const [data, setData] = useState([]);
+  const UserId = useParams().id;
+  const GetCourseApiById = async () => {
+    const items = await GetCourseApiByComentId(UserId);
+    setData(items);
+    console.log("data 3: " , data);
+  };
+  useEffect(() => {
+    GetCourseApiById();
+  }, [UserId]);
+
+  console.log(data, "data in jsx");
   return (
-    <div className=" bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white rounded-3xl px-10 py-8 mt-10" data-aos="fade-up">
+      <>
+      
+
+
+          <div className=" bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white rounded-3xl px-10 py-8 mt-10" data-aos="fade-up">
       <div className="flex items-center   gap-10 ">
           <Tab label="درباره دوره" active={activeTab === "tab1"} onClick={() => openTab("tab1")}/>
           <Tab label=" مدرس دوره" active={activeTab === "tab2"} onClick={() => openTab("tab2")}/>
@@ -37,11 +56,18 @@ const CourseDetailBody = () => {
         </div>
         
         <div id="tab3" className={`tab-content ${activeTab === 'tab3' ? 'block' : 'hidden'}`}>
-          <CourseTopics/>
+        <CourseTopics/>
         </div>
         
         <div id="tab4" className={`tab-content ${activeTab === 'tab4' ? 'block' : 'hidden'}`}>
-            <CourseOpinions/>
+          {data.map((item , index) => {
+            return(
+              <>
+                      <CourseOpinions   title={item.title}  author={item.author} describe={item.describe}/>
+              </>
+            )
+          })}
+    
         </div>
         
         
@@ -52,6 +78,8 @@ const CourseDetailBody = () => {
     
       </div>
     </div>
+      
+      </>
   );
 };
 

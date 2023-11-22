@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { Tab2 } from "../../components/Tab/Tab2";
 import { About } from "./detailskid/About";
 import { Comment } from "./detailskid/Comment";
+import { GetNewsApiByComentId } from "../../core/services/api/GetNewsComment";
+import { useEffect } from "react";
 
 const ArticleBody = ({addUserFullName , insertDate , describe}) => {
 
@@ -15,6 +17,17 @@ const ArticleBody = ({addUserFullName , insertDate , describe}) => {
     setActiveTab(tabName);
   };
 
+
+  const [data, setData] = useState([]);
+  const UserId = useParams().id;
+  const GetCourseApiById = async () => {
+    const items = await GetNewsApiByComentId(UserId);
+    setData(items);
+    console.log("data 3: " , data);
+  };
+  useEffect(() => {
+    GetCourseApiById();
+  }, [UserId]);
   
   return (
     <div
@@ -40,7 +53,15 @@ const ArticleBody = ({addUserFullName , insertDate , describe}) => {
        <About   describe={describe}/>
         </div>
         <div id="tab2" className={`tab-content ${activeTab === 'tab2' ? 'block' : 'hidden'}`}>
-        <Comment/>
+        {/* <Comment/> */}
+
+        {data.map((item , index) => {
+            return(
+              <>
+                    <Comment title={item.title} describe={describe}/>
+              </>
+            )
+        })}
         </div>
       </div>
       <div

@@ -36,7 +36,7 @@ const ArticleDetails = () => {
           <ArticleOpinion />
         </div>
         <div className="w-[30%]" data-aos="fade-up">
-          <ArticleCategory />
+        {/* <ArticleCategory /> */}
           <ArticlesLast />
         </div>
       </div>

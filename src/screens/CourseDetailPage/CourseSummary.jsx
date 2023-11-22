@@ -1,6 +1,20 @@
 import React from "react";
+import { PostAddFiver } from "../../core/services/api/PostAddFaiverit";
+import { useParams } from "react-router-dom";
 
 const CourseSummary = () => {
+
+  const UserId = useParams().id;
+
+  const AddFai = async () => {
+    const userObj = {
+      
+        courseId: UserId
+      
+    }
+    const user = await PostAddFiver(userObj);
+  };
+
   return (
     <div>
       <div className="leading-10 border-2 border-[#ccc] rounded-3xl px-8 py-6 mt-8">
@@ -15,7 +29,7 @@ const CourseSummary = () => {
         رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
         پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
       </div>
-      <button className="flex items-center gap-2 mt-6 bg-[#609fa2] px-6 py-4 rounded-2xl w-[250px] mr-10">
+      <button onClick={AddFai} type="submit" className="flex items-center gap-2 mt-6 bg-[#609fa2] px-6 py-4 rounded-2xl w-[250px] mr-10">
         <svg
           className="w-7"
           viewBox="0 0 24 24"

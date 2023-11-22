@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import RegisterVerify from './RegisterVerify'
 
-const RegisterPhone = ({handlePhone , SignUser , SignTwo}) => {
+const RegisterPhone = ({handlePhone , SignUser }) => {
   const [phoneNumber, setPhoneNumber] = useState('')
   const [verify, setVerify] = useState(false)
   const handleVerify = (values) => {
@@ -47,7 +47,7 @@ const RegisterPhone = ({handlePhone , SignUser , SignTwo}) => {
 
             <button type='submit' className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg' >بعدی</button>
           </div>
-        ) : <RegisterVerify handlePhone={handlePhone} phoneNumber={phoneNumber}  SignTwo={SignTwo}/> }
+        ) : <RegisterVerify handlePhone={handlePhone} phoneNumber={phoneNumber}  /> }
       </Form>
     </Formik>
   )
