@@ -54,6 +54,7 @@ const CourseCardForAllCourse = ({title , desc , teacherName , cost  , likeCount 
     } else {
       setSelectedSvg(null);
       setCount2(count2 - 1);
+      const user2 = await AddDeleteLikeForCourses()
    
     }
   };

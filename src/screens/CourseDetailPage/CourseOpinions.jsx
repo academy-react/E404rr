@@ -1,8 +1,19 @@
 import React from "react";
+import { useState } from "react";
 
 const CourseOpinions = ({title , author , describe}) => {
+
+
+  const [showReplies, setShowReplies] = useState(false);
+
+  
+  const toggleReplies = () => {
+    setShowReplies(!showReplies);
+  };
+
   return (
-    <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
+    <>
+        <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
       <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
         <div className="w-[15%] border-l flex flex-col justify-center items-center pl-14">
           {/* <p className="text-xl mb-3">علی</p> */}
@@ -35,12 +46,36 @@ const CourseOpinions = ({title , author , describe}) => {
           </p>
           <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
             پاسخ
+            
           </div>
 
+          <button className="absolute" onClick={toggleReplies}>
+        {showReplies ? 'مخفی کردن پاسخ‌ها' : 'نمایش پاسخ‌ها'}
+      </button>
+
         </div>
+        
       </div>
 
+  
+      {showReplies && (
+        <div>
+          {/* {replies.map((reply, index) => (
+            <p key={index}>{reply.reply}</p>
+          ))} */}
+
+          <p>hi </p>
+          <p>swdsa</p>
+        </div>
+      )}
+
     </div>
+
+
+
+    </>
+
+
   );
 };
 
