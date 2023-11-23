@@ -10,6 +10,7 @@ import ArticleCategory from "../ArticleDetails/ArticleCategory";
 import ArticlesLast from "../ArticleDetails/ArticlesLast";
 import { getAllNews } from "../../core/services/api/AllNews";
 import axios from "axios";
+import ReactPaginate from 'react-paginate';
 
 const Maghalat = () => {
   const [items, setItems] = useState([
@@ -26,26 +27,26 @@ const Maghalat = () => {
     // { title: "مقاله", date: "1400/03/11" },
     // { title: "مقاله", date: "1400/03/11" },
   ]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 9;
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const postsPerPage = 9;
 
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-  const previousPage = () => {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-  const nextPage = () => {
-    if (currentPage !== Math.ceil(items.length / postsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
+  // const paginate = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
+  // const previousPage = () => {
+  //   if (currentPage !== 1) {
+  //     setCurrentPage(currentPage - 1);
+  //   }
+  // };
+  // const nextPage = () => {
+  //   if (currentPage !== Math.ceil(items.length / postsPerPage)) {
+  //     setCurrentPage(currentPage + 1);
+  //   }
+  // };
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
+  // const indexOfLastPost = currentPage * postsPerPage;
+  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  // const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
 
 
 
@@ -84,6 +85,31 @@ const Maghalat = () => {
       setResults([]); // Clear results when searchInput is empty
     }
   }, [searchInput]);
+
+
+
+  const [currentPage2, setCurrentPage2] = useState(0);
+  const tagsPerPage = 5;
+  const totalTags = 80;
+
+  // تولید تگ‌های p بر اساس صفحه جاری
+  const generateTags = () => {
+    const startTagIndex = currentPage2 * tagsPerPage;
+    const endTagIndex = startTagIndex + tagsPerPage;
+    const tags = [];
+
+    for (let i = startTagIndex; i < endTagIndex && i < totalTags; i++) {
+      tags.push(<p key={i}>محتوای تگ شماره {i + 1}</p>);
+    }
+
+    return tags;
+  };
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage2(selected);
+  };
+
+
 
   return (
     <>
@@ -150,7 +176,7 @@ const Maghalat = () => {
 
             
           </div>
-          <ul className="border h-auto flex mt-[100px] mb-32  justify-center border-transparent mr-[275px] " >
+          {/* <ul className="border h-auto flex mt-[100px] mb-32  justify-center border-transparent mr-[275px] " >
    
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center " > {"<"} </li>
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">1</li>
@@ -160,7 +186,26 @@ const Maghalat = () => {
             <li className="border p-3 rounded-[100%] w-[50px] h-[50px]  text-center ">  {">"} </li>
     
 
-         </ul>
+         </ul> */}
+
+         <div className="border border-transparent mb-[200px] mt-[100px] mr-[200px]">
+          <ReactPaginate
+        previousLabel={<i className='text-green-600 mr-3 border px-3 py-2 rounded-[100%]'> {"<"}</i>}
+        nextLabel={<i className='text-green-600 ml-3 border px-3 py-2 rounded-[100%]'> {">"}</i>}
+        breakLabel={'...'}
+        pageCount={Math.ceil(totalTags / tagsPerPage)}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageChange}
+        containerClassName={'flex justify-center mt-4'}
+        subContainerClassName={'pagination'}
+        activeClassName='bg-blue-200 text-gray-300'
+        pageClassName={'mx-2'}
+        previousClassName={'mx-2 cursor-pointer'}
+        nextClassName={'mx-2 cursor-pointer'}
+        pageLinkClassName={'text-purple-500'}
+      />
+          </div>
         </div>
       </div>
       <Footer />
