@@ -42,7 +42,7 @@ const ArticleInfo = ({title , miniDescribe}) => {
   };
 
   return (
-    <div className="mx-3 mt-6 mb-3">
+    <div className="mx-3 mt-6 mb-3 border border-transparent">
       <p className="text-xs	text-[#198643]">  {title}</p>
       <h5 className="mt-3 text-[#323E73]"> {miniDescribe}</h5>
       <div className="flex items-center mt-4 border border-transparent">

@@ -9,7 +9,7 @@ const ArticlesRow = () => {
 
   const getList = async () => {
     const courses = await getLastNewsList();
-    setNewsList(courses.slice())  
+    setNewsList(courses.slice(-6))  
   } 
   useEffect(() =>{
       getList();
@@ -20,10 +20,10 @@ const ArticlesRow = () => {
         {newsList.map((item , index) => {
             return<ArticlesCard 
              key={index} 
-             title={item.categoryName}
-              minidesc={item.miniDescribe}
+             title={item.title}
+             miniDescribe={item.miniDescribe}
                img={item.currentImageAddressTumb}
-                startDate={item.insertDate}
+               insertDate={item.insertDate}
                 id={item.id}
                   /> 
         })}
