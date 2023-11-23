@@ -1,7 +1,11 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { GetCoursesReplay } from "../../core/services/api/GetReplayCommentForCoursesDetails";
+import { ReplayComent } from "../ArticleDetails/detailskid/ReplayComent";
 
-const CourseOpinions = ({title , author , describe}) => {
+const CourseOpinions = ({title , author , describe , CommentID}) => {
 
 
   const [showReplies, setShowReplies] = useState(false);
@@ -10,6 +14,18 @@ const CourseOpinions = ({title , author , describe}) => {
   const toggleReplies = () => {
     setShowReplies(!showReplies);
   };
+
+  
+  const [data, setData] = useState([]);
+  const UserId = useParams().id;
+  const GetCourseApiById = async () => {
+    const items = await GetCoursesReplay(UserId , CommentID);
+    setData(items);
+    console.log("data 3: " , data);
+  };
+  useEffect(() => {
+    GetCourseApiById();
+  }, [UserId]);
 
   return (
     <>
@@ -59,14 +75,18 @@ const CourseOpinions = ({title , author , describe}) => {
 
   
       {showReplies && (
-        <div>
-          {/* {replies.map((reply, index) => (
-            <p key={index}>{reply.reply}</p>
-          ))} */}
+          <>
 
-          <p>hi </p>
-          <p>swdsa</p>
-        </div>
+
+        {data.map((item , index) => {
+           return(
+            <> 
+                  <ReplayComent author={author} describe={item.describe} index={index} title={item.title}  id={item.id}/>
+            </>
+           )
+        })}
+          
+          </>
       )}
 
     </div>
