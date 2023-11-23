@@ -5,6 +5,7 @@ import { About } from "./detailskid/About";
 import { Comment } from "./detailskid/Comment";
 import { GetNewsApiByComentId } from "../../core/services/api/GetNewsComment";
 import { useEffect } from "react";
+import { CommentNews } from "./detailskid/CommentNews";
 
 const ArticleBody = ({addUserFullName , insertDate , describe}) => {
 
@@ -58,7 +59,8 @@ const ArticleBody = ({addUserFullName , insertDate , describe}) => {
         {data.map((item , index) => {
             return(
               <>
-                    <Comment title={item.title} describe={describe}/>
+                    {/* <Comment title={item.title} describe={describe}/> */}
+                    <CommentNews title={item.title} describe={item.describe} id={item.id}/>
               </>
             )
         })}
