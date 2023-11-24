@@ -1,9 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { GetCoursesReplay } from "../../core/services/api/GetReplayCommentForCoursesDetails";
 import { ReplayComent } from "../ArticleDetails/detailskid/ReplayComent";
+import { Field, Formik ,Form } from "formik";
+import { PostCommentUser } from "../../core/services/api/PostCommentUser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const CourseOpinions = ({title , author , describe , CommentID}) => {
 
@@ -27,15 +32,40 @@ const CourseOpinions = ({title , author , describe , CommentID}) => {
     GetCourseApiById();
   }, [UserId]);
 
+
+
+  const loginUser = async (values) => {
+    console.log(values);
+    const userObj = {
+        comment:values.comment
+    };
+
+  
+    const user = await PostCommentUser(userObj);
+
+
+    if (user === 200) {
+      toast.success(' در انتظار تایید ! ثبت موفق آمیز ', { position: toast.POSITION.TOP_RIGHT });
+
+    }
+    else{
+        // alert("وارد نشدین")
+        toast.error('!  ثبت نشد ', { position: toast.POSITION.TOP_RIGHT });
+    }
+  };
+
   return (
     <>
-        <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
+     <ToastContainer />  
+    <Formik initialValues={{comment : ""}} onSubmit={loginUser}>
+      <Form>
+      <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
       <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
         <div className="w-[15%] border-l flex flex-col justify-center items-center pl-14">
           {/* <p className="text-xl mb-3">علی</p> */}
           <p className="text-xl mb-3">{title}</p>
-          <button className="bg-[#1c543b] text-center text-white px-6 py-3 rounded-2xl">
-            پاسخ
+          <button type="submit" className="bg-[#1c543b] text-center text-white px-6 py-3 rounded-2xl">
+            ثبت
           </button>
 
 
@@ -60,10 +90,30 @@ const CourseOpinions = ({title , author , describe , CommentID}) => {
           <p className=" leading-8">
               {describe}
           </p>
-          <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
-            پاسخ
+          {/* <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
+          <Field
+            name="phoneOrGmail"
+            type="text"
+            placeholder="ایمیل"
+            // component={FormInput}
+            // value={Formik.value.phoneOrGmail}
+            className=" placeholder-darker-green w-full h-[100%]"
+
+          />
             
-          </div>
+          </div> */}
+
+
+<Field className="rounded-3xl border-2 border-[#ccc] px-14 w-[90%] outline-green-600 caret-green-600  mb-3 focus:placeholder:opacity-0 py-4 mt-3 text-black flex justify-between items-stretch"
+            name="comment"
+            type="text"
+            placeholder="پاسخ"
+            // component={FormInput}
+            // value={Formik.value.phoneOrGmail}
+     >
+
+            
+          </Field>
 
           <button className="absolute" onClick={toggleReplies}>
         {showReplies ? 'مخفی کردن پاسخ‌ها' : 'نمایش پاسخ‌ها'}
@@ -90,6 +140,9 @@ const CourseOpinions = ({title , author , describe , CommentID}) => {
       )}
 
     </div>
+
+      </Form>
+    </Formik>
 
 
 
