@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const TextInput = ({ type, placeholder }) => {
   const [searchInput, setSearchInput] = useState('');
@@ -8,8 +9,8 @@ const TextInput = ({ type, placeholder }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesTop?Count${searchInput}`);
-        setResults(response.data);
+        const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?Query=${searchInput}`);
+        setResults(response.data.courseFilterDtos);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -40,7 +41,7 @@ const TextInput = ({ type, placeholder }) => {
           <ul>
             {results.map((item, index) => (
               <>
-              <li key={index}>{item.title}</li>
+              <NavLink to={`/CoursePage/${item.courseId}`} className={"block"} key={index}>{item.title}</NavLink>
               </>
             ))}
           </ul>

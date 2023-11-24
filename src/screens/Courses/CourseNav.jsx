@@ -2,6 +2,7 @@ import {React , useEffect , useState} from "react";
 import TextInput from "../../components/common/TextInput";
 import searchImg from "../../assets/img/search.svg";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 
 const Part5 = () => {
@@ -13,8 +14,8 @@ const Part5 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesTop?Count${searchInput}`);
-        setResults(response.data);
+        const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?Query=${searchInput}`);
+        setResults(response.data.courseFilterDtos);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -44,11 +45,12 @@ const Part5 = () => {
       />
 
       {(searchInput.trim() !== '' && results.length > 0) && (
-        <div className="absolute bg-white w-[300px] h-[200px]">
+        <div className="absolute bg-white w-[300px] h-[200px] z-50 ">
           <ul>
             {results.map((item, index) => (
               <>
-              <li key={index}>{item.title}</li>
+              <NavLink to={`/CoursePage/${item.courseId}`} className={"block z-50"} key={item.courseId}>{item.title}</NavLink>
+              
               </>
             ))}
           </ul>

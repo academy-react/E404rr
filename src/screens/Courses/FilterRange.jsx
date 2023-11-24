@@ -12,12 +12,14 @@ const useStyles = makeStyles(
       color: "#198643",
       height: "3px",
       borderRadius: "3px",
+      zIndex:"-5000"
     },
     rail: {
       opacity: 1,
       backgroundColor: "#e6e9ea",
       height: "3px",
       borderRadius: "3px",
+      zIndex:"-5000"
     },
     thumb: {
       color: "white",
@@ -28,9 +30,11 @@ const useStyles = makeStyles(
       boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.09)",
       "&$focusVisible,&:hover": {
         boxShadow: "0 0 0 8px #198643",
+        zIndex:"-5000"
       },
       "&$active": {
         boxShadow: "0 0 0 14px #198643",
+        zIndex:"-5000"
       },
     },
     // don't remove the following lines
@@ -47,14 +51,14 @@ const FilterRange = () => {
 
   return (
     <div
-      className={` App mt-8 ${styles.filterRange} rounded-lg px-5 py-3 text-[#323E73]`}
+      className={` App mt-8 ${styles.filterRange} rounded-lg px-5 py-3 text-[#323E73] z-[-50]`}
     >
-      <h1 className="text-right font-extrabold text-lg w-full">محدوده قیمت</h1>
+      <h1 className="text-right font-extrabold text-lg w-full z-[-20]">محدوده قیمت</h1>
 
       <div className="w-full">
         <div>
           <Slider
-            className=""
+            className="z-[-10]"
             //disabled
             classes={classes}
             step={50000}
