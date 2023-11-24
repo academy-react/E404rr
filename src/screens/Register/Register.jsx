@@ -4,60 +4,129 @@ import RegisterEmail from '../../components/Register/RegisterEmail'
 import RegisterPhone from '../../components/Register/RegisterPhone'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Field , Form , Formik ,ErrorMessage } from 'formik';
 import { SignAPISetFirst } from '../../core/services/api/signSetFirst';
 import { SignAPISetTwo } from '../../core/services/api/signsettwo';
 import { SignAPISetThere } from '../../core/services/api/signSetThere';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
   const [phone, setPhone] = useState(true)
-  const [phoneNumber, setPhoneNumber] = useState()
+  const [phoneNumber, setPhoneNumber] = useState("")
   const handlePhone = () => {
     setPhone(!phone)
     console.log("hello")
   }
 
 
-  const SignUser = async (values) => {
-    console.log(values);
-    const userObj = {
+  // const SignUser = async (values) => {
+
+  //   console.log(values);
+  //   const userObj = {
    
-        phoneNumber: values.phone 
+  //       phoneNumber: values.phone 
       
   
-    };
-    setPhoneNumber(values.phone)
+  //   };
+  //     setPhoneNumber(values.phone)
+   
+  //   const user = await SignAPISetFirst(userObj); 
+
+  //   console.log(user , "userrr");
+
+
+  // }
+
+  // const SignTwo = async (values) => {
+  //   const CodeObj = {
   
-    const user = await SignAPISetFirst(userObj); 
+  //        phoneNumber : phoneNumber ,
+  //        verifyCode: values.code
+  
+  //   }
 
-    console.log(user , "userrr");
+
+  //   const user2 = await SignAPISetTwo(CodeObj) 
 
 
-  }
+  //   console.log(user2 , "user doooo");
+  // }
 
-  const SignTwo = async (values) => {
+
+  // const SignThery = async (values) => {
+  //   const CodeObj = {
+  
+  //     password: values.password ,
+  //     gmail: values.gmail,
+  //     phoneNumber : phoneNumber ,
+  
+  //   }
+
+
+  //   const user3 = await SignAPISetThere(CodeObj) 
+
+
+  //   console.log(user3 , "user doooo");
+  // }
+  
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+  const navigate = useNavigate();
+
+
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const SignUser = async (values, { setSubmitting }) => {
+
+    const userObj = {
+   
+      phoneNumber: values.phone 
+    
+
+  };
+    setPhoneNumber(values.phone)
+ 
+  const user = await SignAPISetFirst(userObj); 
+
+  console.log(user , "userrr");
+
+    // لاگیک مربوط به ثبت اطلاعات فرم اول
+    setCurrentStep(2);
+    setSubmitting(false);
+  };
+
+  const SignTwo = async (values, { setSubmitting }) => {
+
     const CodeObj = {
   
-         phoneNumber : values.phone ,
-         verifyCode: values.code
-  
-    }
+      phoneNumber : phoneNumber ,
+      verifyCode: values.code
+
+ }
 
 
-    const user2 = await SignAPISetTwo(CodeObj) 
+ const user2 = await SignAPISetTwo(CodeObj) 
 
 
-    console.log(user2 , "user doooo");
-  }
+ console.log(user2 , "user doooo");
+    // لاگیک مربوط به ثبت اطلاعات فرم دوم
+    setCurrentStep(3);
+    setSubmitting(false);
+  };
 
+  const SignThree = async(values, { setSubmitting }) => {
+    // لاگیک مربوط به ثبت اطلاعات فرم سوم
 
-  const SignThery = async (values) => {
     const CodeObj = {
   
       password: values.password ,
       gmail: values.gmail,
-      phoneNumber: values.phone
+      phoneNumber : phoneNumber ,
   
     }
 
@@ -66,17 +135,27 @@ const Register = () => {
 
 
     console.log(user3 , "user doooo");
-  }
-  
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+    setSubmitting(false);
+    // می‌توانید اینجا کدی برای پس از ثبت نهایی انجام دهید
 
+    console.log(user3.token);
+    setItem("token", user3.token);
+    if (user3.success === true) {
+      toast.success('! ورود موفق آمیز', { position: toast.POSITION.TOP_RIGHT });
+       setTimeout(() => {
+        navigate("/")
+       }, 1500);
+    }
+    else{
+        // alert("وارد نشدین")
+        toast.error('! ورود ناموفق ', { position: toast.POSITION.TOP_RIGHT });
+    }
+  };
 
 
   return (
-    <div className='flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue' data-aos="fade-up">
+    <div className='flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue ' data-aos="fade-up">
+         <ToastContainer /> 
       <div className="w-full md:w-max bg-[url('assets/img/background.png')] bg-cover p-4 mx-6 rounded-2xl overflow-hidden">
         <div className="flex flex-col md:gap:5 lg:gap-12 md:flex-row mx-6">
           <div className="flex flex-col justify-center text-center min-w-[15rem]">
@@ -110,7 +189,7 @@ const Register = () => {
                   
               // </Formik>
             
-             <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} /> 
+            //  <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} /> 
             
             
             
@@ -126,8 +205,9 @@ const Register = () => {
             
             : <RegisterEmail/>} */}
 
-        <Formik  onSubmit={SignUser}    initialValues={{ phone: '' }} >
+        {/* <Formik  onSubmit={SignUser}    initialValues={{ phone: '' }} >
                 <Form>
+                  <p>hi : </p>
                   <label htmlFor="phoneNumber">شماره تلفن:</label>
                   <Field type="tel" id="phoneNumber" name="phone" />
                   <ErrorMessage name="phoneNumber" component="div" />
@@ -159,8 +239,56 @@ const Register = () => {
 
                   <button type="submit">ثبت</button>
                 </Form>
-              </Formik>
+              </Formik> */}
 
+<div>
+{/* //  <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} />  */}
+      {currentStep === 1 && (
+        <Formik onSubmit={SignUser} initialValues={{ phone: '' }}>
+          <Form>
+            <label htmlFor="phoneNumber">شماره تلفن:</label>
+            <Field type="tel" id="phoneNumber" name="phone"  placeholder="شماره تلفن خود را وارد کنید..."      
+             className="focus:outline-none  focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+            />
+            <ErrorMessage name="phoneNumber" component="div" />
+            <button type="submit" className='border w-[80px] h-[50px] rounded-xl border-green-600 bg-green-600 text-white'>ثبت</button>
+          </Form>
+        </Formik>
+      )}
+
+      {currentStep === 2 && (
+        <Formik onSubmit={SignTwo} initialValues={{ code: '', phone: phoneNumber }}>
+          <Form>
+            <label htmlFor="code"> کد تایید:</label>
+            <Field type="tel" id="code" name="code"          
+            className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+              />
+            <ErrorMessage name="code" component="div" />
+            <button type="submit"  className='border w-[80px] h-[50px] rounded-xl border-green-600 bg-green-600 text-white'>ثبت</button>
+          </Form>
+        </Formik>
+      )}
+
+      {currentStep === 3 && (
+        <Formik onSubmit={SignThree} initialValues={{ code: '', gmail: '', phone: phoneNumber }}>
+          <Form>
+          <label htmlFor="gmail"> جیمیل</label>
+            <Field type="tel" id="gmail" name="gmail"  
+             className="focus:outline-none block focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+           />
+            <ErrorMessage name="gmail" component="div" />
+
+            <label htmlFor="password"> رمز</label>
+            <Field type="tel" id="password" name="password"        
+             className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+            />
+            <ErrorMessage name="password" component="div" />
+
+            <button type="submit "  className='border w-[80px] h-[50px] rounded-xl border-green-600 bg-green-600 text-white'>ثبت</button>
+          </Form>
+        </Formik>
+      )}
+    </div>
 
 
 
