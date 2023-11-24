@@ -34,6 +34,7 @@ const CourseDetailsPage = () => {
               courseLevelName={data.courseLevelName}
               describe={data.describe}
               courseStatusName={data.courseStatusName}
+              courseId={data.courseId}
             />
             <WillLearn />
             <CourseDetailBody />

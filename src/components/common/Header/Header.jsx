@@ -8,6 +8,7 @@ import { BeatLoader } from "react-spinners";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import tw from "tailwind-styled-components";
+import { getItem, removeItem } from "../../../core/services/common/storage.services";
 
 const YourDiv = tw.div`
   fixed
@@ -80,8 +81,26 @@ const Header = () => {
     });
   };
 
+  // const [isLog , setIsLOg] = useState(null);
+
+  // const logOut = () =>{
+  //     removeItem("token")
+  //     setIsLOg(null)
+  // }
+
+  // const Loged = getItem("token")
+
+  
+  // useEffect(() => {
+  //       if(Loged){
+  //           setIsLOg(Loged)
+  //       }
+  // }, [Loged]);
+
   return (
     <>
+        {/* {isLog ?  <p>hi</p> : <p></p>}
+        <p onClick={logOut}>out</p> */}
       <nav
       
         className="container   max-w-[1250px] mx-auto mt-3 h-[70px] flex items-center justify-between px-14 mb-10 rounded-lg bg-[#f3fcf8]"
@@ -89,7 +108,7 @@ const Header = () => {
         <MobileNav />
         <Logo />
         <HeaderNav />
-        <HeaderLeft />
+        <HeaderLeft  />
       </nav>
 
       <YourDiv    data-aos="fade-up" show={showDiv} onClick={scrollToTop} className={showDiv ? ``  : `  hidden transition-all

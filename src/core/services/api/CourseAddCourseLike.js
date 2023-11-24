@@ -3,7 +3,7 @@ import http from '../interceptor'
 export const AddLikeForCourses = async (user) => {
     try{
         //https://api-academy.iran.liara.run/api/Course/AddCourseLike
-            const response = await http.post(`/Course/AddCourseLike?CourseId${user}`)
+            const response = await http.post(`/Course/AddCourseLike?CourseId=${user}`)
             console.log(user , "id ke donbaleshem");
             return response;
     } catch(error) {
@@ -23,7 +23,7 @@ export const AddLikeForCourses = async (user) => {
 export const AddDisLikeForCourses = async (user) => {
     try{
         //https://api-academy.iran.liara.run/api/Course/AddCourseLike
-            const response = await http.post(`/Course/AddCourseLike?CourseId${user}`)
+            const response = await http.post(`/Course/AddCourseLike?CourseId=${user}`)
 
             return response;
     } catch(error) {
