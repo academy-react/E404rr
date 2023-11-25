@@ -3,6 +3,7 @@ import TextInput from "../../components/common/TextInput";
 import searchImg from "../../assets/img/search.svg";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { GetSearchByQ } from "../../core/services/api/GetSearchCourese";
 
 
 const Part5 = () => {
@@ -13,12 +14,15 @@ const Part5 = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?Query=${searchInput}`);
-        setResults(response.data.courseFilterDtos);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      // try {
+      //   const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?Query=${searchInput}`);
+      //   setResults(response.data.courseFilterDtos);
+      // } catch (error) {
+      //   console.error('Error fetching data:', error);
+      // }
+
+      const courses = await GetSearchByQ(searchInput);
+      setResults(courses)  
     };
 
     // Avoid making unnecessary requests on initial render

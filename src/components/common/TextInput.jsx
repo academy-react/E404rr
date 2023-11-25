@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { GetSearchByQ } from "../../core/services/api/GetSearchCourese";
 
 const TextInput = ({ type, placeholder }) => {
   const [searchInput, setSearchInput] = useState('');
@@ -8,19 +9,25 @@ const TextInput = ({ type, placeholder }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?Query=${searchInput}`);
-        setResults(response.data.courseFilterDtos);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      // try {
+      //   const response = await axios.get(`https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?Query=${searchInput}`);
+      //   setResults(response.data.courseFilterDtos);
+      // } catch (error) {
+      //   console.error('Error fetching data:', error);
+      // }
+
+      
+
+    const courses = await GetSearchByQ(searchInput);
+    setResults(courses)  
+
     };
 
-    // Avoid making unnecessary requests on initial render
+  
     if (searchInput.trim() !== '') {
       fetchData();
     } else {
-      setResults([]); // Clear results when searchInput is empty
+
     }
   }, [searchInput]);
 
