@@ -11,6 +11,7 @@ import { SignAPISetTwo } from '../../core/services/api/signsettwo';
 import { SignAPISetThere } from '../../core/services/api/signSetThere';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as yup from 'yup'
 
 
 const Register = () => {
@@ -153,6 +154,33 @@ const Register = () => {
   };
 
 
+  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+  const validation = yup.object({
+    phone: yup.string().required("لطفا پر کنید.").matches( phoneRegExp ,'.شماره تلفن نادرست است.'),
+
+  })
+
+  const validation2 = yup.object({
+    code: yup.string().required("لطفا پر کنید.")
+
+  })
+
+  const validation3 = yup.object({
+    gmail: yup.string()
+    .email("ایمیل وارد شده نادرست است.")
+    .required("لطفا پر کنید."),
+     password: yup.string()
+    .required("لطفا پر کنید.")
+    .min(8, "اندازه رمز کوتاه است, حداقل ۸ حرف باشد.")
+   .matches(
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+    "رمز باید شامل حداقل یک حرف کوچک, یک حرف بزرگ, یک عدد و یک حرف خاص باشد."
+  )
+
+  })
+
+
   return (
     <div className='flex items-center justify-center mx-auto h-screen font-vazir text-dark-blue ' data-aos="fade-up">
          <ToastContainer /> 
@@ -244,47 +272,51 @@ const Register = () => {
 <div>
 {/* //  <RegisterPhone handlePhone={handlePhone}  SignUser={SignUser} />  */}
       {currentStep === 1 && (
-        <Formik onSubmit={SignUser} initialValues={{ phone: '' }}>
+        <Formik onSubmit={SignUser} initialValues={{ phone: '' }}    validationSchema={validation}>
           <Form>
             <label htmlFor="phoneNumber">شماره تلفن:</label>
-            <Field type="tel" id="phoneNumber" name="phone"  placeholder="شماره تلفن خود را وارد کنید..."      
-             className="focus:outline-none  focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+            <Field type="tel" id="phoneNumber" name="phone"  placeholder="شماره تلفن خود را وارد کنید..."   dir="rtl"     
+             className="focus:outline-none caret-green-600   focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
             />
-            <ErrorMessage name="phoneNumber" component="div" />
-            <button type="submit" className='border w-[80px] h-[50px] rounded-xl border-green-600 bg-green-600 text-white'>ثبت</button>
+            <ErrorMessage name="phone" component="p"
+              className='absolute  text-danger max-w-[25rem]' />
+            <button type="submit" className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg'>ثبت</button>
           </Form>
         </Formik>
       )}
 
       {currentStep === 2 && (
-        <Formik onSubmit={SignTwo} initialValues={{ code: '', phone: phoneNumber }}>
+        <Formik onSubmit={SignTwo} initialValues={{ code: '', phone: phoneNumber }}  validationSchema={validation2}>
           <Form>
             <label htmlFor="code"> کد تایید:</label>
-            <Field type="tel" id="code" name="code"          
-            className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+            <Field type="tel" id="code" name="code" dir="rtl" placeholder={"کد تایید را وارد کنید"}        
+            className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 caret-green-600 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
               />
-            <ErrorMessage name="code" component="div" />
-            <button type="submit"  className='border w-[80px] h-[50px] rounded-xl border-green-600 bg-green-600 text-white'>ثبت</button>
+            <ErrorMessage name="code" component="p" 
+              className='absolute  text-danger max-w-[25rem]' />
+            <button type="submit"  className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg'>ثبت</button>
           </Form>
         </Formik>
       )}
 
       {currentStep === 3 && (
-        <Formik onSubmit={SignThree} initialValues={{ code: '', gmail: '', phone: phoneNumber }}>
+        <Formik onSubmit={SignThree}  validationSchema={validation3} initialValues={{ password: '', gmail: '', phone: phoneNumber }}>
           <Form>
           <label htmlFor="gmail"> جیمیل</label>
-            <Field type="tel" id="gmail" name="gmail"  
-             className="focus:outline-none block focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+            <Field type="tel" id="gmail" name="gmail"  dir="rtl" placeholder={"ایمیل خود را وارد کنید"}
+             className="focus:outline-none caret-green-600 block focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
            />
-            <ErrorMessage name="gmail" component="div" />
+            <ErrorMessage name="gmail" component="p" 
+              className='absolute  text-danger max-w-[25rem]' />
 
             <label htmlFor="password"> رمز</label>
-            <Field type="tel" id="password" name="password"        
-             className="focus:outline-none focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
+            <Field type="tel" id="password" name="password" placeholder={"رمز خود را وارد کنید"} dir="rtl"      
+             className="focus:outline-none caret-green-600 focus:placeholder:opacity-0 w-full mx-2 my-4 px-6 py-2 shadow-md shadow-gray-200 rounded-lg placeholder-darker-green"
             />
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage name="password" component="p"
+              className='absolute  text-danger max-w-[25rem]'  />
 
-            <button type="submit "  className='border w-[80px] h-[50px] rounded-xl border-green-600 bg-green-600 text-white'>ثبت</button>
+            <button type="submit "  className='bg-lighter-green/[.65] w-24 mx-auto mt-12 py-2 rounded-lg'>ثبت</button>
           </Form>
         </Formik>
       )}
