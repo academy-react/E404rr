@@ -59,7 +59,7 @@ const Maghalat = () => {
 
   const getList = async () => {
     const courses = await getAllNews();
-    setAllNewsList(courses)  
+    setAllNewsList(courses.slice())  
   } 
   useEffect(() =>{
       getList();
@@ -131,7 +131,7 @@ const Maghalat = () => {
         placeholder={"خبر مورد نظر خود را سرچ کنید"}
         type={"text"}
         onChange={(e) => setSearchInput(e.target.value)}
-        className="focus:outline-none w-full px-6 py-2 shadow-md focus:placeholder:opacity-0 shadow-gray-200 rounded-lg placeholder-darker-green"
+        className="focus:outline-none caret-green-600 w-full px-6 py-2 shadow-md focus:placeholder:opacity-0 shadow-gray-200 rounded-lg placeholder-darker-green"
       />
 
       {(searchInput.trim() !== '' && results.length > 0) && (
@@ -168,7 +168,7 @@ const Maghalat = () => {
                         title={item.title}
                         miniDescribe={item.miniDescribe}
                           img={item.currentImageAddressTumb}
-                          startDate={item.insertDate}
+                          insertDate={item.insertDate}
                           id={item.id}
                         />
                                           

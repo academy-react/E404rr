@@ -53,12 +53,12 @@ const FilterRange = () => {
     <div
       className={` App mt-8 ${styles.filterRange} rounded-lg px-5 py-3 text-[#323E73] z-[-50]`}
     >
-      <h1 className="text-right font-extrabold text-lg w-full z-[-20]">محدوده قیمت</h1>
+      <h1 className="text-right font-extrabold text-lg w-full ">محدوده قیمت</h1>
 
       <div className="w-full">
         <div>
           <Slider
-            className="z-[-10]"
+            className=""
             //disabled
             classes={classes}
             step={50000}
