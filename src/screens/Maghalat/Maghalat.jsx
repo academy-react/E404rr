@@ -11,6 +11,8 @@ import ArticlesLast from "../ArticleDetails/ArticlesLast";
 import { getAllNews } from "../../core/services/api/AllNews";
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
+import { GetSearchByBlog } from "../../core/services/api/SearchForBlog";
+import { NavLink } from "react-router-dom";
 
 const Maghalat = () => {
   const [items, setItems] = useState([
@@ -70,12 +72,16 @@ const Maghalat = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://api-academy.iran.liara.run/api/News/GetListNewsCategory${searchInput}`);
-        setResults(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      // try {
+      //   const response = await axios.get(`https://api-academy.iran.liara.run/api/News/GetListNewsCategory${searchInput}`);
+      //   setResults(response.data);
+      // } catch (error) {
+      //   console.error('Error fetching data:', error);
+      // }
+
+
+      const courses = await GetSearchByBlog(searchInput);
+      setResults(courses)  
     };
 
     // Avoid making unnecessary requests on initial render
@@ -133,7 +139,8 @@ const Maghalat = () => {
           <ul>
             {results.map((item, index) => (
               <>
-              <li key={index}>{item.categoryName}</li>
+              <NavLink to={`/ArticalePage/${item.id}`} className={"block"} key={index}>{item.title}</NavLink>
+              
               </>
             ))}
           </ul>
