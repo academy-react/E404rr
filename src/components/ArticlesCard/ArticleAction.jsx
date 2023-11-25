@@ -7,7 +7,7 @@ const ArticleAction = ({id , insertDate}) => {
         <ArticleBtn path="مطالعه"  id={id}/>
       </div>
       {/* <div className="flex text-sm">30 آذر 1397</div> */}
-      <div className="flex text-sm">{insertDate}  </div>
+      <div className="flex text-sm">{insertDate.slice(length , 10)}  </div>
 
     </div>
   );

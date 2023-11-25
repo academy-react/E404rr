@@ -59,7 +59,7 @@ const Maghalat = () => {
 
   const getList = async () => {
     const courses = await getAllNews();
-    setAllNewsList(courses.slice())  
+    setAllNewsList(courses)  
   } 
   useEffect(() =>{
       getList();
