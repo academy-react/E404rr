@@ -3,8 +3,12 @@ const setItem = (key, value) => {
 };
 
 const getItem = (key) => {
-  if (localStorage.getItem(key)) return JSON.parse(localStorage.getItem(key));
-  return false;
+      try {
+        if (localStorage.getItem(key)) return JSON.parse(localStorage.getItem(key));
+        return false;
+      } catch (error) {
+        
+      }
 };
 
 const getItemGeneric = (key) => {

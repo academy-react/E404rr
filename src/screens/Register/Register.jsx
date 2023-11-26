@@ -132,16 +132,16 @@ const Register = () => {
     }
 
 
-    const user3 = await SignAPISetThere(CodeObj) 
+    const user = await SignAPISetThere(CodeObj) 
 
 
-    console.log(user3 , "user doooo");
+    console.log(user , "user doooo");
     setSubmitting(false);
     // می‌توانید اینجا کدی برای پس از ثبت نهایی انجام دهید
 
-    console.log(user3.token);
-    setItem("token", user3.token);
-    if (user3.success === true) {
+    console.log(user.token);
+    setItem("token", user.token);
+    if (user.success === true) {
       toast.success('! ورود موفق آمیز', { position: toast.POSITION.TOP_RIGHT });
        setTimeout(() => {
         navigate("/")

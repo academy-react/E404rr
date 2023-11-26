@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ShoppingNum from "./ShoppingNum";
 
-const HeaderLeft = () => {
+const HeaderLeft = ({isLog , logOut}) => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
+    const [isModalOpenRelOut, setIsModalOpenRelOut] = useState(false);
+      const openModal = () => {
+        setIsModalOpen(true);
+      };
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
+
+
+      const openModalRelOut = () => {
+        setIsModalOpenRelOut(true);
+      };
+    
+      const closeModalRelOut = () => {
+        setIsModalOpenRelOut(false);
+      };
+
+
+      const closeAndOut = () =>{
+        logOut()
+        closeModalRelOut()
+      }
+  
   return (
     <div className="flex"   data-aos="fade-up">
       <NavLink to="/Cart">
@@ -61,22 +88,82 @@ const HeaderLeft = () => {
           <ShoppingNum />
         </div>
       </NavLink>
-      <NavLink to="/login">
-        <div className="p-3 mx-2  bg-[#23A455] rounded-full flex cursor-pointer ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6 border-1  border-[#000]  stroke-white fill-white "
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
-              clipRule="evenodd"
-            />
-          </svg>
+
+      {isLog ?
+    <>
+                <div  onClick={openModal}>
+          <div className="p-3 mx-2  bg-[#23A455] rounded-full flex  ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6 border-1  border-[#000]  stroke-white fill-white "
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+
         </div>
-      </NavLink>
+
+        {isModalOpen && (
+            
+            <>
+                <div  className="border top-[-20px] w-[200px] h-[200px] fixed bg-blue-700 z-50">
+                    <NavLink className="block" to={"/"}>
+                          خانه
+                    </NavLink>
+                    <NavLink className="block" to={"/panel"}>
+                          پنل دانشجو
+                    </NavLink>
+                    <p className="block" onClick={openModalRelOut}>
+                          خروج
+                    </p>
+
+                    <div className="absolute left-1 top-1" onClick={closeModal}>close</div>
+                </div>
+            </>
+          )}
+
+
+          {isModalOpenRelOut &&( 
+            <>
+                <div className=" border w-[400px] h-[400px] absolute bg-green-500 left-[500px]">
+                      <p>  آیا مطمعنید که میخاهید از حساب کاربری خود خارج شوید؟</p>
+                      <p className="inline-block" onClick={closeModalRelOut}>خیر</p>
+                      <p className="inline-block mr-[30px]" onClick={closeAndOut}>بله</p>
+                </div> 
+            </>
+          )}
+    </>
+    
+
+    
+    :
+
+
+<NavLink to="/login">
+<div className="p-3 mx-2  bg-[#23A455] rounded-full flex cursor-pointer ">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-6 h-6 border-1  border-[#000]  stroke-white fill-white "
+  >
+    <path
+      fillRule="evenodd"
+      d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+      clipRule="evenodd"
+    />
+  </svg>
+</div>
+</NavLink>
+    
+          }
+
     </div>
   );
 };
