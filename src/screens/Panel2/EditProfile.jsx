@@ -58,8 +58,8 @@ const EditProfile = () => {
 
                                       {isModalOpen && (
                                     <>
-                                          <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div>
-                                          <div className='absolute border w-[400px] rounded-xl h-auto pb-10 top-[140px] right-[550px] bg-white'>
+                                          {/* <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div> */}
+                                          <div className='absolute border w-[400px] rounded-xl h-auto pb-10 top-[0px] right-[300px] bg-white'>
                                                 <div className="relative ">
                                           <svg onClick={closeModal} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute left-5 top-2  text-gray-700">
                                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />

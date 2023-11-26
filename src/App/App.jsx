@@ -95,9 +95,9 @@ const App = createBrowserRouter([
     element: <SideBar/>,
     children: [
       { path: "/panel" , element: <PishKhan/> },
-      { path: "/panel/2", element:<MyCourses/> },
-      { path: "/panel/3", element: <Tiket/> },
-      { path: "/panel/4", element: <EditProfile/> },
+      { path: "/panel/myCourses", element:<MyCourses/> },
+      { path: "/panel/Ticket", element: <Tiket/> },
+      { path: "/panel/editprofile", element: <EditProfile/> },
       { path: "/panel/Addticket", element: <Addtiket/> },
     ],
   },

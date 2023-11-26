@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 import emptyprofile from "../../assets/img/emptyprofile.png"
 import Emoji from 'react-emoji-render';
+import { NavLink } from 'react-router-dom';
 
 const Hader = () => {
-    const [isNightMode, setIsNightMode] = useState(false);
+    // const [isNightMode, setIsNightMode] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const handleClick = () => {
-        setIsNightMode(!isNightMode); // تغییر وضعیت شب به روز و برعکس
-      };
+    const [isModalOpen2, setIsModalOpen2] = useState(false);
+    // const handleClick = () => {
+    //     setIsNightMode(!isNightMode); // تغییر وضعیت شب به روز و برعکس
+    //   };
       const openModal = () => {
         setIsModalOpen(true);
       };
     
       const closeModal = () => {
         setIsModalOpen(false);
+      };
+
+
+      const openModal2 = () => {
+        setIsModalOpen2(true);
+      };
+    
+      const closeModal2 = () => {
+        setIsModalOpen2(false);
       };
   return (
         <>  
@@ -22,9 +33,42 @@ const Hader = () => {
                             <p className='text-[24px]'>کاربر عزیز خوش اومدی  <Emoji text=':heart:'/></p>
                         </div>
                         <div className='flex-2 border flex flex-row-reverse border-transparent   '>
-                                   <div className="w-[56px] h-[56px] border border-transparent rounded-full ml-[30px]">
+                                   <div className="w-[56px] h-[56px] border border-transparent rounded-full ml-[30px]" onClick={openModal2}>
                                         <img src={emptyprofile} alt="" className='w-full h-full rounded-full block' />
                                    </div>
+
+
+
+                                   {isModalOpen2 && (
+                                        <>
+                                        
+                                        
+                                        <div className='fixed top-0 left-0 w-[1366px] ml-[-40px] mt-[-50px] h-[109%] z-[100]  backdrop-blur-sm backdrop-filter  backdrop-grayscale-[0.5] bg-black bg-opacity-10   '></div>
+                                            <div className="absolute mt-[10px] left-10 w-[200px] h-[145px] bg-white z-[2000] rounded-2xl border border-transparent shadow    ">
+                                    
+                                    <div className="relative ">
+                                    <svg onClick={closeModal2} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute left-5 top-2  text-gray-700">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+
+
+                                      <NavLink to={"/"} className={"block"}>
+                                            خانه  
+                                       </NavLink>
+                                      <NavLink to={"/panel"} className={"block"}>
+                                              پنل دانشجو
+                                      </NavLink>
+                                      <NavLink to={"/panel/editprofile"} className={"block"}>
+                                               تغییر پروفایل
+                                      </NavLink>
+    
+                                    </div>
+
+                                    </div>
+                                    </>
+                                        
+                              
+                                   )}
                                    {/* تغییر حالت روز و شب
                                    <div onClick={handleClick} className="w-[56px] h-[56px]  border border-transparent rounded-full bg-white ml-[15px] flex items-center justify-center  ">
                                    {isNightMode ? (
