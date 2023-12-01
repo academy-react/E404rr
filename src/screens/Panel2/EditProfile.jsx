@@ -56,7 +56,7 @@ const EditProfile = () => {
     formdata.append("UserAbout", values.UserAbout);
     formdata.append("LinkdinProfile", values.LinkdinProfile);
     formdata.append("TelegramLink", values.TelegramLink);
-    formdata.append("ReceiveMessageEvent", values.ReceiveMessageEvent);
+    // formdata.append("ReceiveMessageEvent", values.ReceiveMessageEvent);
     formdata.append("HomeAdderess", values.HomeAdderess);
     formdata.append("NationalCode", values.NationalCode);
     formdata.append("Gender", values.Gender);
@@ -409,6 +409,9 @@ const EditProfile = () => {
                           <p className="mr-5"> درباره کاربر </p>
                           <Field
                             type="text"
+                            onChange={(e) =>
+                              setFieldValue("BirthDay", e.target.values)
+                            }
                             placeholder="   درباره خودتان بنویسید"
                             name="BirthDay"
                             className="border border-transparent mt-3  outline-none w-[90%] h-[50px] mx-auto bg-[#f3fcf8]
