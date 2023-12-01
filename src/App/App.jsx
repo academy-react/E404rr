@@ -47,6 +47,8 @@ import CourseTopics from "../screens/CourseDetailPage/CourseTopics"
 import CourseOpinions from "../screens/CourseDetailPage/CourseOpinions"
 import { About } from "../screens/ArticleDetails/detailskid/About";
 import { Comment } from "../screens/ArticleDetails/detailskid/Comment";
+import { FaiverCourses } from "../screens/Panel2/FaiverCourses";
+import { PanelCourses } from "../screens/Panel2/PanelCourses";
 
 
 
@@ -95,7 +97,9 @@ const App = createBrowserRouter([
     element: <SideBar/>,
     children: [
       { path: "/panel" , element: <PishKhan/> },
-      { path: "/panel/myCourses", element:<MyCourses/> },
+      { path: "/panel/Courses", element: <PanelCourses/> },
+      // { path: "/panel/myCourses", element:<MyCourses/> },
+      // { path: "/panel/FiverCourses", element:<FaiverCourses/> },
       { path: "/panel/Ticket", element: <Tiket/> },
       { path: "/panel/editprofile", element: <EditProfile/> },
       { path: "/panel/Addticket", element: <Addtiket/> },

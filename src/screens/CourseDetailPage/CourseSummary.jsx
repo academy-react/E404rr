@@ -16,7 +16,7 @@ const CourseSummary = () => {
       
     }
     const user = await PostAddFiver(userObj);
-    if (user.success === 200) {
+    if (user.success === true) {
       toast.success('! با موفقیت اضافه شد', { position: toast.POSITION.TOP_RIGHT });
     }
     else{

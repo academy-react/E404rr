@@ -5,7 +5,7 @@ import CategoryFilter from "./CategoryFilter";
 
 const CourseFilter = () => {
   return (
-    <div className="w-[300px] block " data-aos="fade-up">
+    <div  data-aos="fade-up" className="w-[300px] block ">
       <FilterRange />
       <ExistFilter />
       <CategoryFilter />

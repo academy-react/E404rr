@@ -7,10 +7,11 @@ import { NavLink, Outlet, useParams } from "react-router-dom";
 import { Tab } from "../../components/Tab/Tab";
 import { GetCourseApiByComentId } from "../../core/services/api/ComentCorses";
 import { useEffect } from "react";
+import { PostAddMyCommentForCourses } from "../../core/services/api/PostAddMyComment";
 
 
 
-const CourseDetailBody = () => {
+const CourseDetailBody = ({courseId}) => {
 
   const [activeTab, setActiveTab] = useState('tab1');
 
@@ -29,7 +30,8 @@ const CourseDetailBody = () => {
     GetCourseApiById();
   }, [UserId]);
 
-  console.log(data, "data in jsx");
+
+
   return (
       <>
       
@@ -63,7 +65,7 @@ const CourseDetailBody = () => {
           {data.map((item , index) => {
             return(
               <>
-                      <CourseOpinions   title={item.title} CommentID={item.id}  author={item.author} describe={item.describe}/>
+                      <CourseOpinions courseId={item.courseId}   title={item.title} CommentID={item.id}  author={item.author} describe={item.describe}/>
               </>
             )
           })}

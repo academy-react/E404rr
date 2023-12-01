@@ -112,7 +112,7 @@ const HeaderLeft = ({isLog , logOut}) => {
         {isModalOpen && (
             
             <>
-                <div  className="border top-[-20px] w-[200px] h-[200px] fixed bg-blue-700 z-50">
+                <div  className="border top-[-20px] w-[200px] h-[200px] rounded-xl text-white fixed bg-green-700 z-50">
                     <NavLink className="block" to={"/"}>
                           خانه
                     </NavLink>

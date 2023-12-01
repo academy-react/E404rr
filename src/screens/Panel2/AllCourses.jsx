@@ -3,21 +3,29 @@ import { MyCursesItems } from '../../components/Sidebar/MyCurses/MyCursesItems'
 import CourseCard from "../../components/common/CourseCard/CourseCardForLanding";
 import { Card3 } from '../../components/common/Card/Card3';
 import { GetMyCoursesStudent } from '../../core/services/api/UserPanel/GetAllCoursesStudent';
+import { Card2 } from '../../components/common/Card/Card2';
+import { Card } from '../../components/common/Card/Card';
+import { getAllCourses } from '../../core/services/api/AllCourses';
+import { PostCoursesReserve } from '../../core/services/api/PostCourseReserve';
+const AllCourses = () => {
 
-const MyCourses = () => {
 
-  const [CoursesList , setCoursesList] = useState([]);
-  const getList = async () => {
-    const courses = await GetMyCoursesStudent();
-    setCoursesList(courses)  
-  } 
-  useEffect(() =>{
-      getList();
-  },[]);
-  
+    const [CoursesList , setCoursesList] = useState([]);
+    const getList = async () => {
+      const courses = await getAllCourses();
+      setCoursesList(courses)  
+    } 
+    useEffect(() =>{
+        getList();
+    },[]);
+
+
+
+
+    
   return (
-    <>
-        <MyCursesItems/>
+        <>
+                <MyCursesItems/>
         <div className='border flex flex-wrap  min-h-[300px] border-transparent gap-x-[30px] mr-[10px] mt-[50px]' data-aos="fade-up">
         <div className='xl:w-[850px] min-h-[350px] shadow-xl rounded-xl  bg-[#F3FCF8] bg-opacity-[26%] xl:mx-auto
           lg:w-[650px] lg:mr-[30px]'>
@@ -45,12 +53,14 @@ const MyCourses = () => {
               {CoursesList.map((item , index) => {
                 return(
                      <>
-                                      <Card3 
-                                      teacheName={item.teacheName}
+                                      <Card 
+                                      teacheName={item.teacherName}
                                       courseTitle={item.courseTitle} 
                                       lastUpdate={item.lastUpdate} 
                                       courseId={item.courseId}
                                       teacherId={item.teacherId}
+                                      title={item.title}
+                                      cost={item.cost}
                                       />
                      </>
                 )
@@ -59,8 +69,10 @@ const MyCourses = () => {
             </div>
         </div>
         </div>
-    </>
+        
+        
+        </>
   )
 }
 
-export default MyCourses
+export default AllCourses

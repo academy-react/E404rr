@@ -37,7 +37,7 @@ const CourseDetailsPage = () => {
               courseId={data.courseId}
             />
             <WillLearn />
-            <CourseDetailBody />
+            <CourseDetailBody        courseId={data.courseId} />
             <CourseRequirements />
             {/* <StudentsBought /> */}
           </div>

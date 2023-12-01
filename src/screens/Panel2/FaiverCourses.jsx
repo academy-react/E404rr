@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { MyCursesItems } from '../../components/Sidebar/MyCurses/MyCursesItems'
 import CourseCard from "../../components/common/CourseCard/CourseCardForLanding";
 import { Card3 } from '../../components/common/Card/Card3';
-import { GetMyCoursesStudent } from '../../core/services/api/UserPanel/GetAllCoursesStudent';
+import { Card4 } from '../../components/common/Card/Card4';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { GetMyFiver } from '../../core/services/api/UserPanel/GetMyFaiverit';
 
-const MyCourses = () => {
+const FaiverCourses = () => {
 
+    
   const [CoursesList , setCoursesList] = useState([]);
   const getList = async () => {
-    const courses = await GetMyCoursesStudent();
+    const courses = await GetMyFiver();
     setCoursesList(courses)  
   } 
   useEffect(() =>{
       getList();
   },[]);
-  
   return (
-    <>
+    <>  
+
+      
+
         <MyCursesItems/>
         <div className='border flex flex-wrap  min-h-[300px] border-transparent gap-x-[30px] mr-[10px] mt-[50px]' data-aos="fade-up">
         <div className='xl:w-[850px] min-h-[350px] shadow-xl rounded-xl  bg-[#F3FCF8] bg-opacity-[26%] xl:mx-auto
@@ -40,22 +46,24 @@ const MyCourses = () => {
             </div>
             <div >
                 {/* items */}
+   
 
 
               {CoursesList.map((item , index) => {
                 return(
                      <>
-                                      <Card3 
+                                      <Card4 
                                       teacheName={item.teacheName}
                                       courseTitle={item.courseTitle} 
                                       lastUpdate={item.lastUpdate} 
                                       courseId={item.courseId}
-                                      teacherId={item.teacherId}
                                       />
                      </>
                 )
             })}
 
+
+                    
             </div>
         </div>
         </div>
@@ -63,4 +71,4 @@ const MyCourses = () => {
   )
 }
 
-export default MyCourses
+export  {FaiverCourses}

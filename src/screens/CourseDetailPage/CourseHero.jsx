@@ -20,10 +20,11 @@ const CourseHero = ({title , teacherName , courseLevelName , describe , courseSt
       
     }
     const user = await PostCoursesReserve(userObj);
-    if (user.success === 200) {
+    if (user.success === true) {
       toast.success('! منتظر تایید باشید با موفقیت ثبت شد', { position: toast.POSITION.TOP_RIGHT });
 
     }
+
     else{
         // alert("وارد نشدین")
         toast.error( '!   ثبت نشد : ', { position: toast.POSITION.TOP_RIGHT });
@@ -43,7 +44,7 @@ const CourseHero = ({title , teacherName , courseLevelName , describe , courseSt
           <p className="text-[#ddd] my-3">
             {describe}
           </p>
-          <button onClick={AddReserve} className="bg-[#f3fcf8] px-4 py-3 mt-8 rounded-2xl">
+          <button type="submit" onClick={AddReserve} className="bg-[#f3fcf8] px-4 py-3 mt-8 rounded-2xl">
             <p>ثبت نام در دوره</p>
           </button>
         </div>

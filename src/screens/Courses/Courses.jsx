@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CourseNav from "./CourseNav";
 import CourseFilter from "./CourseFilter";
 import Footer from "../../components/common/footer/Footer";
 import { AllCourseCountainer } from "./AllCourseCountainer";
 import ReactPaginate from 'react-paginate';
+import { getAllCourses, getAllCoursesPageNumber } from "../../core/services/api/AllCourses";
 
 
 
 
 const Courses = () => {
+
+
+
+  const [CoursesList , setCoursesList] = useState([]);
+  const getList = async () => {
+    const courses = await getAllCoursesPageNumber();
+    setCoursesList(courses)  
+  } 
+  useEffect(() =>{
+      getList();
+  },[]);
   
   
   const [currentPage, setCurrentPage] = useState(0);
-  const tagsPerPage = 5;
-  const totalTags = 80;
+  const tagsPerPage = 1;
+  const totalTags =  7;
 
   // تولید تگ‌های p بر اساس صفحه جاری
   const generateTags = () => {

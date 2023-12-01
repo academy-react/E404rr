@@ -8,9 +8,10 @@ import { Field, Formik ,Form } from "formik";
 import { PostCommentUser } from "../../core/services/api/PostCommentUser";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PostAddMyCommentForCourses } from "../../core/services/api/PostAddMyComment";
 
 
-const CourseOpinions = ({title , author , describe , CommentID}) => {
+const CourseOpinions = ({title , author , describe , CommentID , courseId}) => {
 
 
   const [showReplies, setShowReplies] = useState(false);
@@ -34,30 +35,45 @@ const CourseOpinions = ({title , author , describe , CommentID}) => {
 
 
 
-  const loginUser = async (values) => {
+  // const loginUser = async (values) => {
+  //   console.log(values);
+  //   const userObj = {
+  //       comment:values.comment
+  //   };
+
+  
+  //   const user = await PostCommentUser(userObj);
+
+
+  //   if (user === 200) {
+  //     toast.success(' در انتظار تایید ! ثبت موفق آمیز ', { position: toast.POSITION.TOP_RIGHT });
+
+  //   }
+  //   else{
+  //       // alert("وارد نشدین")
+  //       toast.error('!  ثبت نشد ', { position: toast.POSITION.TOP_RIGHT });
+  //   }
+  // };
+
+
+
+  const AddComment = async (values) => {
     console.log(values);
     const userObj = {
-        comment:values.comment
+      CourseId: courseId ,
+      Title: values.Title,
+      Describe: values.Describe,
     };
 
   
-    const user = await PostCommentUser(userObj);
+    const user = await PostAddMyCommentForCourses(userObj);
+  }
 
-
-    if (user === 200) {
-      toast.success(' در انتظار تایید ! ثبت موفق آمیز ', { position: toast.POSITION.TOP_RIGHT });
-
-    }
-    else{
-        // alert("وارد نشدین")
-        toast.error('!  ثبت نشد ', { position: toast.POSITION.TOP_RIGHT });
-    }
-  };
 
   return (
     <>
      <ToastContainer />  
-    <Formik initialValues={{comment : ""}} onSubmit={loginUser}>
+    <Formik initialValues={{Title : "" ,Describe: ""}} onSubmit={AddComment}>
       <Form>
       <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
       <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
@@ -105,7 +121,8 @@ const CourseOpinions = ({title , author , describe , CommentID}) => {
 
 
 <Field className="rounded-3xl border-2 border-[#ccc] px-14 w-[90%] outline-green-600 caret-green-600  mb-3 focus:placeholder:opacity-0 py-4 mt-3 text-black flex justify-between items-stretch"
-            name="comment"
+            name={`Title`}
+            
             type="text"
             placeholder="پاسخ"
             // component={FormInput}

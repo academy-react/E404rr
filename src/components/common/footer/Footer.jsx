@@ -11,7 +11,7 @@ const Footer = () => {
         <FooterLinks />
         <WorkingTime />
       </footer>
-      <Brand />
+      {/* <Brand /> */}
     </div>
   );
 };
