@@ -28,6 +28,7 @@ const EditProfile = () => {
   const getList = async () => {
     const item = await GetProfileInfo();
     setData(item);
+    
   };
   useEffect(() => {
     getList();
@@ -101,24 +102,24 @@ const EditProfile = () => {
                 <Form>
                   <div className="mr-[20px]">
                     <div className="border border-transparent rounded-full w-[120px] h-[120px] mr-[60px] ">
-                      {/* {data?.userImage?.map((img , index) => {
+                      {data?.userImage?.map((img , index) => {
                           return(<>
                           
                           <img
-                          src={emptyprofile}
+                          src={img.puctureAddress}
                           alt=""
                           id={img.id}
                           className="rounded-full w-full h-full"
                         />
 
                           </>)
-                      } )} */}
+                      } )}
 
-                      <img
+                      {/* <img
                         src={emptyprofile}
                         alt=""
                         className="rounded-full w-full h-full"
-                      />
+                      /> */}
                     </div>
                     <div className="border border-transparent  p-3">
                       <Field

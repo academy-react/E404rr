@@ -25,6 +25,7 @@ const TeachersPage = () => {
               Name={item.fullName}
               key={index}
               id={item.teacherId}
+              pictureAddress={item.pictureAddress}
          />
             )
         })}

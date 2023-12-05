@@ -65,7 +65,7 @@ const CourseDetailBody = ({courseId}) => {
           {data.map((item , index) => {
             return(
               <>
-                      <CourseOpinions courseId={item.courseId}   title={item.title} CommentID={item.id}  author={item.author} describe={item.describe}/>
+                      <CourseOpinions likeCount={item.likeCount} disslikeCount={item.disslikeCount} courseId={item.courseId}   title={item.title} CommentID={item.id}  author={item.author} describe={item.describe}/>
               </>
             )
           })}

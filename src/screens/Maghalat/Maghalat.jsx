@@ -170,6 +170,8 @@ const Maghalat = () => {
                           img={item.currentImageAddressTumb}
                           insertDate={item.insertDate}
                           id={item.id}
+                          currentLikeCount={item.currentLikeCount}
+                          currentDissLikeCount={item.currentDissLikeCount}
                         />
                                           
                   </>
@@ -178,7 +180,7 @@ const Maghalat = () => {
 
           </div>
           <div className="w-[30%]">
-          <ArticleCategory />
+          {/* <ArticleCategory /> */}
             <ArticlesLast />
 
             

@@ -10,6 +10,8 @@ import { useEffect } from "react";
 import { getLastCoursesList } from "../../core/services/api/course";
 import { useParams } from "react-router-dom";
 import { GetCourseById } from "../../core/services/api/getCoursestopbyId";
+import CourseOpinions from "./CourseOpinions";
+import { CoursesOption3 } from "./CoursesOption";
 
 const CourseDetailsPage = () => {
   // const [Course , setCourse] = useState([]);
@@ -41,6 +43,7 @@ const CourseDetailsPage = () => {
             <CourseRequirements />
             {/* <StudentsBought /> */}
           </div>
+          <CoursesOption3  />
           <Footer />
         </>
       ) : (

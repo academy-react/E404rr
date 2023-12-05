@@ -1,12 +1,25 @@
 import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
-const Card4 = ({courseId , teacheName , courseTitle , lastUpdate}) => {
+import { DeleteFavorite } from "../../../core/services/api/UserPanel/GetMyFaiverit";
+const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId}) => {
 
     const navigate = useNavigate();
     const goCourse = () => {
       navigate(`/CoursePage/${courseId}`);
     };
+
+
+
+    
+  const AddDeleteFavorite = async () => {
+    const userObj = {
+      CourseFavoriteId : favoriteId
+    };
+    console.log(userObj , "user");
+  
+    const user = await DeleteFavorite(userObj);
+  }
   
   return (
     <>
@@ -59,6 +72,7 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate}) => {
           </p>
 
           <svg
+            onClick={AddDeleteFavorite}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

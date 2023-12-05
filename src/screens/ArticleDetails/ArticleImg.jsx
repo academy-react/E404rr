@@ -1,7 +1,20 @@
 import React from "react";
 import img from "../../assets/img/ArticleDetails/Article.png";
+import { PostAddFiverNews } from "../../core/services/api/PostAddFaiverit";
+import { useParams } from "react-router-dom";
 
-const ArticleImg = ({title , currentView}) => {
+const ArticleImg = ({title , currentView , id}) => {
+
+  const UserId = useParams().id;
+  const AddFaiNews = async () => {
+    console.log();
+    const userObj = {
+      NewsId: UserId
+    };
+
+  
+    const user = await PostAddFiverNews(userObj);
+  }
   return (
     <div className="text-[#323E73]" data-aos="fade-up">
       <div>
@@ -46,6 +59,9 @@ const ArticleImg = ({title , currentView}) => {
             </svg>
           </p>
         </div>
+      </div>
+      <div className="border rounded-lg  w-[180px] text-center mx-auto mt-5 py-3" onClick={AddFaiNews}>
+              افزودن به خبر مورد علاقه
       </div>
     </div>
   );

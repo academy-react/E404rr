@@ -4,7 +4,7 @@ import AboutTeacher from "./AboutTeacher";
 import TeachersCourse from "./TeachersCourse";
 import Footer from "../../components/common/footer/Footer";
 import { GetAllTeacherById } from "../../core/services/api/GetTeacherAllByID";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const TeachersDetails = () => {
     const [data, setData] = useState([]);
@@ -35,14 +35,20 @@ const TeachersDetails = () => {
             </div>
             <div className="flex flex-col gap-3 items-center">
               <p className="text-gray-500 text-lg">تعداد دوره ها</p>
-              <p className="text-xl font-extrabold">7</p>
+              <p className="text-xl font-extrabold">{data.courseCounts}</p>
+            </div>
+
+            <div className="flex flex-col gap-3 items-center">
+              <p className="text-gray-500 text-lg">تعداد خبر ها</p>
+              <p className="text-xl font-extrabold">{data.newsCount}</p>
             </div>
           </div>
           <AboutTeacher />
-          <TeachersCourse />
+          {/* <TeachersCourse /> */}
         </div>
+        
         <div className="w-[30%]" data-aos="fade-up">
-          <TeacherAvatar />
+        <TeacherAvatar   pictureAddress={data.pictureAddress}/>
           <div className="flex flex-col gap-6 mt-14">
             <div className="flex items-center justify-center px-6 py-4 p-2 shadow-sm  shadow-slate-300 rounded-2xl gap-3">
               <svg
@@ -124,7 +130,7 @@ const TeachersDetails = () => {
               </svg>
               <p>twitter</p>
             </div>
-            <div className="flex items-center justify-center px-6 py-4 p-2 shadow-sm  shadow-slate-300 rounded-2xl gap-3">
+            <NavLink to={data.linkdinProfileLink} className="flex items-center justify-center px-6 py-4 p-2 shadow-sm  shadow-slate-300 rounded-2xl gap-3">
               <svg
                 className="w-7"
                 viewBox="0 0 24 24"
@@ -160,7 +166,7 @@ const TeachersDetails = () => {
                 </g>
               </svg>
               <p>LinedIn</p>
-            </div>
+            </NavLink>
           </div>
         </div>
       </div>

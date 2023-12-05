@@ -31,8 +31,8 @@ const HeaderLeft = ({isLog , logOut}) => {
       }
   
   return (
-    <div className="flex"   data-aos="fade-up">
-      <NavLink to="/Cart">
+    <div className="flex" >
+      <NavLink to="/Cart"   data-aos="fade-up">
         <div className="p-3 relative mx-2 bg-[#23A455] rounded-full flex cursor-pointer ">
           <svg
             className="w-6"
@@ -112,7 +112,7 @@ const HeaderLeft = ({isLog , logOut}) => {
         {isModalOpen && (
             
             <>
-                <div  className="border top-[-20px] w-[200px] h-[200px] rounded-xl text-white fixed bg-green-700 z-50">
+                <div  className="border top-[30] w-[200px] h-[200px] rounded-xl text-white absolute bg-green-700 z-50">
                     <NavLink className="block" to={"/"}>
                           خانه
                     </NavLink>
@@ -123,7 +123,13 @@ const HeaderLeft = ({isLog , logOut}) => {
                           خروج
                     </p>
 
-                    <div className="absolute left-1 top-1" onClick={closeModal}>close</div>
+                    <div className="absolute left-1 top-1" onClick={closeModal}>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                    </div>
                 </div>
             </>
           )}

@@ -17,7 +17,8 @@ export const getAllCourses = async (count) => {
 
 
 
-  export const getAllCoursesPageNumber = async (count) => {
+  export const getAllCoursesPageNumber = async (PageNumber , RowsOfPage) => {
+      // (`/Home/GetCoursesWithPagination?PageNumber=${PageNumber}&RowsOfPage=${RowsOfPage}`);
       try {
         console.log("Fetching started ...");
         //https://acadapi.etacorealtime.ir/api/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0

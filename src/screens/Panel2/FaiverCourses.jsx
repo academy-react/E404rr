@@ -18,6 +18,7 @@ const FaiverCourses = () => {
   useEffect(() =>{
       getList();
   },[]);
+
   return (
     <>  
 
@@ -53,6 +54,7 @@ const FaiverCourses = () => {
                 return(
                      <>
                                       <Card4 
+                                      favoriteId={item.favoriteId}
                                       teacheName={item.teacheName}
                                       courseTitle={item.courseTitle} 
                                       lastUpdate={item.lastUpdate} 

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { Outlet } from 'react-router'
-import { NavLink } from 'react-router-dom'
+import { NavLink , useNavigate } from 'react-router-dom'
 import Hader from '../../Sidebar/Hader'
 import logo3 from "../../../assets/img/logo3.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { removeItem } from '../../../core/services/common/storage.services'
 
 
 
@@ -18,6 +19,15 @@ const SideBar = () => {
         AOS.init();
         AOS.refresh();
       }, []);
+     
+      const logOut = () =>{
+        removeItem("token")
+        setIsLOg(null)
+        navigate("/")
+        
+    }
+
+    const navigate = useNavigate();
   return (
         <>
             <div className='flex mt-[30px]'   data-aos="fade-up" >
@@ -110,7 +120,7 @@ const SideBar = () => {
                             </p>
                     
                          </NavLink>
-                         <NavLink to="/logout" >
+                         <NavLink onClick={logOut} >
                          <div className="w-[224px] h-[40px] border mt-[16px] rounded-lg  border-transparent  ">
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-[5px] inline-block">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />

@@ -24,21 +24,21 @@ const Courses = () => {
   
   
   const [currentPage, setCurrentPage] = useState(0);
-  const tagsPerPage = 1;
+  const tagsPerPage = 3;
   const totalTags =  7;
 
   // تولید تگ‌های p بر اساس صفحه جاری
-  const generateTags = () => {
-    const startTagIndex = currentPage * tagsPerPage;
-    const endTagIndex = startTagIndex + tagsPerPage;
-    const tags = [];
+  // const generateTags = () => {
+  //   const startTagIndex = currentPage * tagsPerPage;
+  //   const endTagIndex = startTagIndex + tagsPerPage;
+  //   const tags = [];
 
-    for (let i = startTagIndex; i < endTagIndex && i < totalTags; i++) {
-      tags.push(<p key={i}>محتوای تگ شماره {i + 1}</p>);
-    }
+  //   for (let i = startTagIndex; i < endTagIndex && i < totalTags; i++) {
+  //     tags.push(<p key={i}>محتوای تگ شماره {i + 1}</p>);
+  //   }
 
-    return tags;
-  };
+  //   return tags;
+  // };
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
@@ -48,8 +48,9 @@ const Courses = () => {
 
   return (
     <>
+      
       <CourseNav />
-      <div className="container max-w-[1255px] mx-auto flex-wrap flex justify-between items-start">
+      <div className="container max-w-[1255px] mx-auto flex-wrap flex-row flex justify-between items-start">
       <CourseFilter />
         <AllCourseCountainer/>
  

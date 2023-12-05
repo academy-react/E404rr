@@ -13,3 +13,17 @@ export const  PostAddFiver = async (user) => {
         return  false;
     }
 }
+
+
+
+
+export const  PostAddFiverNews = async (user) => {
+    try{
+            const response = await http.post(`/News/AddFavoriteNews?NewsId=${user.NewsId}`)
+
+            console.log(response , "ressxdqedf");
+            return response;
+    } catch(error) {
+        return  false;
+    }
+}

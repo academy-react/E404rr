@@ -25,6 +25,8 @@ const ArticlesRow = () => {
                img={item.currentImageAddressTumb}
                insertDate={item.insertDate}
                 id={item.id}
+                currentLikeCount={item.currentLikeCount}
+                currentDissLikeCount={item.currentDissLikeCount}
                   /> 
         })}
     </div>

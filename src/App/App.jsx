@@ -49,6 +49,7 @@ import { About } from "../screens/ArticleDetails/detailskid/About";
 import { Comment } from "../screens/ArticleDetails/detailskid/Comment";
 import { FaiverCourses } from "../screens/Panel2/FaiverCourses";
 import { PanelCourses } from "../screens/Panel2/PanelCourses";
+import { EditProfile2 } from "../screens/Panel2/EditProfile2";
 
 
 
@@ -101,7 +102,7 @@ const App = createBrowserRouter([
       // { path: "/panel/myCourses", element:<MyCourses/> },
       // { path: "/panel/FiverCourses", element:<FaiverCourses/> },
       { path: "/panel/Ticket", element: <Tiket/> },
-      { path: "/panel/editprofile", element: <EditProfile/> },
+      { path: "/panel/editprofile", element: <EditProfile2/> },
       { path: "/panel/Addticket", element: <Addtiket/> },
     ],
   },

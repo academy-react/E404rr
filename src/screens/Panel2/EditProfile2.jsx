@@ -1,0 +1,470 @@
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import React, { useEffect, useState } from "react";
+import emptyprofile from "../../assets/img/emptyprofile.png";
+import { GetProfileInfo } from "../../core/services/api/UserPanel/GetProfileInfo";
+import { AddProfileImage } from "../../core/services/api/UserPanel/PostAddProfileImage";
+import { PutProfileInfo } from "../../core/services/api/UserPanel/PutUpdateProfileInfo";
+const EditProfile2 = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal2 = () => {
+    setIsModalOpen2(true);
+  };
+
+  const closeModal2 = () => {
+    setIsModalOpen2(false);
+  };
+
+  const [data, setData] = useState([]);
+  const getList = async () => {
+    const item = await GetProfileInfo();
+    setData(item);
+  };
+  useEffect(() => {
+    getList();
+  }, []);
+
+  // const [profile, setProfile] = useState([]);
+
+  // const PostProfile = async (values) => {
+  //   console.log(values);
+  //   const profile = {
+  //     profile: values.profile,
+  //   };
+
+  //   const user = await AddProfileImage(profile);
+  // };
+
+  const PutProfile = async (values) => {
+    console.log(values);
+    const profile = {
+      lName: values.lName,
+    };
+
+    const formdata = new FormData();
+    formdata.append("LName", values.LName);
+    formdata.append("FName", values.FName);
+    formdata.append("UserAbout", values.UserAbout);
+    formdata.append("LinkdinProfile", values.LinkdinProfile);
+    formdata.append("TelegramLink", values.TelegramLink);
+    formdata.append("ReceiveMessageEvent", values.ReceiveMessageEvent);
+    formdata.append("HomeAdderess", values.HomeAdderess);
+    formdata.append("NationalCode", values.NationalCode);
+    formdata.append("Gender", values.Gender);
+    formdata.append("BirthDay", values.BirthDay);
+    formdata.append("Latitude", values.Latitude);
+    formdata.append("Longitude", values.Longitude);
+
+    const imgData = new FormData();
+    imgData.append("formFile", values.userImg);
+    console.log("values", values.userImg);
+    const postImg = await AddProfileImage(imgData ? imgData : null);
+    console.log(postImg, "postImg");
+    const user = await PutProfileInfo(formdata);
+  };
+  // const SelectImg = async (values) => {
+
+  // }
+  return (
+    <>
+      {/* <Formik>
+                        <Form>
+                           
+                            <Field placeholder="نام کاربری خود را وارد کنید..." className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[46px] xl:mr-[30px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>
+                            <Field type="email" placeholder=" ایمیل خود را وارد کنید..." className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[46px] xl:mr-[60px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>
+                            <Field placeholder=" شماره تلفن خود را وارد کنید..." className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[46px] xl:mr-[30px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>
+                            <Field placeholder=" کد ملی خود را وارد کنید..." className="outline-none border rounded pr-3 focus:placeholder:opacity-0 border-[#DEC9E9] hover:border-green-600 xl:w-[380px] lg:w-[300px] h-[50px] mt-[46px] xl:mr-[60px] lg:mr-[30px] md:mr-[30px] sm:mr-1"/>  
+                        </Form>
+                    </Formik> */}
+      <div
+        className="flex flex-wrap border border-transparent pb-5"
+        data-aos="fade-up"
+      >
+        <Formik
+          onSubmit={PutProfile}
+          initialValues={{ profile: "" }}
+          className="flex w-[80%] h-auto border mx-auto mt-[50px] border-"
+        >
+          {({ setFieldValue }) => {
+            return (
+              <>
+                <Form>
+                  <div className="mr-[20px]">
+                    <div className="border border-transparent rounded-full w-[120px] h-[120px] mr-[60px] ">
+                      {data?.userImage?.map((img, index) => {
+                        return (
+                          <>
+                            <img
+                              src={img.puctureAddress}
+                              alt=""
+                              id={img.id}
+                              className="rounded-full w-full h-full"
+                            />
+                          </>
+                        );
+                      })}
+
+                      {/* <img
+                        src={emptyprofile}
+                        alt=""
+                        className="rounded-full w-full h-full"
+                      /> */}
+                    </div>
+                    <div className="border border-transparent  p-3">
+                      <Field
+                        type="file"
+                        name="profile"
+                        onChange={(e) =>
+                          setFieldValue("userImg", e.target.files[0])
+                        }
+                        id="file-profile-edit"
+                        className="hidden"
+                        accept=".jpg , .jpeg , .png"
+                      />
+                      <label
+                        name="profile"
+                        className="border  flex items-center bg-white justify-center  px-[20px] py-[7px] rounded-xl"
+                        htmlFor="file-profile-edit"
+                      >
+                        <p className="">عکس جدید خود را اضافه کنید</p>
+                      </label>
+                      <div className="flex justify-center items-center text-center border mt-[10px] border-transparent">
+                        <p className="text-[12px]">
+                          لطفا عکس واضح و با کیفیت انتخاب کنید <br />{" "}
+                          <span className="text-[10px]">
+                            تنها فرمت های jpg و png قابل استفاده اند
+                          </span>{" "}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" className="mr-[120px]">
+                    submit
+                  </button>
+                </Form>
+              </>
+            );
+          }}
+        </Formik>
+
+        <div className="border w-[80%]  bg-white mt-[30px] pb-10 mx-auto border-transparent rounded-xl">
+          <Formik
+            onSubmit={PutProfile}
+            initialValues={{
+              LName: "",
+              FName: "",
+              UserAbout: "",
+              LinkdinProfile: "",
+              TelegramLink: "",
+              ReceiveMessageEvent: "",
+              HomeAdderess: "",
+              NationalCode: "",
+              Gender: "",
+              BirthDay: "",
+              Latitude: "",
+              Longitude: "",
+            }}
+          >
+            <Form>
+              <div>
+                <div className="flex">
+                  <div className="basis-1/2">
+                    <h3 className="text-[18px] mr-5 mt-5">اطلاعات شخصی</h3>
+                    {/* openMOdal1 */}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
+                  <div className="border border-transparent mr-10 w-[30%] ">
+                    <p> نام خانوادگی </p>
+                    {data.LName ? (
+                      <>
+                        <Field
+                          placeholder={data.LName}
+                          name="LName"
+                          className="outline-none  placeholder:text-black"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <Field
+                          className="outline-none placeholder:text-black"
+                          placeholder={"هنوز اسمی ثبت نکردید"}
+                          name="LName"
+                        />
+                      </>
+                    )}
+                  </div>
+
+                  <div className="border border-transparent  w-[30%] ">
+                    <div className="border border-transparent w-[30%] mr-10">
+                      <p>نام </p>
+                      <p className="mt-2">
+                        {data.fName ? (
+                          <>
+                            <Field
+                              placeholder={data.fName}
+                              className="outline-none  placeholder:text-black"
+                              name="FName"
+                            />
+                          </>
+                        ) : (
+                          <>
+                            {" "}
+                            <Field
+                              className=" placeholder:text-black"
+                              placeholder={"هنوز اسمی ثبت نکردید"}
+                              name="FName"
+                            />{" "}
+                          </>
+                        )}
+                      </p>
+                    </div>
+                    {/* 
+              <p> ایمیل</p>
+              {data.email ? <>{data.email}</> : <>هنوز ایمیلی ثبت نکردید</>} */}
+                  </div>
+
+                  <div className="border border-transparent  w-[30%] ">
+                    {/* <p> شماره تلفن </p>
+              <p className="mt-2">{data.phoneNumber}</p> */}
+
+                    <p> درباره </p>
+
+                    {data.UserAbout ? (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.UserAbout}
+                          name="UserAbout"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={"هنوز درباره ای ثبت نکردید"}
+                          name="UserAbout"
+                        />
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
+                  <div className="border border-transparent mr-10 w-[35%] mt-10 ">
+                    <p> پروفایل لینکدین </p>
+                    {data.LinkdinProfile ? (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.LinkdinProfile}
+                          name="LinkdinProfile"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={"ثبت نشد"}
+                          name="LinkdinProfile"
+                        />
+                      </>
+                    )}
+                  </div>
+
+                  <div className="border border-transparent w-[25%] mt-10 ">
+                    <p> پروفایل تلگرام </p>
+                    {data.TelegramLink ? (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.TelegramLink}
+                          name="TelegramLink"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={"ثبت نکردید"}
+                          name="TelegramLink"
+                        />
+                      </>
+                    )}
+                  </div>
+
+                  <div className="border border-transparent w-[30%] mt-10 ">
+                    <p> رویداد پیام را دریافت کنید </p>
+                    {data.ReceiveMessageEvent ? (
+                      <>
+                        {" "}
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.ReceiveMessageEvent}
+                          name="ReceiveMessageEvent"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={"ثبت نکردید"}
+                          name="ReceiveMessageEvent"
+                        />
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
+                  <div className="border border-transparent mr-10 w-[35%] mt-10 ">
+                    <p> آدرس خانه </p>
+                    {data.HomeAdderess ? (
+                      <>
+                        {" "}
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.HomeAdderess}
+                          name="HomeAdderess"
+                        />
+                      </>
+                    ) : (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={"ثبت نکردید"}
+                        name="HomeAdderess"
+                      />
+                    )}
+                  </div>
+
+                  <div className="border border-transparent w-[25%] mt-10 ">
+                    <p> کد ملی </p>
+                    {data.NationalCode ? (
+                      <>
+                        {" "}
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.NationalCode}
+                          name="NationalCode"
+                        />
+                      </>
+                    ) : (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={"ثبت نکردید"}
+                        name="NationalCode"
+                      />
+                    )}
+                  </div>
+
+                  <div className="border border-transparent w-[30%] mt-10 ">
+                    <p> جنسیت </p>
+                    {data.gender ? (
+                      <>
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.gender}
+                          name="gender"
+                        />
+                      </>
+                    ) : (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={"ثبت نکردید"}
+                        name="gender"
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
+                  <div className="border border-transparent mr-10 w-[35%] mt-10 ">
+                    <p> روز تولد </p>
+                    {data.BirthDay ? (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={data.BirthDay}
+                        name="BirthDay"
+                      />
+                    ) : (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={"ثبت نکردید"}
+                        name="BirthDay"
+                      />
+                    )}
+                  </div>
+
+                  <div className="border border-transparent w-[25%] mt-10 ">
+                    <p> عرض جغرافیایی </p>
+                    {data.Latitude ? (
+                      <>
+                        {" "}
+                        <Field
+                          className="outline-none  placeholder:text-black"
+                          placeholder={data.Latitude}
+                          name="Latitude"
+                        />
+                      </>
+                    ) : (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={"ثبت نکردید"}
+                        name="Latitude"
+                      />
+                    )}
+                  </div>
+
+                  <div className="border border-transparent w-[30%] mt-10 ">
+                    <p> طول جغرافیایی </p>
+                    {data.Longitude ? (
+                      <>
+                        <>
+                          {" "}
+                          <Field
+                            className="outline-none  placeholder:text-black"
+                            placeholder={data.Longitude}
+                            name="Longitude"
+                          />
+                        </>{" "}
+                      </>
+                    ) : (
+                      <Field
+                        className="outline-none  placeholder:text-black"
+                        placeholder={"ثبت نکردید"}
+                        name="Longitude"
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div className="border flex items-center justify-center border-transparent mt-10">
+                  <button
+                    type="submit"
+                    className="border bg-green-600 py-3 text-white"
+                  >
+                    {" "}
+                    ثبت تغییرات
+                  </button>
+                </div>
+              </div>
+            </Form>
+          </Formik>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export { EditProfile2 };
