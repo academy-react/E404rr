@@ -100,18 +100,13 @@ const EditProfile2 = () => {
                 <Form>
                   <div className="mr-[20px]">
                     <div className="border border-transparent rounded-full w-[120px] h-[120px] mr-[60px] ">
-                      {data?.userImage?.map((img, index) => {
-                        return (
-                          <>
+
                             <img
-                              src={img.puctureAddress}
+                              src={data.currentPictureAddress}
                               alt=""
-                              id={img.id}
                               className="rounded-full w-full h-full"
                             />
-                          </>
-                        );
-                      })}
+  
 
                       {/* <img
                         src={emptyprofile}
@@ -186,10 +181,10 @@ const EditProfile2 = () => {
                 <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
                   <div className="border border-transparent mr-10 w-[30%] ">
                     <p> نام خانوادگی </p>
-                    {data.LName ? (
+                    {data.lName ? (
                       <>
                         <Field
-                          placeholder={data.LName}
+                          placeholder={data.lName}
                           name="LName"
                           className="outline-none  placeholder:text-black"
                         />
@@ -238,14 +233,14 @@ const EditProfile2 = () => {
                   <div className="border border-transparent  w-[30%] ">
                     {/* <p> شماره تلفن </p>
               <p className="mt-2">{data.phoneNumber}</p> */}
-
+                    
                     <p> درباره </p>
 
-                    {data.UserAbout ? (
+                    {data.userAbout ? (
                       <>
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.UserAbout}
+                          placeholder={data.userAbout}
                           name="UserAbout"
                         />
                       </>
@@ -264,11 +259,11 @@ const EditProfile2 = () => {
                 <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
                   <div className="border border-transparent mr-10 w-[35%] mt-10 ">
                     <p> پروفایل لینکدین </p>
-                    {data.LinkdinProfile ? (
+                    {data.linkdinProfile ? (
                       <>
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.LinkdinProfile}
+                          placeholder={data.linkdinProfile}
                           name="LinkdinProfile"
                         />
                       </>
@@ -285,11 +280,11 @@ const EditProfile2 = () => {
 
                   <div className="border border-transparent w-[25%] mt-10 ">
                     <p> پروفایل تلگرام </p>
-                    {data.TelegramLink ? (
+                    {data.telegramLink ? (
                       <>
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.TelegramLink}
+                          placeholder={data.telegramLink}
                           name="TelegramLink"
                         />
                       </>
@@ -306,12 +301,12 @@ const EditProfile2 = () => {
 
                   <div className="border border-transparent w-[30%] mt-10 ">
                     <p> رویداد پیام را دریافت کنید </p>
-                    {data.ReceiveMessageEvent ? (
+                    {data.receiveMessageEvent ? (
                       <>
                         {" "}
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.ReceiveMessageEvent}
+                          placeholder={data.receiveMessageEvent}
                           name="ReceiveMessageEvent"
                         />
                       </>
@@ -330,12 +325,12 @@ const EditProfile2 = () => {
                 <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
                   <div className="border border-transparent mr-10 w-[35%] mt-10 ">
                     <p> آدرس خانه </p>
-                    {data.HomeAdderess ? (
+                    {data.homeAdderess ? (
                       <>
                         {" "}
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.HomeAdderess}
+                          placeholder={data.homeAdderess}
                           name="HomeAdderess"
                         />
                       </>
@@ -350,12 +345,12 @@ const EditProfile2 = () => {
 
                   <div className="border border-transparent w-[25%] mt-10 ">
                     <p> کد ملی </p>
-                    {data.NationalCode ? (
+                    {data.nationalCode ? (
                       <>
                         {" "}
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.NationalCode}
+                          placeholder={data.nationalCode}
                           name="NationalCode"
                         />
                       </>
@@ -391,10 +386,10 @@ const EditProfile2 = () => {
                 <div className="flex flex-wrap min-w-[70%]  border border-transparent mx-auto mt-5">
                   <div className="border border-transparent mr-10 w-[35%] mt-10 ">
                     <p> روز تولد </p>
-                    {data.BirthDay ? (
+                    {data.birthDay ? (
                       <Field
                         className="outline-none  placeholder:text-black"
-                        placeholder={data.BirthDay}
+                        placeholder={data.birthDay}
                         name="BirthDay"
                       />
                     ) : (
@@ -408,12 +403,12 @@ const EditProfile2 = () => {
 
                   <div className="border border-transparent w-[25%] mt-10 ">
                     <p> عرض جغرافیایی </p>
-                    {data.Latitude ? (
+                    {data.latitude ? (
                       <>
                         {" "}
                         <Field
                           className="outline-none  placeholder:text-black"
-                          placeholder={data.Latitude}
+                          placeholder={data.latitude}
                           name="Latitude"
                         />
                       </>
@@ -428,13 +423,13 @@ const EditProfile2 = () => {
 
                   <div className="border border-transparent w-[30%] mt-10 ">
                     <p> طول جغرافیایی </p>
-                    {data.Longitude ? (
+                    {data.longitude ? (
                       <>
                         <>
                           {" "}
                           <Field
                             className="outline-none  placeholder:text-black"
-                            placeholder={data.Longitude}
+                            placeholder={data.longitude}
                             name="Longitude"
                           />
                         </>{" "}
