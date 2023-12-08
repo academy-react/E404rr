@@ -167,11 +167,11 @@ const Maghalat = () => {
                         key={index} 
                         title={item.title}
                         miniDescribe={item.miniDescribe}
-                          img={item.currentImageAddressTumb}
                           insertDate={item.insertDate}
                           id={item.id}
                           currentLikeCount={item.currentLikeCount}
                           currentDissLikeCount={item.currentDissLikeCount}
+                          addUserProfileImage={item.addUserProfileImage}
                         />
                                           
                   </>

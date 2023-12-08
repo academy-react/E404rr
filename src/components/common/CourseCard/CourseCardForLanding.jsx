@@ -2,13 +2,13 @@ import CourseImg from "./CourseImg";
 import CourseInfo from "./CourseInfo";
 import CourseDetails from "./CourseDetails";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import poster from "../../../assets/img/Landing/02.png";
 
 import styles from "./CourseCard.module.css";
 import { AddDeleteLikeForCourses, AddDisLikeForCourses, AddLikeForCourses } from "../../../core/services/api/CourseAddCourseLike";
 
-const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeCount}) => {
+const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeCount }) => {
   const [isClicked, setIsClicked] = useState(true);
   const [isClicked2, setIsClicked2] = useState(true);
 
@@ -61,6 +61,7 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeC
       className={`${styles.courseCard} border border-transparent    w-[287.5px]  max-lg:mx-10 max-xl:my-10 rounded mb-8 `}
       data-aos="fade-up"
     >
+
       <div>
         <img src={poster} alt="" />
       </div>
@@ -70,6 +71,7 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeC
       <div className="mx-3 mt-3 text-right border border-transparent">
         {/* عنوان */}
         <h3 className="text-[#323E73] text-[15px] mb-4 font-medium	 	">
+
           {title}
         </h3>
         <p className="flex items-center">

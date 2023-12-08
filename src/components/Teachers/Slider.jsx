@@ -51,7 +51,7 @@ export default function Slider() {
         
         {teachersList.map((item , index) => {
           return(
-            <SliderCart  Name={item.fullName}/>
+            <SliderCart  Name={item.fullName} pictureAddress={item.pictureAddress} teacherId={item.teacherId}/>
           )
         })}
       </Carousel>

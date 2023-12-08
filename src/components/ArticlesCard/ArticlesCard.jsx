@@ -10,14 +10,14 @@ const ArticlesCard = ({
   miniDescribe,
   insertDate,
   currentLikeCount,
-  currentDissLikeCount,
+  currentDissLikeCount,addUserProfileImage
 }) => {
   return (
     <div
       className={`${styles.articleCard} w-[380px] h-[500px] max-lg:mx-10 max-xl:my-10 rounded text-right  mb-16 `}
       data-aos="fade-up"
     >
-      <ArticleImg img={img} />
+      <ArticleImg img={addUserProfileImage} />
       <ArticleInfo
         title={title}
         id={id}

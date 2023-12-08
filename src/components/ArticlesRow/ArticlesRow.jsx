@@ -27,6 +27,7 @@ const ArticlesRow = () => {
                 id={item.id}
                 currentLikeCount={item.currentLikeCount}
                 currentDissLikeCount={item.currentDissLikeCount}
+                addUserProfileImage={item.addUserProfileImage}
                   /> 
         })}
     </div>

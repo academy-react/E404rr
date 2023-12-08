@@ -100,13 +100,11 @@ const EditProfile2 = () => {
                 <Form>
                   <div className="mr-[20px]">
                     <div className="border border-transparent rounded-full w-[120px] h-[120px] mr-[60px] ">
-
-                            <img
-                              src={data.currentPictureAddress}
-                              alt=""
-                              className="rounded-full w-full h-full"
-                            />
-  
+                      <img
+                        src={data.currentPictureAddress}
+                        alt=""
+                        className="rounded-full w-full h-full"
+                      />
 
                       {/* <img
                         src={emptyprofile}
@@ -233,7 +231,7 @@ const EditProfile2 = () => {
                   <div className="border border-transparent  w-[30%] ">
                     {/* <p> شماره تلفن </p>
               <p className="mt-2">{data.phoneNumber}</p> */}
-                    
+
                     <p> درباره </p>
 
                     {data.userAbout ? (
@@ -365,21 +363,12 @@ const EditProfile2 = () => {
 
                   <div className="border border-transparent w-[30%] mt-10 ">
                     <p> جنسیت </p>
-                    {data.gender ? (
-                      <>
-                        <Field
-                          className="outline-none  placeholder:text-black"
-                          placeholder={data.gender}
-                          name="gender"
-                        />
-                      </>
-                    ) : (
-                      <Field
-                        className="outline-none  placeholder:text-black"
-                        placeholder={"ثبت نکردید"}
-                        name="gender"
-                      />
-                    )}
+                    <Field type="radio" name="Gender" value="female"/> زن
+                    <Field type="radio" name="Gender" value="male" /> مرد
+          
+               
+
+
                   </div>
                 </div>
 
