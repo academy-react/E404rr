@@ -44,16 +44,22 @@ const TextInput = ({ type, placeholder }) => {
       />
 
       {(searchInput.trim() !== '' && results.length > 0) && (
-        <div className="absolute bg-white w-[300px] h-[200px]">
+        <div className="absolute overflow-auto bg-white w-[600px] max-h-[200px] min-h-[80px]">
           <ul>
             {results.map((item, index) => (
               <>
-              <NavLink to={`/CoursePage/${item.courseId}`} className={"block"} key={index}>{item.title}</NavLink>
+                  <div className="block mt-3">
+                  <img src={item.tumbImageAddress} className="border w-[50px] h-[50px] inline-block rounded-full" alt="" />
+              <NavLink to={`/CoursePage/${item.courseId}`} className={"inline-block mr-3"} key={index}>{item.title}</NavLink>
+                  </div>
               </>
             ))}
           </ul>
         </div>
       )}
+
+
+
     </>
   );
 };
