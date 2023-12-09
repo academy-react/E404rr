@@ -19,7 +19,8 @@ const CourseCardForAllCourse = ({
   cost,
   likeCount,
   id,
-  dissLikeCount
+  dissLikeCount,
+  tumbImageAddress
 }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isClicked2, setIsClicked2] = useState(false);
@@ -216,9 +217,16 @@ const CourseCardForAllCourse = ({
 className={`${styles.courseCard} hover:scale-105     w-[287.5px]  max-lg:mx-10 max-xl:my-10 rounded mb-8 `}
 data-aos="fade-up"
 >
-<div>
-  <img src={poster} alt="" />
+  {tumbImageAddress ?  (
+    <div>
+    <img src={tumbImageAddress} className="w-[287.5px] h-[179.69px]" alt="" />
+  </div>
+  )  :   (
+    <div>
+  <img src={poster} className="w-[287.5px] h-[179.69px]" alt="" />
 </div>
+  )}
+
 {/* <CourseImg /> */}
 {/* <CourseInfo  title={title} teacherName={teacherName}  likeCount={likeCount} /> */}
 

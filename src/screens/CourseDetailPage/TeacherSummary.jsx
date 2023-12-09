@@ -1,7 +1,7 @@
 import React from "react";
 import jobs from "../../assets/img/SteveJobs.jpg";
 
-const TeacherSummary = () => {
+const TeacherSummary = ({teacherName}) => {
   return (
     <div className="flex bg-[#1c543b] rounded-3xl px-8 py-6 mt-8 text-white">
       <div className="bg-[#1c543b] py-4 px-6  flex flex-col items-center border-l-2 border-[#ccc]">
@@ -9,8 +9,7 @@ const TeacherSummary = () => {
           <img className="rounded-full" src={jobs} alt="" />
         </div>
         <div className="text-center">
-          <p className="text-xl my-2">مهدیار شیرزاد</p>
-          <p>بیکار</p>
+          <p className="text-xl my-2">{teacherName} </p>
           <button className="bg-[#f3fcf8] text-black px-4 py-2 rounded-xl mt-3">
             رزومه و نمونه تدریس
           </button>

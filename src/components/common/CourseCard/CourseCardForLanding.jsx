@@ -8,7 +8,7 @@ import poster from "../../../assets/img/Landing/02.png";
 import styles from "./CourseCard.module.css";
 import { AddDeleteLikeForCourses, AddDisLikeForCourses, AddLikeForCourses } from "../../../core/services/api/CourseAddCourseLike";
 
-const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeCount }) => {
+const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeCount ,tumbImageAddress }) => {
   const [isClicked, setIsClicked] = useState(true);
   const [isClicked2, setIsClicked2] = useState(true);
 
@@ -62,9 +62,16 @@ const CourseCard = ({ title, desc, teacherName, cost, likeCount , id , dissLikeC
       data-aos="fade-up"
     >
 
-      <div>
-        <img src={poster} alt="" />
-      </div>
+{tumbImageAddress ?  (
+    <div>
+    <img src={tumbImageAddress} className="w-[287.5px] h-[179.69px]" alt="" />
+  </div>
+  )  :   (
+    <div>
+  <img src={poster} className="w-[287.5px] h-[179.69px]" alt="" />
+</div>
+  )}
+
       {/* <CourseImg /> */}
       {/* <CourseInfo  title={title} teacherName={teacherName}  likeCount={likeCount} /> */}
 

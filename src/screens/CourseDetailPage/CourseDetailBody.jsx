@@ -11,7 +11,7 @@ import { PostAddMyCommentForCourses } from "../../core/services/api/PostAddMyCom
 
 
 
-const CourseDetailBody = ({courseId}) => {
+const CourseDetailBody = ({courseId  , teacherName}) => {
 
   const [activeTab, setActiveTab] = useState('tab1');
 
@@ -54,7 +54,7 @@ const CourseDetailBody = ({courseId}) => {
 
 
         <div id="tab2" className={`tab-content ${activeTab === 'tab2' ? 'block' : 'hidden'}`}>
-        <TeacherSummary/> 
+        <TeacherSummary teacherName={teacherName}/> 
         </div>
         
         <div id="tab3" className={`tab-content ${activeTab === 'tab3' ? 'block' : 'hidden'}`}>

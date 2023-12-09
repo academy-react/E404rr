@@ -19,7 +19,7 @@ const AllCourseCountainer = () => {
         {CoursesList.map((item , index) => {
                 return(
                   <CourseCardForAllCourse 
-                  key={index}  id={item.courseId} dissLikeCount={item.dissLikeCount}  title={item.title} desc={item.desc} teacherName={item.teacherName} cost={item.cost} likeCount={item.likeCount}
+                  key={index} tumbImageAddress={item.tumbImageAddress}  id={item.courseId} dissLikeCount={item.dissLikeCount}  title={item.title} desc={item.desc} teacherName={item.teacherName} cost={item.cost} likeCount={item.likeCount}
                   />
                 )
         })}
