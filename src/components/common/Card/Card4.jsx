@@ -13,16 +13,21 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId}) 
 
     
   const AddDeleteFavorite = async () => {
-    const userObj = {
-      CourseFavoriteId : favoriteId
-    };
-    console.log(userObj , "user");
-  
-    const user = await DeleteFavorite(userObj);
+    // const userObj = {
+    //   CourseFavoriteId : favoriteId
+    // };
+
+    var formdata = new FormData();
+    formdata.append("CourseFavoriteId", "76674b60-628d-ee11-b6c7-ca6d3e095898");
+    
+    
+    const user = await DeleteFavorite(formdata);
+    
   }
   
   return (
     <>
+    {favoriteId}
       <div className=" border-b h-[70px]  flex  last:border-transparent " >
         <div
           className="xl:w-[80px] h-[50px] xl:mr-[30px] border border-transparent 

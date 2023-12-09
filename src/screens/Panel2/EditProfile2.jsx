@@ -46,9 +46,9 @@ const EditProfile2 = () => {
 
   const PutProfile = async (values) => {
     console.log(values);
-    const profile = {
-      lName: values.lName,
-    };
+    // const profile = {
+    //   lName: values.lName,
+    // };
 
     const formdata = new FormData();
     formdata.append("LName", values.LName);
@@ -56,7 +56,7 @@ const EditProfile2 = () => {
     formdata.append("UserAbout", values.UserAbout);
     formdata.append("LinkdinProfile", values.LinkdinProfile);
     formdata.append("TelegramLink", values.TelegramLink);
-    formdata.append("ReceiveMessageEvent", values.ReceiveMessageEvent);
+    formdata.append("ReceiveMessageEvent", true);
     formdata.append("HomeAdderess", values.HomeAdderess);
     formdata.append("NationalCode", values.NationalCode);
     formdata.append("Gender", values.Gender);

@@ -8,18 +8,18 @@ import { Field, Formik, Form } from "formik";
 import { PostCommentUser } from "../../core/services/api/PostCommentUser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { PostAddMyCommentForCourses } from "../../core/services/api/PostAddMyComment";
+import { PostAddMyCommentForCourses, PostAddRepayMyCommentForCourses } from "../../core/services/api/PostAddMyComment";
 import { AddDeleteLikeForCourses, AddDisLikeForCoursesComment, AddLikeForCourses, AddLikeForCoursesComment } from "../../core/services/api/CourseAddCourseLike";
 
 const CourseOpinions = ({ title, author, describe, CommentID, courseId , disslikeCount , likeCount }) => {
   const [showReplies, setShowReplies] = useState(false);
-
+  const UserId = useParams().id;
   const toggleReplies = () => {
     setShowReplies(!showReplies);
   };
 
   const [data, setData] = useState([]);
-  const UserId = useParams().id;
+
   const GetCourseApiById = async () => {
     const items = await GetCoursesReplay(UserId, CommentID);
     setData(items);
@@ -47,15 +47,31 @@ const CourseOpinions = ({ title, author, describe, CommentID, courseId , disslik
   //   }
   // };
 
+  // const AddComment = async (values) => {
+  //   console.log(values);
+  //   const userObj = {
+  //     CourseId: courseId,
+  //     Title: values.Title,
+  //     Describe: values.Describe,
+  //   };
+
+  //   const user = await PostAddRepayMyCommentForCourses(userObj);
+  // };
+
+
+
+
+
   const AddComment = async (values) => {
     console.log(values);
-    const userObj = {
-      CourseId: courseId,
-      Title: values.Title,
-      Describe: values.Describe,
-    };
+    var formData = new FormData();
+    formData.append("CourseId", UserId);
+    formData.append("Title", values.Title);
+    formData.append("Describe", values.Describe);
+    formData.append("CommentId", CommentID)
 
-    const user = await PostAddMyCommentForCourses(userObj);
+    const user = await PostAddRepayMyCommentForCourses(formData);
+    console.log("send", user);
   };
 
   const [isClicked, setIsClicked] = useState(false);
@@ -100,7 +116,7 @@ const CourseOpinions = ({ title, author, describe, CommentID, courseId , disslik
   return (
     <>
       <ToastContainer />
-      <Formik initialValues={{ Title: "", Describe: "" }} onSubmit={AddComment}>
+      <Formik initialValues={{ Title: "title", Describe: "" }} onSubmit={AddComment}>
         <Form>
           <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
             <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
@@ -145,9 +161,9 @@ const CourseOpinions = ({ title, author, describe, CommentID, courseId , disslik
             
           </div> */}
 
-                <Field
+                                <Field
                   className="rounded-3xl border-2 border-[#ccc] px-14 w-[90%] outline-green-600 caret-green-600  mb-3 focus:placeholder:opacity-0 py-4 mt-3 text-black flex justify-between items-stretch"
-                  name="Title"
+                  name="Describe"
                   type="text"
                   placeholder="پاسخ"
                   // component={FormInput}

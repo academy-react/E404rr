@@ -17,7 +17,7 @@ export const GetMyFiver = async (count) => {
   export const DeleteFavorite  = async (user) => {
     try{
         //https://api-academy.iran.liara.run/api/Course/AddCourseLike
-            const response = await http.delete(`/Course/DeleteCourseFavorite`, user)
+            const response = await http.delete(`/Course/DeleteCourseFavorite` ,user)
 
             return response;
     } catch(error) {

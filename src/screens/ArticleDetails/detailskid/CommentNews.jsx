@@ -4,6 +4,7 @@ import { ReplayComentNews } from './ReplayComentNews';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { GetNewsReplay } from '../../../core/services/api/NewsReplay';
+import { Field ,} from 'formik';
 
 const CommentNews = ({title , describe , id}) => {
 
@@ -25,6 +26,54 @@ const CommentNews = ({title , describe , id}) => {
   useEffect(() => {
     GetCourseApiById();
   }, [id]);
+
+  
+
+
+
+
+
+  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked2, setIsClicked2] = useState(false);
+
+  const [selectedSvg, setSelectedSvg] = useState(null);
+
+  const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
+  // const UserId =  id;
+  const handleClick = async () => {
+    if (selectedSvg !== 1) {
+      setSelectedSvg(1);
+      setCount(count + 1);
+
+      if (selectedSvg === 2) {
+        setCount2(count2 - 1);
+      }
+      const user = await AddLikeForCoursesComment(CommentID);
+    } else {
+      setSelectedSvg(null);
+      setCount(count - 1);
+      const user2 = await AddDeleteLikeForCourses();
+    }
+  };
+
+  const handleClick2 = async () => {
+    if (selectedSvg !== 2) {
+      setSelectedSvg(2);
+      setCount2(count2 + 1);
+
+      if (selectedSvg === 1) {
+        setCount(count - 1);
+      }
+      const user = await AddDisLikeForCoursesComment(CommentID);
+    } else {
+      setSelectedSvg(null);
+      setCount2(count2 - 1);
+      const user2 = await AddDeleteLikeForCourses();
+    }
+  };
+
+
 
   return (
     <div className="rounded-3xl border-2 border-[#ccc] px-6 py-8 mt-8 ">
@@ -68,7 +117,8 @@ const CommentNews = ({title , describe , id}) => {
         </p>
         <div className="rounded-3xl border-2 border-[#ccc] px-14 py-4 mt-3 text-black flex justify-between items-stretch">
           پاسخ
-        </div>
+          </div>
+
 
         <button className="absolute" onClick={toggleReplies}>
         {showReplies ? 'مخفی کردن پاسخ‌ها' : 'نمایش پاسخ‌ها'}
