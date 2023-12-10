@@ -6,6 +6,7 @@ import MyCourses from './MyCourses';
 import { FaiverCourses } from './FaiverCourses';
 import AllCourses from './AllCourses';
 import { MyResreve } from './MyResreve';
+import { FaiverNews } from './FaiverNews';
 
 const PanelCourses = () => {
 
@@ -55,7 +56,7 @@ const PanelCourses = () => {
 
     <div id="tab5" className={`tab-content ${activeTab === 'tab5' ? 'block' : 'hidden'}`}>
             
-            <FaiverCourses/>
+            <FaiverNews/>
   
     
       </div>

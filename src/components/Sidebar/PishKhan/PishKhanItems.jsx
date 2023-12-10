@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { GetMyFiver } from '../../../core/services/api/UserPanel/GetMyFaiverit';
+import { getAllCourses, getAllCoursesTotal } from '../../../core/services/api/AllCourses';
 
 const PishKhanItems = () => {
+  const [CoursesList , setCoursesList] = useState([]);
+  const getList = async () => {
+    const courses = await getAllCoursesTotal();
+    setCoursesList(courses)  
+  } 
+  useEffect(() =>{
+      getList();
+  },[]);
+
   return (
         <>
                         <div className='flex flex-wrap border border-transparent mt-[50px] ' data-aos="fade-up">
@@ -28,8 +39,8 @@ const PishKhanItems = () => {
                     </div>
         
                     <div className='border border-transparent w-auto h-full text-white mr-[15px] '>
-                          <p className='mt-[10px] text-[13px]'> دوره های من</p>
-                          <p className='font-bold mt-[5px] text-[18px]'>0 دوره</p>
+                          <p className='mt-[10px] text-[13px]'>دوره ها </p>
+                          <p className='font-bold mt-[5px] text-[18px]'>{CoursesList} دوره</p>
 
                     </div>
                 </div>
