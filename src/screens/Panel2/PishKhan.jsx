@@ -7,7 +7,7 @@ const PishKhan = () => {
   return (
         <>
          
-          <PishKhanItems/>
+          <PishKhanItems  title={"مجموع دوره ها"} title2={"مجموع خبر  ها"}/>
             <Pishkhanqus/>
       
             

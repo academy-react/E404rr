@@ -2,11 +2,11 @@ import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
 import { DeleteFavorite } from "../../../core/services/api/UserPanel/GetMyFaiverit";
-const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,cost}) => {
+const Card6 = ({title , currentView , currentLikeCount , updateDate , favoriteId , newsId}) => {
 
     const navigate = useNavigate();
     const goCourse = () => {
-      navigate(`/CoursePage/${courseId}`);
+      navigate(`/ArticalePage/${newsId}`);
     };
 
 
@@ -47,32 +47,26 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,c
             onClick={goCourse}
           >
             {/* آموزش جامع زبان.... */}
-            {courseTitle .slice(length,20)}
+            {title.slice(length , 8)}
           </p>
           <p
-            className="inline-block xl:w-[90px] text-center border
+            className="inline-block xl:w-[110px] text-center border
             lg:mr-[10px] md:mr-[15px]  border-transparent "
           >
-            {teacheName.slice(length,8)}
+            {currentView}
           </p>
           <p
-            className="lg:inline-block xl:w-[100px] border
+            className="lg:inline-block xl:w-[110px] border
             hidden text-center border-transparent"
           >
-            1397/01/20
+            {currentLikeCount}
           </p>
+
           <p
-            className="lg:inline-block xl:xl:w-[100px] border
-             text-center border-transparent
-            lg:mr-[10px] hidden"
-          >
-            {lastUpdate.slice(length,10)}
-          </p>
-          <p
-            className="inline-block xl:w-[150px] border text-center border-transparent
+            className="inline-block xl:w-[100px] border text-center border-transparent
             lg:mr-[10px] md:mr-[15px] mr-1"
           >
-            {" "}
+            {updateDate.slice(length , 10)}
           </p>
 
           <svg
@@ -82,7 +76,7 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,c
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 inline-block xl:w-[100px] border border-transparent xl:mr-0 lg:mr-[20px] md:mr-[20px]"
+            className="w-6 h-6 inline-block xl:w-[100px] border border-transparent xl:mr-10 lg:mr-[20px] md:mr-[20px]"
           >
             <path
               strokeLinecap="round"
@@ -96,4 +90,4 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,c
   );
 };
 
-export { Card4 };
+export { Card6 };

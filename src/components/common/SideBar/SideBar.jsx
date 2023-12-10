@@ -22,8 +22,8 @@ const SideBar = () => {
      
       const logOut = () =>{
         removeItem("token")
-        setIsLOg(null)
         navigate("/")
+ 
         
     }
 

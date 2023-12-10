@@ -42,7 +42,7 @@ const FaiverCourses = () => {
                   <span className="xl:mr-[45px] lg:inline-block
                       lg:mr-[30px] hidden">تاریخ پایان</span>
                   <span className="xl:mr-[75px] inline-block
-                      lg:mr-[60px]  md:mr-[60px] mr-[40px]">قیمت</span>
+                      lg:mr-[60px]  md:mr-[60px] mr-[40px]"></span>
                 </div>
             </div>
             <div >

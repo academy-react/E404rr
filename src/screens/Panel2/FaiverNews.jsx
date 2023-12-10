@@ -5,14 +5,15 @@ import { Card3 } from '../../components/common/Card/Card3';
 import { Card4 } from '../../components/common/Card/Card4';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { GetMyFiver } from '../../core/services/api/UserPanel/GetMyFaiverit';
+import { GetMyFiver, GetMyFiverNews } from '../../core/services/api/UserPanel/GetMyFaiverit';
+import { Card6 } from '../../components/common/Card/Card6';
 
 const FaiverNews = () => {
 
     
   const [CoursesList , setCoursesList] = useState([]);
   const getList = async () => {
-    const courses = await GetMyFiver();
+    const courses = await GetMyFiverNews();
     setCoursesList(courses)  
   } 
   useEffect(() =>{
@@ -34,32 +35,30 @@ const FaiverNews = () => {
                   <span className="xl:mr-[50px] inline-block 
                    lg:mr-[30px] md:mr-[50px] mr-[25px] ">تصویر </span>
                   <span className="xl:mr-[80px] inline-block
-                      lg:mr-[70px] md:mr-[70px] mr-[45px]">نام دوره</span>
+                      lg:mr-[70px] md:mr-[70px] mr-[45px]">نام خبر</span>
                   <span className="xl:mr-[85px] inline-block
-                      lg:mr-[55px]  md:mr-[70px] mr-[70px]">استاد</span>
+                      lg:mr-[55px]  md:mr-[70px] mr-[70px]"> تعداد بازدید</span>
                   <span className="xl:mr-[50px] lg:inline-block
-                      lg:mr-[25px] hidden">تاریخ شروع</span>
+                      lg:mr-[25px] hidden"> تعداد لایک</span>
                   <span className="xl:mr-[45px] lg:inline-block
-                      lg:mr-[30px] hidden">تاریخ پایان</span>
-                  <span className="xl:mr-[75px] inline-block
-                      lg:mr-[60px]  md:mr-[60px] mr-[40px]">قیمت</span>
+                      lg:mr-[30px] hidden"> اخرین اپدیت</span>
                 </div>
             </div>
             <div >
                 {/* items */}
-   
+    
 
 
               {CoursesList.map((item , index) => {
                 return(
                      <>
-                                      <Card4 
-                                      favoriteId={item.favoriteId}
-                                      teacheName={item.teacheName}
-                                      courseTitle={item.courseTitle} 
-                                      lastUpdate={item.lastUpdate} 
-                                      courseId={item.courseId}
-                                      cost={item.cost}
+                                      <Card6
+                                          title={item.title}
+                                          currentView={item.currentView}
+                                          currentLikeCount={item.currentLikeCount}
+                                          updateDate={item.updateDate}
+                                          favoriteId={item.favoriteId}
+                                          newsId={item.newsId}
                                       />
                      </>
                 )

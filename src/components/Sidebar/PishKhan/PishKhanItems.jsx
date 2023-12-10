@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { GetMyFiver } from '../../../core/services/api/UserPanel/GetMyFaiverit';
 import { getAllCourses, getAllCoursesTotal } from '../../../core/services/api/AllCourses';
+import { getAllNewsTotal } from '../../../core/services/api/AllNews';
 
-const PishKhanItems = () => {
+const PishKhanItems = ({title , title2}) => {
   const [CoursesList , setCoursesList] = useState([]);
+  const [NewsList , setNewsList] = useState([]);
+
   const getList = async () => {
     const courses = await getAllCoursesTotal();
+    const news = await getAllNewsTotal();
     setCoursesList(courses)  
+    setNewsList(news)
   } 
   useEffect(() =>{
       getList();
@@ -39,7 +44,7 @@ const PishKhanItems = () => {
                     </div>
         
                     <div className='border border-transparent w-auto h-full text-white mr-[15px] '>
-                          <p className='mt-[10px] text-[13px]'>دوره ها </p>
+                          <p className='mt-[10px] text-[13px]'> {title} </p>
                           <p className='font-bold mt-[5px] text-[18px]'>{CoursesList} دوره</p>
 
                     </div>
@@ -69,8 +74,8 @@ const PishKhanItems = () => {
                     </div>
         
                     <div className='border border-transparent w-auto h-full text-white mr-[15px] '>
-                          <p className='mt-[10px] text-[13px]'>  مجموع خرید تا الان</p>
-                          <p className='font-bold mt-[5px] text-[18px]'>0 تومان</p>
+                          <p className='mt-[10px] text-[13px]'>{title2}</p>
+                          <p className='font-bold mt-[5px] text-[18px]'>{NewsList}  خبر</p>
 
                     </div>
                 </div>
