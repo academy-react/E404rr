@@ -12,3 +12,18 @@ export const GetMyCoursesStudent = async () => {
             return [];
       }  
   };
+
+
+export const GetMyCoursesResrveStudent = async () => {
+      try {
+        console.log("Fetching started ...");
+            //  https://acadapi.etacorealtime.ir/api/SharePanel/GetProfileInfo
+            const result = await http.get(`/SharePanel/GetMyCoursesReserve`);
+
+        return result;
+        
+      } catch (error) {
+            console.log(error);
+            return [];
+      }  
+  };

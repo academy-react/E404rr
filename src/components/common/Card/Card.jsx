@@ -108,7 +108,7 @@ const Card = ({ courseId, teacheName, courseTitle, lastUpdate, teacherId , title
             lg:mr-[10px] md:mr-[15px] mr-1"
           >
             {" "}
-            <span>تومان</span> {cost}{" "}
+            <span>تومان</span> {cost}
           </p>
 
           <svg

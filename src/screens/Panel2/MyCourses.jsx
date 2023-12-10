@@ -51,6 +51,8 @@ const MyCourses = () => {
                                       lastUpdate={item.lastUpdate} 
                                       courseId={item.courseId}
                                       teacherId={item.teacherId}
+                                      cost={item.cost}
+
                                       />
                      </>
                 )

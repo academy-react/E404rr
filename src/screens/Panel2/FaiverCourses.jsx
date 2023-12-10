@@ -59,6 +59,7 @@ const FaiverCourses = () => {
                                       courseTitle={item.courseTitle} 
                                       lastUpdate={item.lastUpdate} 
                                       courseId={item.courseId}
+                                      cost={item.cost}
                                       />
                      </>
                 )

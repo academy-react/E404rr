@@ -1,12 +1,25 @@
 import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
-const Card3 = ({ courseId, teacheName, courseTitle, lastUpdate , teacherId}) => {
+const Card3 = ({ courseId, teacheName, courseTitle, lastUpdate , teacherId , cost}) => {
   const navigate = useNavigate();
   const goCourse = () => {
     navigate(`/CoursePage/${courseId}`);
   };
+  const AddDeleteCourses = async () => {
+    // const userObj = {
+    //   CourseFavoriteId : favoriteId
+    // };
 
+    var formdata = new FormData();
+    formdata.append("CourseFavoriteId", favoriteId );
+    console.log(formdata , "hiiiiform");
+    
+    
+    const user = await (formdata);
+    
+  }
+  
   return (
     <>
       <div className=" border-b h-[70px]  flex  last:border-transparent ">
@@ -55,7 +68,7 @@ const Card3 = ({ courseId, teacheName, courseTitle, lastUpdate , teacherId}) => 
             lg:mr-[10px] md:mr-[15px] mr-1"
           >
             {" "}
-            <span>تومان</span> 1,390,000{" "}
+            <span>تومان</span> {cost}
           </p>
 
           <svg

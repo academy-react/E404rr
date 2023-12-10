@@ -2,7 +2,7 @@ import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
 import { DeleteFavorite } from "../../../core/services/api/UserPanel/GetMyFaiverit";
-const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId}) => {
+const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,cost}) => {
 
     const navigate = useNavigate();
     const goCourse = () => {
@@ -18,7 +18,8 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId}) 
     // };
 
     var formdata = new FormData();
-    formdata.append("CourseFavoriteId", "76674b60-628d-ee11-b6c7-ca6d3e095898");
+    formdata.append("CourseFavoriteId", favoriteId );
+    console.log(formdata , "hiiiiform");
     
     
     const user = await DeleteFavorite(formdata);
@@ -27,7 +28,6 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId}) 
   
   return (
     <>
-    {favoriteId}
       <div className=" border-b h-[70px]  flex  last:border-transparent " >
         <div
           className="xl:w-[80px] h-[50px] xl:mr-[30px] border border-transparent 
@@ -73,7 +73,7 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId}) 
             lg:mr-[10px] md:mr-[15px] mr-1"
           >
             {" "}
-            <span>تومان</span> 1,390,000{" "}
+            <span>تومان</span> {cost}
           </p>
 
           <svg
