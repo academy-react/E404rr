@@ -456,6 +456,7 @@ import emptyprofile from "../../assets/img/emptyprofile.png";
 import { GetProfileInfo } from "../../core/services/api/UserPanel/GetProfileInfo";
 import { AddProfileImage } from "../../core/services/api/UserPanel/PostAddProfileImage";
 import { PutProfileInfo } from "../../core/services/api/UserPanel/PutUpdateProfileInfo";
+import { NavLink } from "react-router-dom";
 
 const EditProfile2 = () => {
   const [data, setdata] = useState([]);
@@ -493,9 +494,9 @@ const EditProfile2 = () => {
     const postImg = await AddProfileImage(imgData ? imgData : null);
     console.log(postImg, "postImg");
   };
-  const  gi =  () =>{
-      console.log("hi");
-  }
+  const gi = () => {
+    console.log("hi");
+  };
   return (
     <>
       <div
@@ -560,6 +561,22 @@ const EditProfile2 = () => {
                       >
                         <p className="">عکس جدید خود را اضافه کنید</p>
                       </label>
+                      <div className="border flex justify-center items-center border-transparent mt-3 mb-3 ">
+                      <button
+                        type="submit"
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        ثبت  عکس جدید
+                      </button>
+                      </div>
+                      <NavLink
+                        to={"/panel/editprofile/profiles"}
+                        name="profile"
+                        className="border mt-3  flex items-center bg-white justify-center  px-[20px] py-[7px] rounded-xl"
+                        htmlFor="file-profile-edit"
+                      >
+                        <p className="">عکسی از گالری انتخاب کنید </p>
+                      </NavLink>
                       <div className="flex justify-center items-center text-center border mt-[10px] border-transparent">
                         <p className="text-[12px]">
                           لطفا عکس واضح و با کیفیت انتخاب کنید <br />{" "}
@@ -570,9 +587,7 @@ const EditProfile2 = () => {
                       </div>
                     </div>
                   </div>
-                  <button type="submit" className="mr-[120px]">
-                    submit
-                  </button>
+
                   <div>
                     <div className="flex">
                       <div className="basis-1/2">
@@ -747,7 +762,7 @@ const EditProfile2 = () => {
                     <div className="border flex items-center justify-center border-transparent mt-10">
                       <button
                         type="submit"
-                        className="border bg-green-600 py-3 text-white"
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                       >
                         {" "}
                         ثبت تغییرات

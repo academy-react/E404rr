@@ -12,3 +12,15 @@ export const GetProfileInfo = async (count) => {
             return [];
       }  
   };
+
+
+
+export const SelectProfile = async (user) => {
+    try{
+            const response = await http.post('/SharePanel/SelectProfileImage' , user)
+
+            return response;
+    } catch(error) {
+        return  false;
+    }
+}

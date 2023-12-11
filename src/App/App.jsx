@@ -50,6 +50,7 @@ import { Comment } from "../screens/ArticleDetails/detailskid/Comment";
 import { FaiverCourses } from "../screens/Panel2/FaiverCourses";
 import { PanelCourses } from "../screens/Panel2/PanelCourses";
 import { EditProfile2 } from "../screens/Panel2/EditProfile2";
+import { Gallery } from "../screens/Panel2/Gallery";
 
 const App = createBrowserRouter([
   {
@@ -105,7 +106,7 @@ const App = createBrowserRouter([
         
       },
       { path: "/panel/Addticket", element: <Addtiket /> },
-      { path: "/panel/editprofile/profiles", element: "" },
+      { path: "/panel/editprofile/profiles", element: <Gallery/> },
 
     ],
   },
