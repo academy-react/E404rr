@@ -74,3 +74,17 @@ export const DeleteFavorite = async (user) => {
     return false;
   }
 };
+
+
+export const DeleteFavoriteNews = async (user) => {
+  try {
+    //https://api-academy.iran.liara.run/api/Course/AddCourseLike
+    const response = await http.delete(`/News/DeleteFavoriteNews`, {
+      data: user,
+    });
+
+    return response;
+  } catch (error) {
+    return false;
+  }
+};

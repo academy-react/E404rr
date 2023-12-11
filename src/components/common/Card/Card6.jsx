@@ -1,7 +1,7 @@
 import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
-import { DeleteFavorite } from "../../../core/services/api/UserPanel/GetMyFaiverit";
+import { DeleteFavorite, DeleteFavoriteNews } from "../../../core/services/api/UserPanel/GetMyFaiverit";
 const Card6 = ({title , currentView , currentLikeCount , updateDate , favoriteId , newsId}) => {
 
     const navigate = useNavigate();
@@ -13,16 +13,16 @@ const Card6 = ({title , currentView , currentLikeCount , updateDate , favoriteId
 
     
   const AddDeleteFavorite = async () => {
-    // const userObj = {
-    //   CourseFavoriteId : favoriteId
-    // };
+    const userObj = {
+      deleteEntityId : favoriteId
+    };
 
-    var formdata = new FormData();
-    formdata.append("CourseFavoriteId", favoriteId );
-    console.log(formdata , "hiiiiform");
+    // var formdata = new FormData();
+    // formdata.append("CourseFavoriteId", favoriteId );
+    // console.log(formdata , "hiiiiform");
     
     
-    const user = await DeleteFavorite(formdata);
+    const user = await DeleteFavoriteNews(userObj);
     
   }
   
