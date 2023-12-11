@@ -41,17 +41,15 @@ import { Addtiket } from "../screens/Panel2/AddTiket/Addtiket";
 import TeachersDetails from "../screens/TeachersDetails/TeachersDetails";
 import { E404ror } from "../screens/404/E404ror";
 
-import CourseSummary from "../screens/CourseDetailPage/CourseSummary"
-import TeacherSummary from "../screens/CourseDetailPage/TeacherSummary"
-import CourseTopics from "../screens/CourseDetailPage/CourseTopics"
-import CourseOpinions from "../screens/CourseDetailPage/CourseOpinions"
+import CourseSummary from "../screens/CourseDetailPage/CourseSummary";
+import TeacherSummary from "../screens/CourseDetailPage/TeacherSummary";
+import CourseTopics from "../screens/CourseDetailPage/CourseTopics";
+import CourseOpinions from "../screens/CourseDetailPage/CourseOpinions";
 import { About } from "../screens/ArticleDetails/detailskid/About";
 import { Comment } from "../screens/ArticleDetails/detailskid/Comment";
 import { FaiverCourses } from "../screens/Panel2/FaiverCourses";
 import { PanelCourses } from "../screens/Panel2/PanelCourses";
 import { EditProfile2 } from "../screens/Panel2/EditProfile2";
-
-
 
 const App = createBrowserRouter([
   {
@@ -67,11 +65,11 @@ const App = createBrowserRouter([
       { path: "/consultation-req", element: <ConsultaitionReq /> },
       { path: "/about-us", element: <AboutUs /> },
       { path: "/Cart", element: <Cart /> },
-      { path: "/ArticalePage/:id", element: <ArticleDetails />} , 
+      { path: "/ArticalePage/:id", element: <ArticleDetails /> },
       { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
       // { path: "/CoursePage/:id", element: <CourseDetailsPage /> },
       { path: "/teachers/profile/:id", element: <TeachersDetails /> },
-  
+
       { path: "/teacher-profile", element: <TeachersDetails /> },
     ],
   },
@@ -90,24 +88,29 @@ const App = createBrowserRouter([
     ],
   },
 
-
-
   // پیشخوان
   {
     path: "/panel",
-    element: <SideBar/>,
+    element: <SideBar />,
     children: [
-      { path: "/panel" , element: <PishKhan/> },
-      { path: "/panel/Courses", element: <PanelCourses/> },
+      { path: "/panel", element: <PishKhan /> },
+      { path: "/panel/Courses", element: <PanelCourses /> },
       // { path: "/panel/myCourses", element:<MyCourses/> },
       // { path: "/panel/FiverCourses", element:<FaiverCourses/> },
-      { path: "/panel/Ticket", element: <Tiket/> },
-      { path: "/panel/editprofile", element: <EditProfile2/> },
-      { path: "/panel/Addticket", element: <Addtiket/> },
+      { path: "/panel/Ticket", element: <Tiket /> },
+      {
+        path: "/panel/editprofile",
+        element: <EditProfile2 />,
+         
+        
+      },
+      { path: "/panel/Addticket", element: <Addtiket /> },
+      { path: "/panel/editprofile/profiles", element: "" },
+
     ],
   },
 
-  { path: "*", element: <E404ror/> },
-] );
+  { path: "*", element: <E404ror /> },
+]);
 
 export default App;

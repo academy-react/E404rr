@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emptyprofile from "../../assets/img/emptyprofile.png"
 import Emoji from 'react-emoji-render';
 import { NavLink } from 'react-router-dom';
+import { GetProfileInfo } from '../../core/services/api/UserPanel/GetProfileInfo';
 
 const Hader = () => {
     // const [isNightMode, setIsNightMode] = useState(false);
@@ -26,11 +27,21 @@ const Hader = () => {
       const closeModal2 = () => {
         setIsModalOpen2(false);
       };
+
+      const [data , setdata] = useState([])
+
+      const getList = async () => {
+        const item = await GetProfileInfo();
+        setdata(item);
+      };
+      useEffect(() => {
+        getList();
+      }, []);
   return (
         <>  
                                 <header className='flex h-[56px] mt-[30px]  border border-transparent justify-between'>
                         <div className='flex-1 border border-transparent mt-[10px] mr-[30px]'> 
-                            <p className='text-[24px]'>کاربر عزیز خوش اومدی  <Emoji text=':heart:'/></p>
+                            <p className='text-[24px]'>{data.fName} عزیز خوش اومدی  <Emoji text=':heart:'/></p>
                         </div>
                         <div className='flex-2 border flex flex-row-reverse border-transparent   '>
                                    <div className="w-[56px] h-[56px] border border-transparent rounded-full ml-[30px]" onClick={openModal2}>

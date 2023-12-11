@@ -4,6 +4,7 @@ import CourseCard from "../../components/common/CourseCard/CourseCardForLanding"
 import { Card3 } from "../../components/common/Card/Card3";
 import {
   GetMyCoursesResrveStudent,
+  GetMyCoursesResrveStudentTotal,
   GetMyCoursesStudent,
 } from "../../core/services/api/UserPanel/GetAllCoursesStudent";
 import { Card4 } from "../../components/common/Card/Card4";
@@ -19,9 +20,19 @@ const MyResreve = () => {
     getList();
   }, []);
 
+
+  const [CoursesList2 , setCoursesList2] = useState([]);
+  const getList2 = async () => {
+    const courses = await GetMyCoursesResrveStudentTotal();
+    setCoursesList2(courses)  
+  } 
+  useEffect(() =>{
+      getList2();
+  },[]);
+
   return (
     <>
-      <MyCursesItems />
+      {/* <MyCursesItems  title={"دوره های رزرو شده"} total={CoursesList2}/> */}
       <div
         className="border flex flex-wrap  min-h-[300px] border-transparent gap-x-[30px] mr-[10px] mt-[50px]"
         data-aos="fade-up"

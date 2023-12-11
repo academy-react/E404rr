@@ -5,7 +5,7 @@ import { Card3 } from '../../components/common/Card/Card3';
 import { Card4 } from '../../components/common/Card/Card4';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { GetMyFiver } from '../../core/services/api/UserPanel/GetMyFaiverit';
+import { GetMyFiver, GetMyFiverTotal } from '../../core/services/api/UserPanel/GetMyFaiverit';
 
 const FaiverCourses = () => {
 
@@ -19,12 +19,21 @@ const FaiverCourses = () => {
       getList();
   },[]);
 
+  const [CoursesList2 , setCoursesList2] = useState([]);
+  const getList2 = async () => {
+    const courses = await GetMyFiverTotal();
+    setCoursesList2(courses)  
+  } 
+  useEffect(() =>{
+      getList2();
+  },[]);
+
   return (
     <>  
 
       
 
-        <MyCursesItems/>
+        <MyCursesItems title={"دوره های ذخیره شده"} total={CoursesList2}/>
         <div className='border flex flex-wrap  min-h-[300px] border-transparent gap-x-[30px] mr-[10px] mt-[50px]' data-aos="fade-up">
         <div className='xl:w-[850px] min-h-[350px] shadow-xl rounded-xl  bg-[#F3FCF8] bg-opacity-[26%] xl:mx-auto
           lg:w-[650px] lg:mr-[30px]'>

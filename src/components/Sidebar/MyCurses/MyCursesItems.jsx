@@ -1,6 +1,11 @@
 import React from 'react'
+import { getAllCoursesTotal } from '../../../core/services/api/AllCourses';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const MyCursesItems = () => {
+const MyCursesItems = ({title , total}) => {
+
+
   return (
         <>
                                         <div className='flex flex-wrap border border-transparent mt-[50px] ' data-aos="fade-up">
@@ -13,12 +18,12 @@ const MyCursesItems = () => {
                     </div>
         
                     <div className='border border-transparent w-auto h-full text-white mr-[15px] '>
-                          <p className='mt-[10px] text-[13px]'> دوره های ثبت نام شده</p>
-                          <p className='font-bold mt-[5px] text-[18px]'>0 دوره</p>
+                          <p className='mt-[10px] text-[13px]'> {title}</p>
+                          <p className='font-bold mt-[5px] text-[18px]'>{total} دوره</p>
 
                     </div>
                 </div>
-                <div className="w-[240px] h-[84px] bg-blue-500 border border-transparent rounded-xl mr-[30px] flex items-center ">
+                {/* <div className="w-[240px] h-[84px] bg-blue-500 border border-transparent rounded-xl mr-[30px] flex items-center ">
                     <div className='w-[68px] h-[68px] border border-transparent mr-[5px] rounded-xl bg-white bg-opacity-20 flex items-center justify-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[36px] h-[36px] text-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -47,7 +52,7 @@ const MyCursesItems = () => {
                           <p className='font-bold mt-[5px] text-[18px]'>0 دوره</p>
 
                     </div>
-                </div>
+                </div> */}
 
             </div>
 

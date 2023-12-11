@@ -5,7 +5,7 @@ import { Card3 } from '../../components/common/Card/Card3';
 import { Card4 } from '../../components/common/Card/Card4';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { GetMyFiver, GetMyFiverNews } from '../../core/services/api/UserPanel/GetMyFaiverit';
+import { GetMyFiver, GetMyFiverNews, GetMyFiverNewsTotal } from '../../core/services/api/UserPanel/GetMyFaiverit';
 import { Card6 } from '../../components/common/Card/Card6';
 
 const FaiverNews = () => {
@@ -20,12 +20,22 @@ const FaiverNews = () => {
       getList();
   },[]);
 
+  const [CoursesList2 , setCoursesList2] = useState([]);
+  const getList2 = async () => {
+    const courses = await GetMyFiverNewsTotal();
+    setCoursesList2(courses)  
+  } 
+  useEffect(() =>{
+      getList2();
+  },[]);
+
+
   return (
     <>  
 
       
 
-        <MyCursesItems/>
+        <MyCursesItems total={CoursesList2} title={"خبر های مورد علاقه"}/>
         <div className='border flex flex-wrap  min-h-[300px] border-transparent gap-x-[30px] mr-[10px] mt-[50px]' data-aos="fade-up">
         <div className='xl:w-[850px] min-h-[350px] shadow-xl rounded-xl  bg-[#F3FCF8] bg-opacity-[26%] xl:mx-auto
           lg:w-[650px] lg:mr-[30px]'>

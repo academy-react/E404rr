@@ -14,16 +14,23 @@ export const GetMyFiver = async (count) => {
   };
 
 
-//   export const DeleteFavorite  = async (user) => {
-//     try{
-//         //https://api-academy.iran.liara.run/api/Course/AddCourseLike
-//             const response = await http.delete(`/Course/DeleteCourseFavorite` ,user)
+  export const GetMyFiverTotal = async (count) => {
+    try {
+      console.log("Fetching started ...");
+          //  https://api-academy.iran.liara.run/api/News/GetListNewsCategory
+          const result = await http.get(`/SharePanel/GetMyFavoriteCourses`);
 
-//             return response;
-//     } catch(error) {
-//         return  false;
-//     }
-// }
+      return result.totalCount;
+      
+    } catch (error) {
+          console.log(error);
+          return [];
+    }  
+};
+
+
+
+
 
 export const GetMyFiverNews = async (count) => {
   try {
@@ -32,6 +39,20 @@ export const GetMyFiverNews = async (count) => {
         const result = await http.get(`/SharePanel/GetMyFavoriteNews`);
 
     return result.myFavoriteNews;
+    
+  } catch (error) {
+        console.log(error);
+        return [];
+  }  
+};
+
+export const GetMyFiverNewsTotal = async (count) => {
+  try {
+    console.log("Fetching started ...");
+        //  https://api-academy.iran.liara.run/api/News/GetListNewsCategory
+        const result = await http.get(`/SharePanel/GetMyFavoriteNews`);
+
+    return result.totalCount;
     
   } catch (error) {
         console.log(error);

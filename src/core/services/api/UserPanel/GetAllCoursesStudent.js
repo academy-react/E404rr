@@ -13,6 +13,20 @@ export const GetMyCoursesStudent = async () => {
       }  
   };
 
+  export const GetMyCoursesStudentTotal = async () => {
+    try {
+      console.log("Fetching started ...");
+          //  https://acadapi.etacorealtime.ir/api/SharePanel/GetProfileInfo
+          const result = await http.get(`/SharePanel/GetMyCourses `);
+
+      return result.totalCount;
+      
+    } catch (error) {
+          console.log(error);
+          return [];
+    }  
+};
+
 
 export const GetMyCoursesResrveStudent = async () => {
       try {
@@ -27,3 +41,18 @@ export const GetMyCoursesResrveStudent = async () => {
             return [];
       }  
   };
+
+
+  export const GetMyCoursesResrveStudentTotal = async () => {
+    try {
+      console.log("Fetching started ...");
+          //  https://acadapi.etacorealtime.ir/api/SharePanel/GetProfileInfo
+          const result = await http.get(`/SharePanel/GetMyCoursesReserve`);
+
+      return result.totalCount;
+      
+    } catch (error) {
+          console.log(error);
+          return [];
+    }  
+};
