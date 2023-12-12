@@ -56,3 +56,16 @@ export const GetMyCoursesResrveStudent = async () => {
           return [];
     }  
 };
+
+export const DeleteRes = async (user) => {
+  try {
+    //https://api-academy.iran.liara.run/api/Course/AddCourseLike
+    const response = await http.delete(`/CourseReserve`, {
+      data: user,
+    });
+
+    return response;
+  } catch (error) {
+    return false;
+  }
+};

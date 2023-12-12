@@ -27,7 +27,7 @@ const ArticleDetails = () => {
         data-aos="fade-up"
       >
         <div className="w-[65%]" data-aos="fade-up">
-        <ArticleImg title={data.title} currentView={data.currentView} id={data.id} />
+        <ArticleImg title={data.title} currentView={data.currentView} currentImageAddressTumb={data.currentImageAddressTumb} id={data.id} />
           <ArticleBody
             addUserFullName={data.addUserFullName}
             insertDate={data.insertDate}

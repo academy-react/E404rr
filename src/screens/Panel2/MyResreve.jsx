@@ -3,6 +3,7 @@ import { MyCursesItems } from "../../components/Sidebar/MyCurses/MyCursesItems";
 import CourseCard from "../../components/common/CourseCard/CourseCardForLanding";
 import { Card3 } from "../../components/common/Card/Card3";
 import {
+  DeleteRes,
   GetMyCoursesResrveStudent,
   GetMyCoursesResrveStudentTotal,
   GetMyCoursesStudent,
@@ -21,14 +22,6 @@ const MyResreve = () => {
   }, []);
 
 
-  const [CoursesList2 , setCoursesList2] = useState([]);
-  const getList2 = async () => {
-    const courses = await GetMyCoursesResrveStudentTotal();
-    setCoursesList2(courses)  
-  } 
-  useEffect(() =>{
-      getList2();
-  },[]);
 
   return (
     <>
@@ -86,6 +79,7 @@ const MyResreve = () => {
                     reserverDate={item.reserverDate}
                     accept={item.accept}
                     courseId={item.courseId}
+                    reserveId={item.reserveId}
                   />
                 </>
               );

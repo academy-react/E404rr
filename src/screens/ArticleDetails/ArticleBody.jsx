@@ -7,29 +7,29 @@ import { GetNewsApiByComentId } from "../../core/services/api/GetNewsComment";
 import { useEffect } from "react";
 import { CommentNews } from "./detailskid/CommentNews";
 
-const ArticleBody = ({addUserFullName , insertDate , describe}) => {
+const ArticleBody = ({ addUserFullName, insertDate, describe }) => {
+  const activeClass = ({ isActive }) =>
+    isActive
+      ? "py-2 border-b-2  border-[#323E73] "
+      : "py-2 border-b-2  border-[#323E73] border-transparent";
 
-  const activeClass = ({ isActive}) => 
-  isActive ? "py-2 border-b-2  border-[#323E73] " : "py-2 border-b-2  border-[#323E73] border-transparent" ;
-
-  const [activeTab, setActiveTab] = useState('tab1');
+  const [activeTab, setActiveTab] = useState("tab1");
 
   const openTab = (tabName) => {
     setActiveTab(tabName);
   };
-
 
   const [data, setData] = useState([]);
   const UserId = useParams().id;
   const GetCourseApiById = async () => {
     const items = await GetNewsApiByComentId(UserId);
     setData(items);
-    console.log("data 3: " , data);
+    console.log("data 3: ", data);
   };
   useEffect(() => {
     GetCourseApiById();
   }, [UserId]);
-  
+
   return (
     <div
       className=" px-14 flex flex-col py-10 mt-10 rounded-3xl bg-gradient-to-bl from-[#f3fcf8] text-[#323E73] to-white"
@@ -39,31 +39,47 @@ const ArticleBody = ({addUserFullName , insertDate , describe}) => {
         className="px-10 flex items-center gap-7 text-2xl mb-7"
         data-aos="fade-up"
       >
-
-          <Tab2 label="توضیحات" active={activeTab === 'tab1'} onClick={() => openTab('tab1')}/>
-          <Tab2 label="دیدگاه ها" active={activeTab === 'tab2'} onClick={() => openTab('tab2')} />
-     
-     
-
+        <Tab2
+          label="توضیحات"
+          active={activeTab === "tab1"}
+          onClick={() => openTab("tab1")}
+        />
+        <Tab2
+          label="دیدگاه ها"
+          active={activeTab === "tab2"}
+          onClick={() => openTab("tab2")}
+        />
       </div>
       <div
         className=" border-2 border-[#ccc] rounded-3xl p-6"
         data-aos="fade-up"
       >
-       <div id="tab1" className={`tab-content ${activeTab === 'tab1' ? 'block' : 'hidden'}`}>
-       <About   describe={describe}/>
+        <div
+          id="tab1"
+          className={`tab-content ${activeTab === "tab1" ? "block" : "hidden"}`}
+        >
+          <About describe={describe} />
         </div>
-        <div id="tab2" className={`tab-content ${activeTab === 'tab2' ? 'block' : 'hidden'}`}>
-        {/* <Comment/> */}
+        <div
+          id="tab2"
+          className={`tab-content ${activeTab === "tab2" ? "block" : "hidden"}`}
+        >
+          {/* <Comment/> */}
 
-        {data.map((item , index) => {
-            return(
+          {data.map((item, index) => {
+            return (
               <>
-                    {/* <Comment title={item.title} describe={describe}/> */}
-                    <CommentNews title={item.title} describe={item.describe} id={item.id}/>
+                {/* <Comment title={item.title} describe={describe}/> */}
+                <CommentNews
+                  title={item.title}
+                  describe={item.describe}
+                  dissLikeCount={item.dissLikeCount}
+                  id={item.id}
+                  LikeCount={item.likeCount}
+                />
               </>
-            )
-        })}
+            );
+          })}
         </div>
       </div>
       <div
@@ -73,7 +89,7 @@ const ArticleBody = ({addUserFullName , insertDate , describe}) => {
         {/* <p>توسط : مهدیار شیرزاد</p> */}
         <p> توسظ : {addUserFullName}</p>
         <div className="flex items-center justify-between ">
-        <svg
+          <svg
             className="w-6"
             viewBox="0 0 24 24"
             fill="none"
@@ -104,7 +120,7 @@ const ArticleBody = ({addUserFullName , insertDate , describe}) => {
             </g>
           </svg>
           {/* <p className="mx-3">10 آبان 1402</p> */}
-           <p className="mx-3"> {insertDate} </p>
+          <p className="mx-3"> {insertDate} </p>
         </div>
       </div>
     </div>

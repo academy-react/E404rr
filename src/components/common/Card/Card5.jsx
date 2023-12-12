@@ -1,12 +1,30 @@
 import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
+import { DeleteRes } from "../../../core/services/api/UserPanel/GetAllCoursesStudent";
 
-const Card5 = ({ courseName, studentName  , reserverDate , accept , courseId}) => {
+const Card5 = ({ courseName, studentName  , reserverDate , accept , courseId , reserveId}) => {
   const navigate = useNavigate();
   const goCourse = () => {
     navigate(`/CoursePage/${courseId}`);
   };
+
+
+  const AddDeleteRRRes = async () => {
+    const userObj = {
+      id: reserveId
+    };
+
+    // var formdata = new FormData();
+    // formdata.append("active", true );
+    // formdata.append("id", reserveId );
+    // console.log(formdata , "hiiiiform");
+    
+    
+    const user = await DeleteRes(userObj);
+    
+  }
+
 
   return (
     <div className=" border-b h-[70px]  flex  last:border-transparent ">
@@ -52,6 +70,7 @@ const Card5 = ({ courseName, studentName  , reserverDate , accept , courseId}) =
             </p>
 
             <svg
+            onClick={AddDeleteRRRes}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

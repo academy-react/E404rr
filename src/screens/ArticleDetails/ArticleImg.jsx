@@ -3,7 +3,7 @@ import img from "../../assets/img/ArticleDetails/Article.png";
 import { PostAddFiverNews } from "../../core/services/api/PostAddFaiverit";
 import { useParams } from "react-router-dom";
 
-const ArticleImg = ({title , currentView , id}) => {
+const ArticleImg = ({title , currentView , id , currentImageAddressTumb}) => {
 
   const UserId = useParams().id;
   const AddFaiNews = async () => {
@@ -18,7 +18,7 @@ const ArticleImg = ({title , currentView , id}) => {
   return (
     <div className="text-[#323E73]" data-aos="fade-up">
       <div>
-        <img className="rounded-3xl max-w-[888px] h-auto" src={img} alt="" />
+        <img className="rounded-3xl max-w-[888px] h-[350px] " src={img} alt="" />
         <div className="flex items-center justify-between px-14 mt-8  bg-gradient-to-bl from-[#f3fcf8] to-white rounded-2xl   ">
           {/* <p className="text-lg  px-6 py-4 font-bold ">الگوریتم چیست ؟</p> */}
           <p className="text-lg  px-6 py-4 font-bold ">{title}</p>

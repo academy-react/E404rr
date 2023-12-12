@@ -29,3 +29,17 @@ export const  PostAddRepayMyCommentForCourses = async (user) => {
         return  false;
     }
 }
+
+
+export const  PostAddMyCommentForNews = async (user) => {
+    try{
+            const response = await http.post(`/News/CreateNewsComment` , user)
+
+            console.log(response , "faired");
+            return response;
+    } catch(error) {
+        return  false;
+    }
+}
+
+
