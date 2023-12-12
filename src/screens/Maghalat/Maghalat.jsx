@@ -119,9 +119,9 @@ const Maghalat = () => {
 
   return (
     <>
-      <div className="container font-vazir mx-auto px-10 text-center" data-aos="fade-up">
-        <div className="flex flex-col max-w-[1250px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10"data-aos="fade-up">
-          <div className="relative w-full md:w-[450px]" data-aos="fade-up">
+      <div className="container font-vazir mx-auto px-10 text-center">
+        <div className="flex flex-col max-w-[1250px] mx-auto lg:flex-row gap-5 justify-between items-center my-6 px-8 py-2 rounded-lg bg-lighter-green/10">
+          <div className="relative w-full md:w-[450px]" >
             {/* <TextInput type="text" placeholder="جستجو مقاله های مختلف..." /> */}
 
 
@@ -133,7 +133,7 @@ const Maghalat = () => {
         onChange={(e) => setSearchInput(e.target.value)}
         className="focus:outline-none caret-green-600 w-full px-6 py-2 shadow-md focus:placeholder:opacity-0 shadow-gray-200 rounded-lg placeholder-darker-green"
       />
-
+{/* 
       {(searchInput.trim() !== '' && results.length > 0) && (
         <div className="absolute bg-white w-[300px] h-[200px]">
           <ul>
@@ -143,13 +143,40 @@ const Maghalat = () => {
               
               </>
             ))}
+
+
+
           </ul>
         </div>
-      )}
+      )} */}
 
 
 
 
+{searchInput.trim() !== "" && results.length > 0 && (
+          <div className="absolute overflow-auto bg-white w-[100%] max-h-[200px] min-h-[80px] border z-50">
+            <ul>
+              {results.map((item, index) => (
+                <>
+                  <div className="block mt-3 mr-[-200px]">
+                    <img
+                      src={item.currentImageAddressTumb}
+                      className="border w-[50px] h-[50px] inline-block rounded-full"
+                      alt=""
+                    />
+                    <NavLink
+                      to={`/ArticalePage/${item.id}`}
+                      className={"inline-block mr-3"}
+                      key={index}
+                    >
+                      {item.title}
+                    </NavLink>
+                  </div>
+                </>
+              ))}
+            </ul>
+          </div>
+        )}
 
             <img
               src={searchImg}

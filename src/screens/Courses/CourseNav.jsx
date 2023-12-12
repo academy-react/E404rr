@@ -1,15 +1,12 @@
-import {React , useEffect , useState} from "react";
+import { React, useEffect, useState } from "react";
 import TextInput from "../../components/common/TextInput";
 import searchImg from "../../assets/img/search.svg";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { GetSearchByQ } from "../../core/services/api/GetSearchCourese";
 
-
 const Part5 = () => {
-
-
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState("");
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -22,11 +19,11 @@ const Part5 = () => {
       // }
 
       const courses = await GetSearchByQ(searchInput);
-      setResults(courses)  
+      setResults(courses);
     };
 
     // Avoid making unnecessary requests on initial render
-    if (searchInput.trim() !== '') {
+    if (searchInput.trim() !== "") {
       fetchData();
     } else {
       setResults([]); // Clear results when searchInput is empty
@@ -34,36 +31,43 @@ const Part5 = () => {
   }, [searchInput]);
 
   return (
-    <div className="bg-[#f3fcf8] container max-w-[1250px] mx-auto rounded-lg py-3 px-10 flex justify-start " data-aos="fade-up">
+    <div className="bg-[#f3fcf8] container max-w-[1250px] mx-auto rounded-lg py-3 px-10 flex justify-start ">
       <div className="relative  md:w-[450px] ">
         {/* <TextInput type="text" placeholder="جستجو مقاله های مختلف..." /> */}
 
-
         <input
-        id="searchInput"
-        value={searchInput}
-        placeholder={"جست و جوی دوره های مختلف"}
-        type="text"
-        onChange={(e) => setSearchInput(e.target.value)}
-         className="focus:outline-none w-full px-6 py-2 caret-green-600 shadow-md focus:placeholder:opacity-0 shadow-gray-200 rounded-lg placeholder-darker-green"
-      />
+          id="searchInput"
+          value={searchInput}
+          placeholder={"جست و جوی دوره های مختلف"}
+          type="text"
+          onChange={(e) => setSearchInput(e.target.value)}
+          className="focus:outline-none w-full px-6 py-2 caret-green-600 shadow-md focus:placeholder:opacity-0 shadow-gray-200 rounded-lg placeholder-darker-green"
+        />
 
-      {(searchInput.trim() !== '' && results.length > 0) && (
-        <div className="absolute bg-white w-[300px] h-[200px] z-50 ">
-          <ul>
-            {results.map((item, index) => (
-              <>
-              <NavLink to={`/CoursePage/${item.courseId}`} className={"block z-50"} key={item.courseId}>{item.title}</NavLink>
-              
-              </>
-            ))}
-          </ul>
-        </div>
-      )}
-
-
-
-
+        {searchInput.trim() !== "" && results.length > 0 && (
+          <div className="absolute overflow-auto bg-white w-[600px] max-h-[200px] min-h-[80px] z-50">
+            <ul>
+              {results.map((item, index) => (
+                <>
+                  <div className="block mt-3">
+                    <img
+                      src={item.tumbImageAddress}
+                      className="border w-[50px] h-[50px] inline-block rounded-full"
+                      alt=""
+                    />
+                    <NavLink
+                      to={`/CoursePage/${item.courseId}`}
+                      className={"inline-block mr-3"}
+                      key={index}
+                    >
+                      {item.title}
+                    </NavLink>
+                  </div>
+                </>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <img
           src={searchImg}

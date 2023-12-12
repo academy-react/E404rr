@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import python from "../../assets/img/python.png";
 import about1 from "../../assets/img/about1.png";
 import about2 from "../../assets/img/about2.png";
 import Collapse from "./Collapse";
 import Footer from "../../components/common/footer/Footer";
+import { useEffect } from "react";
+import { ReportHome } from "../../core/services/api/ReportHome";
 
 const AboutUs = () => {
+  const [Report , setReport] = useState([])
+
+  const AddReport = async () =>{
+    const Status = await ReportHome()
+    setReport(Status)
+  }
+
+  useEffect(() => {
+    AddReport()
+  }, []);
   return (
     <>
       <div className="container max-w-[1250px] mx-auto px-10 mb-20"   data-aos="fade-up">
@@ -36,20 +48,20 @@ const AboutUs = () => {
         <div   data-aos="fade-up"
          className="container flex items-center justify-between  bg-[#f3fcf8] rounded-3xl px-28 py-6 mt-10 text-center text-[#323e73] font-bold ">
           <div>
-            <p className="text-2xl my-5 ">محصولات</p>
-            <p className="text-lg">61</p>
+            <p className="text-2xl my-5 ">تعداد دوره ها</p>
+            <p className="text-lg">{Report.courseCount}</p>
           </div>
           <div>
-            <p className="text-2xl my-5 ">سابقه فعالیت</p>
-            <p className="text-lg">12</p>
+            <p className="text-2xl my-5 "> تعداد خبر ها</p>
+            <p className="text-lg">{Report.newsCount}</p>
           </div>
           <div>
-            <p className="text-2xl my-5 ">مشتریان</p>
-            <p className="text-lg">950</p>
+            <p className="text-2xl my-5 ">تعداد دانشجو</p>
+            <p className="text-lg">{Report.studentCount}</p>
           </div>
           <div>
-            <p className="text-2xl my-5 ">اعضای تیم</p>
-            <p className="text-lg">18</p>
+            <p className="text-2xl my-5 "> تعداد معلم ها</p>
+            <p className="text-lg">{Report.teacherCount}</p>
           </div>
         </div>
         <div className="flex items-center justify-between mt-20"   data-aos="fade-up">
