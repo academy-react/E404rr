@@ -3,7 +3,7 @@ import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
 import { DeleteRes } from "../../../core/services/api/UserPanel/GetAllCoursesStudent";
 
-const Card5 = ({ courseName, studentName  , reserverDate , accept , courseId , reserveId}) => {
+const Card5 = ({ courseName, studentName , teacherName  , reserverDate , accept , courseId , reserveId}) => {
   const navigate = useNavigate();
   const goCourse = () => {
     navigate(`/CoursePage/${courseId}`);
@@ -46,7 +46,7 @@ const Card5 = ({ courseName, studentName  , reserverDate , accept , courseId , r
           onClick={goCourse}
         >
           {/* آموزش جامع زبان.... */}
-          {courseName.slice(10)}
+          {courseName.slice(length , 10)}
         </p>
         <p
           className="inline-block xl:w-[120px] text-center border

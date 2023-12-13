@@ -53,7 +53,7 @@ const MyResreve = () => {
                 className="xl:mr-[95px] inline-block
                       lg:mr-[55px]  md:mr-[70px] mr-[70px]"
               >
-                استاد
+              دانشجو  
               </span>
               <span
                 className="xl:mr-[80px] lg:inline-block
@@ -80,6 +80,7 @@ const MyResreve = () => {
                     accept={item.accept}
                     courseId={item.courseId}
                     reserveId={item.reserveId}
+                    teacherName={item.teacherName}
                   />
                 </>
               );
