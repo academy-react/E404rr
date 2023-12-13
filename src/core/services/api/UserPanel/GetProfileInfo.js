@@ -24,3 +24,13 @@ export const SelectProfile = async (user) => {
         return  false;
     }
 }
+
+export const DeleteProfile = async (user) => {
+    try{
+            const response = await http.delete('/SharePanel/DeleteProfileImage' , user)
+
+            return response;
+    } catch(error) {
+        return  false;
+    }
+}
