@@ -71,7 +71,7 @@ const Card3 = ({ courseId, teacheName, courseTitle, lastUpdate , teacherId , cos
             <span>تومان</span> {cost}
           </p>
 
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -84,7 +84,7 @@ const Card3 = ({ courseId, teacheName, courseTitle, lastUpdate , teacherId , cos
               stroke-linejoin="round"
               d="M6 18L18 6M6 6l12 12"
             />
-          </svg>
+          </svg> */}
         </div>
       </div>
     </>

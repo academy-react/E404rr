@@ -27,7 +27,7 @@ export const SelectProfile = async (user) => {
 
 export const DeleteProfile = async (user) => {
     try{
-            const response = await http.delete('/SharePanel/DeleteProfileImage' , user)
+            const response = await http.delete('/SharePanel/DeleteProfileImage' , { data: user})
 
             return response;
     } catch(error) {

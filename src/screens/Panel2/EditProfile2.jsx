@@ -553,6 +553,7 @@ const EditProfile2 = () => {
                         id="file-profile-edit"
                         className="hidden"
                         accept=".jpg , .jpeg , .png"
+                        
                       />
                       <label
                         name="profile"
@@ -720,8 +721,9 @@ const EditProfile2 = () => {
                               setFieldValue("Gender", e.target.value);
                             }}
                           >
-                            <option value="false">مرد</option>
-                            <option value="true">زن</option>
+                            <option value="true"  selected={data.gender === true}>مرد</option>
+                            <option value="false" selected={data.gender === false}>زن</option>
+
                           </select>
                         </div>
                       </div>
