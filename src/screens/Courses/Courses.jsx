@@ -64,7 +64,7 @@ const Courses = () => {
 
          </ul> */}
 
-          <div className="border border-transparent mb-[200px] mt-[50px] mr-[600px]">
+          {/* <div className="border border-transparent mb-[200px] mt-[50px] mr-[600px]">
           <ReactPaginate
         previousLabel={<i className='text-green-600 mr-3 border px-3 py-2 rounded-[100%]'> {"<"}</i>}
         nextLabel={<i className='text-green-600 ml-3 border px-3 py-2 rounded-[100%]'> {">"}</i>}
@@ -81,7 +81,7 @@ const Courses = () => {
         nextClassName={'mx-2 cursor-pointer'}
         pageLinkClassName={'text-purple-500'}
       />
-          </div>
+          </div> */}
       </div>
       
       <Footer />
