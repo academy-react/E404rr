@@ -224,7 +224,7 @@ const Maghalat = () => {
 
          </ul> */}
 
-         <div className="border border-transparent mb-[200px] mt-[100px] mr-[200px]">
+         {/* <div className="border border-transparent mb-[200px] mt-[100px] mr-[200px]">
           <ReactPaginate
         previousLabel={<i className='text-green-600 mr-3 border px-3 py-2 rounded-[100%]'> {"<"}</i>}
         nextLabel={<i className='text-green-600 ml-3 border px-3 py-2 rounded-[100%]'> {">"}</i>}
@@ -241,7 +241,7 @@ const Maghalat = () => {
         nextClassName={'mx-2 cursor-pointer'}
         pageLinkClassName={'text-purple-500'}
       />
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

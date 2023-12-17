@@ -62,7 +62,7 @@ const AllCourseCountainer = () => {
 
   return (
     <div
-      className="flex flex-wrap max-w-[900px] items-start justify-between mt-8"
+      className="flex flex-wrap max-w-[900px] items-start justify-between mt-8 relative pb-[200px]"
       data-aos="fade-up"
     >
       {CoursesList.courseFilterDtos?.map((item, index) => {
@@ -81,7 +81,7 @@ const AllCourseCountainer = () => {
         );
       })}
 
-      <div className="border border-transparent mb-[200px] xl:mt-[100px] xl:mr-[300px]">
+      <div className="border border-transparent absolute bottom-[100px] right-[300px]">
         {totalPages > 1 && (
           <ReactPaginate
             previousLabel={
