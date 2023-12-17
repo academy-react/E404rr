@@ -32,7 +32,7 @@ const ContactMethod = () => {
         </svg>
         <p>آدرس : تهران، زعفرانیه، خیابان مقدس اردبیلی، راست چین</p>
       </div>
-      <div className="flex items-center justify-between mt-6">
+      <div className="flex items-center justify-between mt-6 xl:mr-0 mr-5">
         <div className="flex items-center gap-2">
           <svg
             className="w-6"
@@ -59,7 +59,7 @@ const ContactMethod = () => {
           </svg>
           <p>09123456789</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-5 xl:ml-0">
           <svg
             className="w-6"
             viewBox="0 0 24 24"
