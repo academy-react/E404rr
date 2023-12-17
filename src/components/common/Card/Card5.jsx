@@ -2,6 +2,8 @@ import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
 import { DeleteRes } from "../../../core/services/api/UserPanel/GetAllCoursesStudent";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Card5 = ({ courseName, studentName , teacherName  , reserverDate , accept , courseId , reserveId}) => {
   const navigate = useNavigate();
@@ -22,12 +24,21 @@ const Card5 = ({ courseName, studentName , teacherName  , reserverDate , accept 
     
     
     const user = await DeleteRes(userObj);
+
+    if (user.success === true) {
+      toast.success("!  با موفقیت از لیست رزرو حذف شد", { position: toast.POSITION.TOP_RIGHT });
+    } else {
+      // alert("وارد نشدین")
+      toast.error("! عملیات ناموفق ", { position: toast.POSITION.TOP_RIGHT });
+    }
     
   }
 
 
   return (
     <div className=" border-b h-[70px]  flex  last:border-transparent ">
+                    <ToastContainer />
+
       <div
         className="xl:w-[80px] h-[50px] xl:mr-[30px] border border-transparent 
   lg:mr-[10px]  lg:w-[80px] md:w-[80px] md:mr-[30px] mr-1"

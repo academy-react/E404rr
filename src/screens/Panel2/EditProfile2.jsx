@@ -457,6 +457,8 @@ import { GetProfileInfo } from "../../core/services/api/UserPanel/GetProfileInfo
 import { AddProfileImage } from "../../core/services/api/UserPanel/PostAddProfileImage";
 import { PutProfileInfo } from "../../core/services/api/UserPanel/PutUpdateProfileInfo";
 import { NavLink } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EditProfile2 = () => {
   const [data, setdata] = useState([]);
@@ -488,11 +490,29 @@ const EditProfile2 = () => {
 
     const user = await PutProfileInfo(formdata);
 
+    if (user.success === true) {
+      toast.success("! تغییر در پروفایل با موفقیت اضافه شد", { position: toast.POSITION.TOP_RIGHT });
+    } else {
+      // alert("وارد نشدین")
+      toast.error("! عملیات  ناموفق ", { position: toast.POSITION.TOP_RIGHT });
+    }
+    
+
+    
     const imgData = new FormData();
     imgData.append("formFile", values.userImg);
     console.log("values", values.userImg);
     const postImg = await AddProfileImage(imgData ? imgData : null);
     console.log(postImg, "postImg");
+
+
+    if (postImg.success === true) {
+      toast.success("! عکس با موفقیت اضافه شد", { position: toast.POSITION.TOP_RIGHT });
+    } else {
+      // alert("وارد نشدین")
+      toast.error("! عملیات عکس ناموفق ", { position: toast.POSITION.TOP_RIGHT });
+    }
+    
   };
   const gi = () => {
     console.log("hi");
@@ -503,6 +523,8 @@ const EditProfile2 = () => {
         className="flex flex-wrap border border-transparent pb-5"
         data-aos="fade-up"
       >
+              <ToastContainer />
+
         <div className="border w-[80%]  bg-white mt-[30px] pb-10 mx-auto border-transparent rounded-xl">
           <Formik
             initialValues={{
@@ -563,12 +585,12 @@ const EditProfile2 = () => {
                         <p className="">عکس جدید خود را اضافه کنید</p>
                       </label>
                       <div className="border flex justify-center items-center border-transparent mt-3 mb-3 ">
-                      <button
+                      {/* <button
                         type="submit"
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                       >
                         ثبت  عکس جدید
-                      </button>
+                      </button> */}
                       </div>
                       <NavLink
                         to={"/panel/editprofile/profiles"}

@@ -2,6 +2,9 @@ import React from "react";
 import img from "../../assets/img/ArticleDetails/Article.png";
 import { PostAddFiverNews } from "../../core/services/api/PostAddFaiverit";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ArticleImg = ({title , currentView , id , currentImageAddressTumb}) => {
 
@@ -14,10 +17,21 @@ const ArticleImg = ({title , currentView , id , currentImageAddressTumb}) => {
 
   
     const user = await PostAddFiverNews(userObj);
+    if (user.success === true) {
+      toast.success('! ثبت موفق آمیز', { position: toast.POSITION.TOP_RIGHT });
+       setTimeout(() => {
+        navigate("/")
+       }, 1500);
+    }
+    else{
+        // alert("وارد نشدین")
+        toast.error('! ثبت ناموفق ', { position: toast.POSITION.TOP_RIGHT });
+    }
   }
   return (
     <div className="text-[#323E73]" data-aos="fade-up">
       <div>
+        <ToastContainer/>
         <img className="rounded-3xl max-w-[888px] h-[350px] " src={img} alt="" />
         <div className="flex items-center justify-between px-14 mt-8  bg-gradient-to-bl from-[#f3fcf8] to-white rounded-2xl   ">
           {/* <p className="text-lg  px-6 py-4 font-bold ">الگوریتم چیست ؟</p> */}

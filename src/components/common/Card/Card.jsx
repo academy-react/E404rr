@@ -41,6 +41,8 @@ import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
 import { PostCoursesReserve } from "../../../core/services/api/PostCourseReserve";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Card = ({ courseId, teacheName, courseTitle, lastUpdate, teacherId , title , cost}) => {
   const navigate = useNavigate();
   const goCourse = () => {
@@ -57,11 +59,20 @@ const Card = ({ courseId, teacheName, courseTitle, lastUpdate, teacherId , title
       
     }
     const user = await PostCoursesReserve(userObj);
+
+    if (user.success === true) {
+      toast.success("! دوره با موفقیت اضافه شد", { position: toast.POSITION.TOP_RIGHT });
+    } else {
+      // alert("وارد نشدین")
+      toast.error("! عملیات ناموفق ", { position: toast.POSITION.TOP_RIGHT });
+    }
   
   }
 
   return (
     <>
+          <ToastContainer />
+
       <div className=" border-b h-[70px]  flex  last:border-transparent "   >
         <div
           className="xl:w-[80px] h-[50px] xl:mr-[30px] border border-transparent 

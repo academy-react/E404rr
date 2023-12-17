@@ -2,6 +2,9 @@ import React from "react";
 import bgitem1 from "../../../assets/img/bgitem1.png";
 import { useNavigate } from "react-router-dom";
 import { DeleteFavorite } from "../../../core/services/api/UserPanel/GetMyFaiverit";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,cost}) => {
 
     const navigate = useNavigate();
@@ -23,11 +26,21 @@ const Card4 = ({courseId , teacheName , courseTitle , lastUpdate , favoriteId ,c
     
     
     const user = await DeleteFavorite(formdata);
+
+    if (user.success === true) {
+      toast.success("!  با موفقیت از لیست ذخیره حذف شد", { position: toast.POSITION.TOP_RIGHT });
+    } else {
+      // alert("وارد نشدین")
+      toast.error("! عملیات ناموفق ", { position: toast.POSITION.TOP_RIGHT });
+    }
+  
     
   }
   
   return (
     <>
+              <ToastContainer />
+
       <div className=" border-b h-[70px]  flex  last:border-transparent " >
         <div
           className="xl:w-[80px] h-[50px] xl:mr-[30px] border border-transparent 
