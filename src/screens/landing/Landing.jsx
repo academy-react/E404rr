@@ -13,6 +13,7 @@ import { rgb } from "@react-spring/shared";
 import  {React ,  useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BestCourses } from "../../components/LastCourses/BestCourses";
 
 const Landing = () => {
   useEffect(() => {
@@ -25,8 +26,9 @@ const Landing = () => {
       <HeroSection  />
       <CoursesLogo />
       <LastCourses />
-      <Teachers />
       <LastArticles  />
+      <Teachers />
+      <BestCourses/>
       <Footer />  
       
      </div>

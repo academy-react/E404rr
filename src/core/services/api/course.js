@@ -12,3 +12,18 @@ export const getLastCoursesList = async (count) => {
             return [];
       }  
   };
+
+
+  export const BestCoursesApi = async (count) => {
+      try {
+        console.log("Fetching started ...");
+        //url => https://acadapi.etacorealtime.ir/api/Home/GetCoursesTop?Count=5
+        const result = await http.get(`/Home/GetCoursesTop`);
+        
+        return result;
+        
+      } catch (error) {
+            console.log(error);
+            return [];
+      }  
+  };
