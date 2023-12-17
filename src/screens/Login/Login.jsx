@@ -175,13 +175,13 @@ const Login = () => {
         </div>
 
         <div className="flex justify-between mt-5 text-darker-green font-semibold">
-          <span onClick={handlePhone} className="cursor-pointer">
+          {/* <span onClick={handlePhone} className="cursor-pointer">
             ورود با شماره تلفن
           </span>
-          <NavLink to="/forget">پسورد را فراموش کردم</NavLink>
+          <NavLink to="/forget">پسورد را فراموش کردم</NavLink> */}
         </div>
 
-        <div className="absolute text-green-600 mt-[-60px]">
+        <div className="absolute text-green-600 mt-[-30px] mr-3">
               <label htmlFor="rr">مرا به یاد داشته باش</label>
               <Field id="rr" type="checkbox"    name="rememberMe"/>
         </div>
@@ -201,7 +201,7 @@ const Login = () => {
 
             <div className="flex justify-between mt-5 text-darker-green underline font-semibold">
               <NavLink to="/">بازگشت به صفحه اصلی</NavLink>
-              <NavLink to="/">ورود کارمندان</NavLink>
+              {/* <NavLink to="/">ورود کارمندان</NavLink> */}
             </div>
           </div>
           <div className="image-container shrink-0">

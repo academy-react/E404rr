@@ -40,7 +40,7 @@ import ReactPaginate from "react-paginate";
 const AllCourseCountainer = () => {
   const [CoursesList, setCoursesList] = useState([]);
   const [RowsOfPage, setRowsOfPage] = useState(12);
-  const [PageNumber, setPageNumber] = useState(2);
+  const [PageNumber, setPageNumber] = useState();
 
   const [totalPages, setTotalPages] = useState();
 
